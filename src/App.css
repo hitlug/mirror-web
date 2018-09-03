@@ -1,0 +1,12 @@
+.logo {
+  line-height: 64px;
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  width: 300px;
+  margin-left: 0;
+  margin-right: 24px;
+  float: left;
+}
