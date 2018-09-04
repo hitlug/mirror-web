@@ -6,7 +6,8 @@ export default class MirrorsList extends Component {
     const columns = [
       {
         title: "镜像名称",
-        dataIndex: "name"
+        dataIndex: "name",
+        render: text => <a href={"/" + text}>{text}</a>
       },
       {
         title: "同步状态",

@@ -3,6 +3,9 @@ import { Layout, Row, Col } from "antd";
 import axios from "axios";
 import MirrorsList from "./components/mirrorsList";
 import DownloadForm from "./components/downloadForm";
+import ContactCard from "./components/contactCard";
+import HelpCard from "./components/helpCard";
+import ConfigGenerator from "./components/configGenerator";
 import "./App.css";
 
 const { Header, Footer, Content } = Layout;
@@ -10,7 +13,8 @@ const { Header, Footer, Content } = Layout;
 export default class App extends Component {
   state = {
     mirrorsList: null,
-    isoLinks: null
+    isoLinks: null,
+    config: null
   };
 
   fetch_mirrors_list = (params = {}) => {
@@ -50,9 +54,29 @@ export default class App extends Component {
     });
   };
 
+  fetch_config = (params = {}) => {
+    this.setState({
+      fetching_slots: true
+    });
+    axios({
+      url: "/static/config.json",
+      method: "get",
+      data: {
+        ...params
+      }
+    }).then(response => {
+      const config = response.data;
+      console.log(config);
+      this.setState({
+        config: config
+      });
+    });
+  };
+
   componentWillMount() {
     this.fetch_mirrors_list();
     this.fetch_iso_links();
+    this.fetch_config();
   }
 
   render() {
@@ -60,7 +84,7 @@ export default class App extends Component {
       <Layout>
         <Header>
           <Col offset={3}>
-            <div className="logo"> 哈尔滨工业大学开源镜像站 </div>
+            <div className="logo"> 哈尔滨工业大学开源镜像站</div>
           </Col>
         </Header>
         <Content
@@ -74,7 +98,18 @@ export default class App extends Component {
               <MirrorsList mirrorsList={this.state.mirrorsList} />
             </Col>
             <Col md={6}>
-              <DownloadForm isoLinks={this.state.isoLinks} />
+              <div className="side-card">
+                <DownloadForm isoLinks={this.state.isoLinks} />
+              </div>
+              <div className="side-card">
+                <ConfigGenerator config={this.state.config} />
+              </div>
+              <div className="side-card">
+                <ContactCard />
+              </div>
+              <div className="side-card">
+                <HelpCard />
+              </div>
             </Col>
           </Row>
         </Content>

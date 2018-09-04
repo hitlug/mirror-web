@@ -1,0 +1,72 @@
+[
+  {
+    "label": "Ubuntu",
+    "value": "ubuntu",
+    "children": [
+      {
+        "label": "18.04 LTS",
+        "value": "bionic"
+      },
+      {
+        "label": "16.04 LTS",
+        "value": "xenial"
+      },
+      {
+        "label": "14.04 LTS",
+        "value": "trusty"
+      },
+      {
+        "label": "12.04 LTS",
+        "value": "precise"
+      },
+      {
+        "label": "15.04",
+        "value": "vivid"
+      },
+      {
+        "label": "15.10",
+        "value": "wily"
+      },
+      {
+        "label": "16.10",
+        "value": "yakkety"
+      },
+      {
+        "label": "17.04",
+        "value": "zesty"
+      },
+      {
+        "label": "17.10",
+        "value": "artful"
+      }
+    ]
+  },
+  {
+    "label": "Debian",
+    "value": "debian",
+    "children": [
+      {
+        "label": "9 stretch",
+        "value": "stretch"
+      },
+      {
+        "label": "8 jessie",
+        "value": "jessie"
+      },
+      {
+        "label": "7 wheezy",
+        "value": "wheezy"
+      }
+    ]
+  },
+  {
+    "label": "Archlinux",
+    "value": "archlinux",
+    "children": [
+      {
+        "label": "archlinux",
+        "value": "archlinux"
+      }
+    ]
+  }
+]
