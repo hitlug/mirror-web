@@ -4,8 +4,8 @@
     "label": "Arch Linux",
     "children": [
       {
-        "label": "2018.09.01 (x86_64, CLI-only)",
-        "value": "/archlinux/iso/latest/archlinux-2018.09.01-x86_64.iso"
+        "label": "2019.10.01 (x86_64, CLI-only)",
+        "value": "/archlinux/iso/latest/archlinux-2019.10.01-x86_64.iso"
       }
     ]
   },
@@ -14,84 +14,100 @@
     "label": "Debian",
     "children": [
       {
-        "label": "9.5.0 (amd64, CD installer with xfce)",
-        "value": "/debian-cd/current/amd64/iso-cd/debian-9.5.0-amd64-xfce-CD-1.iso"
+        "label": "10.1.0 (amd64, CD installer with xfce)",
+        "value": "/debian-cd/current/amd64/iso-cd/debian-10.1.0-amd64-xfce-CD-1.iso"
       },
       {
-        "label": "9.5.0 (i386, CD installer with xfce)",
-        "value": "/debian-cd/current/i386/iso-cd/debian-9.5.0-i386-xfce-CD-1.iso"
+        "label": "10.1.0 (i386, CD installer with xfce)",
+        "value": "/debian-cd/current/i386/iso-cd/debian-10.1.0-i386-xfce-CD-1.iso"
       },
       {
-        "label": "9.5.0 (amd64, DVD installer (Part 3))",
-        "value": "/debian-cd/current/amd64/iso-dvd/debian-9.5.0-amd64-DVD-3.iso"
+        "label": "10.1.0 (amd64, DVD installer (Part 3))",
+        "value": "/debian-cd/current/amd64/iso-dvd/debian-10.1.0-amd64-DVD-3.iso"
       },
       {
-        "label": "9.5.0 (amd64, DVD installer (Part 2))",
-        "value": "/debian-cd/current/amd64/iso-dvd/debian-9.5.0-amd64-DVD-2.iso"
+        "label": "10.1.0 (amd64, DVD installer (Part 2))",
+        "value": "/debian-cd/current/amd64/iso-dvd/debian-10.1.0-amd64-DVD-2.iso"
       },
       {
-        "label": "9.5.0 (amd64, DVD installer (Part 1))",
-        "value": "/debian-cd/current/amd64/iso-dvd/debian-9.5.0-amd64-DVD-1.iso"
+        "label": "10.1.0 (amd64, DVD installer (Part 1))",
+        "value": "/debian-cd/current/amd64/iso-dvd/debian-10.1.0-amd64-DVD-1.iso"
       },
       {
-        "label": "9.5.0 (i386, DVD installer (Part 3))",
-        "value": "/debian-cd/current/i386/iso-dvd/debian-9.5.0-i386-DVD-3.iso"
+        "label": "10.1.0 (i386, DVD installer (Part 3))",
+        "value": "/debian-cd/current/i386/iso-dvd/debian-10.1.0-i386-DVD-3.iso"
       },
       {
-        "label": "9.5.0 (i386, DVD installer (Part 2))",
-        "value": "/debian-cd/current/i386/iso-dvd/debian-9.5.0-i386-DVD-2.iso"
+        "label": "10.1.0 (i386, DVD installer (Part 2))",
+        "value": "/debian-cd/current/i386/iso-dvd/debian-10.1.0-i386-DVD-2.iso"
       },
       {
-        "label": "9.5.0 (i386, DVD installer (Part 1))",
-        "value": "/debian-cd/current/i386/iso-dvd/debian-9.5.0-i386-DVD-1.iso"
+        "label": "10.1.0 (i386, DVD installer (Part 1))",
+        "value": "/debian-cd/current/i386/iso-dvd/debian-10.1.0-i386-DVD-1.iso"
       },
       {
-        "label": "9.5.0 (amd64, Live CD with xfce)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-9.5.0-amd64-xfce.iso"
+        "label": "10.1.0 (amd64, Live CD with xfce)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.1.0-amd64-xfce.iso"
       },
       {
-        "label": "9.5.0 (amd64, Live CD with mate)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-9.5.0-amd64-mate.iso"
+        "label": "10.1.0 (amd64, Live CD with standard)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.1.0-amd64-standard.iso"
       },
       {
-        "label": "9.5.0 (amd64, Live CD with lxde)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-9.5.0-amd64-lxde.iso"
+        "label": "10.1.0 (amd64, Live CD with mate)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.1.0-amd64-mate.iso"
       },
       {
-        "label": "9.5.0 (amd64, Live CD with kde)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-9.5.0-amd64-kde.iso"
+        "label": "10.1.0 (amd64, Live CD with lxqt)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.1.0-amd64-lxqt.iso"
       },
       {
-        "label": "9.5.0 (amd64, Live CD with gnome)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-9.5.0-amd64-gnome.iso"
+        "label": "10.1.0 (amd64, Live CD with lxde)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.1.0-amd64-lxde.iso"
       },
       {
-        "label": "9.5.0 (amd64, Live CD with cinnamon)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-9.5.0-amd64-cinnamon.iso"
+        "label": "10.1.0 (amd64, Live CD with kde)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.1.0-amd64-kde.iso"
       },
       {
-        "label": "9.5.0 (i386, Live CD with xfce)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-9.5.0-i386-xfce.iso"
+        "label": "10.1.0 (amd64, Live CD with gnome)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.1.0-amd64-gnome.iso"
       },
       {
-        "label": "9.5.0 (i386, Live CD with mate)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-9.5.0-i386-mate.iso"
+        "label": "10.1.0 (amd64, Live CD with cinnamon)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.1.0-amd64-cinnamon.iso"
       },
       {
-        "label": "9.5.0 (i386, Live CD with lxde)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-9.5.0-i386-lxde.iso"
+        "label": "10.1.0 (i386, Live CD with xfce)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.1.0-i386-xfce.iso"
       },
       {
-        "label": "9.5.0 (i386, Live CD with kde)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-9.5.0-i386-kde.iso"
+        "label": "10.1.0 (i386, Live CD with standard)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.1.0-i386-standard.iso"
       },
       {
-        "label": "9.5.0 (i386, Live CD with gnome)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-9.5.0-i386-gnome.iso"
+        "label": "10.1.0 (i386, Live CD with mate)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.1.0-i386-mate.iso"
       },
       {
-        "label": "9.5.0 (i386, Live CD with cinnamon)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-9.5.0-i386-cinnamon.iso"
+        "label": "10.1.0 (i386, Live CD with lxqt)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.1.0-i386-lxqt.iso"
+      },
+      {
+        "label": "10.1.0 (i386, Live CD with lxde)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.1.0-i386-lxde.iso"
+      },
+      {
+        "label": "10.1.0 (i386, Live CD with kde)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.1.0-i386-kde.iso"
+      },
+      {
+        "label": "10.1.0 (i386, Live CD with gnome)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.1.0-i386-gnome.iso"
+      },
+      {
+        "label": "10.1.0 (i386, Live CD with cinnamon)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.1.0-i386-cinnamon.iso"
       }
     ]
   },
@@ -101,27 +117,27 @@
     "children": [
       {
         "label": "7 (x86_64, NetInstall)",
-        "value": "/centos/7.5.1804/isos/x86_64/CentOS-7-x86_64-NetInstall-1804.iso"
+        "value": "/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-NetInstall-1908.iso"
       },
       {
         "label": "7 (x86_64, Minimal)",
-        "value": "/centos/7.5.1804/isos/x86_64/CentOS-7-x86_64-Minimal-1804.iso"
+        "value": "/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso"
       },
       {
         "label": "7 (x86_64, LiveKDE)",
-        "value": "/centos/7.5.1804/isos/x86_64/CentOS-7-x86_64-LiveKDE-1804.iso"
+        "value": "/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-LiveKDE-1908.iso"
       },
       {
         "label": "7 (x86_64, LiveGNOME)",
-        "value": "/centos/7.5.1804/isos/x86_64/CentOS-7-x86_64-LiveGNOME-1804.iso"
+        "value": "/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-LiveGNOME-1908.iso"
       },
       {
         "label": "7 (x86_64, Everything)",
-        "value": "/centos/7.5.1804/isos/x86_64/CentOS-7-x86_64-Everything-1804.iso"
+        "value": "/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-Everything-1908.iso"
       },
       {
         "label": "7 (x86_64, DVD)",
-        "value": "/centos/7.5.1804/isos/x86_64/CentOS-7-x86_64-DVD-1804.iso"
+        "value": "/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso"
       },
       {
         "label": "6.10 (x86_64, netinstall)",
@@ -170,48 +186,52 @@
     "label": "Ubuntu",
     "children": [
       {
-        "label": "18.04.1 (amd64, Desktop LiveDVD)",
-        "value": "/ubuntu-releases/bionic/ubuntu-18.04.1-desktop-amd64.iso"
+        "label": "19.04 (amd64, Desktop LiveDVD)",
+        "value": "/ubuntu-releases/disco/ubuntu-19.04-desktop-amd64.iso"
       },
       {
-        "label": "16.04.5 (amd64, Desktop LiveDVD)",
-        "value": "/ubuntu-releases/xenial/ubuntu-16.04.5-desktop-amd64.iso"
+        "label": "18.04.3 (amd64, Desktop LiveDVD)",
+        "value": "/ubuntu-releases/bionic/ubuntu-18.04.3-desktop-amd64.iso"
       },
       {
-        "label": "16.04.5 (i386, Desktop LiveDVD)",
-        "value": "/ubuntu-releases/xenial/ubuntu-16.04.5-desktop-i386.iso"
+        "label": "16.04.6 (amd64, Desktop LiveDVD)",
+        "value": "/ubuntu-releases/xenial/ubuntu-16.04.6-desktop-amd64.iso"
       },
       {
-        "label": "14.04.5 (amd64, Desktop LiveDVD)",
-        "value": "/ubuntu-releases/trusty/ubuntu-14.04.5-desktop-amd64.iso"
+        "label": "16.04.6 (i386, Desktop LiveDVD)",
+        "value": "/ubuntu-releases/xenial/ubuntu-16.04.6-desktop-i386.iso"
       },
       {
-        "label": "14.04.5 (i386, Desktop LiveDVD)",
-        "value": "/ubuntu-releases/trusty/ubuntu-14.04.5-desktop-i386.iso"
+        "label": "14.04.6 (amd64, Desktop LiveDVD)",
+        "value": "/ubuntu-releases/trusty/ubuntu-14.04.6-desktop-amd64.iso"
       },
       {
-        "label": "12.04.5 (amd64, Desktop LiveDVD)",
-        "value": "/ubuntu-releases/precise/ubuntu-12.04.5-desktop-amd64.iso"
+        "label": "14.04.6 (i386, Desktop LiveDVD)",
+        "value": "/ubuntu-releases/trusty/ubuntu-14.04.6-desktop-i386.iso"
       },
       {
-        "label": "12.04.5 (i386, Desktop LiveDVD)",
-        "value": "/ubuntu-releases/precise/ubuntu-12.04.5-desktop-i386.iso"
+        "label": "19.04 (amd64, Server)",
+        "value": "/ubuntu-releases/disco/ubuntu-19.04-live-server-amd64.iso"
       },
       {
-        "label": "16.04.5 (amd64, Server)",
-        "value": "/ubuntu-releases/xenial/ubuntu-16.04.5-server-amd64.iso"
+        "label": "18.04.3 (amd64, Server)",
+        "value": "/ubuntu-releases/bionic/ubuntu-18.04.3-live-server-amd64.iso"
       },
       {
-        "label": "16.04.5 (i386, Server)",
-        "value": "/ubuntu-releases/xenial/ubuntu-16.04.5-server-i386.iso"
+        "label": "16.04.6 (amd64, Server)",
+        "value": "/ubuntu-releases/xenial/ubuntu-16.04.6-server-amd64.iso"
       },
       {
-        "label": "14.04.5 (amd64, Server)",
-        "value": "/ubuntu-releases/trusty/ubuntu-14.04.5-server-amd64.iso"
+        "label": "16.04.6 (i386, Server)",
+        "value": "/ubuntu-releases/xenial/ubuntu-16.04.6-server-i386.iso"
       },
       {
-        "label": "14.04.5 (i386, Server)",
-        "value": "/ubuntu-releases/trusty/ubuntu-14.04.5-server-i386.iso"
+        "label": "14.04.6 (amd64, Server)",
+        "value": "/ubuntu-releases/trusty/ubuntu-14.04.6-server-amd64.iso"
+      },
+      {
+        "label": "14.04.6 (i386, Server)",
+        "value": "/ubuntu-releases/trusty/ubuntu-14.04.6-server-i386.iso"
       },
       {
         "label": "12.04.5 (amd64, Server)",
@@ -228,8 +248,8 @@
     "label": "Deepin",
     "children": [
       {
-        "label": "15.7 (amd64)",
-        "value": "/deepin-cd/15.7/deepin-15.7-amd64.iso"
+        "label": "15.11 (amd64)",
+        "value": "/deepin-cd/15.11/deepin-15.11-amd64.iso"
       }
     ]
   },
@@ -238,66 +258,12 @@
     "label": "TeX \u6392\u7248\u7cfb\u7edf",
     "children": [
       {
-        "label": "TeX Live 2018 (Windows & Linux)",
-        "value": "/CTAN/systems/texlive/Images/texlive2018-20180414.iso"
+        "label": "TeX Live 2019 (Windows & Linux)",
+        "value": "/CTAN/systems/texlive/Images/texlive2019-20190410.iso"
       },
       {
-        "label": "MacTeX 20180417 (macOS)",
-        "value": "/CTAN/systems/mac/mactex/mactex-20180417.pkg"
-      }
-    ]
-  },
-  {
-    "value": "Conda",
-    "label": "Conda",
-    "children": [
-      {
-        "label": "Anaconda3 5.2.0 (Linux, x86_64)",
-        "value": "/anaconda/archive/Anaconda3-5.2.0-Linux-x86_64.sh"
-      },
-      {
-        "label": "Anaconda3 5.2.0 (MacOSX, x86_64)",
-        "value": "/anaconda/archive/Anaconda3-5.2.0-MacOSX-x86_64.pkg"
-      },
-      {
-        "label": "Anaconda3 5.2.0 (MacOSX, x86_64)",
-        "value": "/anaconda/archive/Anaconda3-5.2.0-MacOSX-x86_64.sh"
-      },
-      {
-        "label": "Anaconda3 5.2.0 (Windows, x86_64)",
-        "value": "/anaconda/archive/Anaconda3-5.2.0-Windows-x86_64.exe"
-      },
-      {
-        "label": "Anaconda3 5.2.0 (Windows, x86)",
-        "value": "/anaconda/archive/Anaconda3-5.2.0-Windows-x86.exe"
-      },
-      {
-        "label": "Anaconda3 5.2.0 (Linux, x86)",
-        "value": "/anaconda/archive/Anaconda3-5.2.0-Linux-x86.sh"
-      },
-      {
-        "label": "Anaconda2 5.2.0 (Linux, x86_64)",
-        "value": "/anaconda/archive/Anaconda2-5.2.0-Linux-x86_64.sh"
-      },
-      {
-        "label": "Anaconda2 5.2.0 (Windows, x86_64)",
-        "value": "/anaconda/archive/Anaconda2-5.2.0-Windows-x86_64.exe"
-      },
-      {
-        "label": "Anaconda2 5.2.0 (MacOSX, x86_64)",
-        "value": "/anaconda/archive/Anaconda2-5.2.0-MacOSX-x86_64.sh"
-      },
-      {
-        "label": "Anaconda2 5.2.0 (MacOSX, x86_64)",
-        "value": "/anaconda/archive/Anaconda2-5.2.0-MacOSX-x86_64.pkg"
-      },
-      {
-        "label": "Anaconda2 5.2.0 (Linux, x86)",
-        "value": "/anaconda/archive/Anaconda2-5.2.0-Linux-x86.sh"
-      },
-      {
-        "label": "Anaconda2 5.2.0 (Windows, x86)",
-        "value": "/anaconda/archive/Anaconda2-5.2.0-Windows-x86.exe"
+        "label": "MacTeX 20190508 (macOS)",
+        "value": "/CTAN/systems/mac/mactex/mactex-20190508.pkg"
       }
     ]
   }
