@@ -118,7 +118,10 @@ export default class App extends Component {
             textAlign: "center"
           }}
         >
-          哈尔滨工业大学开源镜像站
+          <p>哈尔滨工业大学开源镜像站</p>
+          <p>
+            本站由哈尔滨工业大学网络与信息中心支持创办，由哈尔滨工业大学Linux用户协会运行维护。
+          </p>
         </Footer>
       </Layout>
     );
