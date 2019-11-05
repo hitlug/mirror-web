@@ -4,8 +4,8 @@
     "label": "Arch Linux",
     "children": [
       {
-        "label": "2019.10.01 (x86_64, CLI-only)",
-        "value": "/archlinux/iso/latest/archlinux-2019.10.01-x86_64.iso"
+        "label": "2019.11.01 (x86_64, CLI-only)",
+        "value": "/archlinux/iso/latest/archlinux-2019.11.01-x86_64.iso"
       }
     ]
   },
@@ -186,6 +186,10 @@
     "label": "Ubuntu",
     "children": [
       {
+        "label": "19.10 (amd64, Desktop LiveDVD)",
+        "value": "/ubuntu-releases/eoan/ubuntu-19.10-desktop-amd64.iso"
+      },
+      {
         "label": "19.04 (amd64, Desktop LiveDVD)",
         "value": "/ubuntu-releases/disco/ubuntu-19.04-desktop-amd64.iso"
       },
@@ -208,6 +212,18 @@
       {
         "label": "14.04.6 (i386, Desktop LiveDVD)",
         "value": "/ubuntu-releases/trusty/ubuntu-14.04.6-desktop-i386.iso"
+      },
+      {
+        "label": "12.04.5 (amd64, Desktop LiveDVD)",
+        "value": "/ubuntu-releases/precise/ubuntu-12.04.5-desktop-amd64.iso"
+      },
+      {
+        "label": "12.04.5 (i386, Desktop LiveDVD)",
+        "value": "/ubuntu-releases/precise/ubuntu-12.04.5-desktop-i386.iso"
+      },
+      {
+        "label": "19.10 (amd64, Server)",
+        "value": "/ubuntu-releases/eoan/ubuntu-19.10-live-server-amd64.iso"
       },
       {
         "label": "19.04 (amd64, Server)",
@@ -250,6 +266,10 @@
       {
         "label": "15.11 (amd64)",
         "value": "/deepin-cd/15.11/deepin-15.11-amd64.iso"
+      },
+      {
+        "label": "15.10.1 (amd64)",
+        "value": "/deepin-cd/15.10.1/deepin-15.10.1-amd64.iso"
       }
     ]
   },
