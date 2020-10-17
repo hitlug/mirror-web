@@ -1,0 +1,7 @@
+default:
+  image: node
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run-script build
