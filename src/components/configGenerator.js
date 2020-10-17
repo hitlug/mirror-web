@@ -45,6 +45,8 @@ export default class ConfigGenerator extends Component {
         configBlock = build_centos_block(this.state.selectVersion);
         this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
+      default:
+        break;
     }
   };
 
@@ -216,6 +218,8 @@ function build_centos_block(version) {
       build_centos_subblock(`PowerTools`, `PowerTools`, `https://mirrors.hit.edu.cn/centos/$releasever/PowerTools/$basearch/os/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=PowerTools&infra=$infra`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`, 0, ``) + '\n' +
       build_centos_subblock(`extras`, `Extras`, `https://mirrors.hit.edu.cn/centos/$releasever/extras/$basearch/os/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`, 1, `additional packages that may be useful`) + '\n' +
       build_centos_subblock(`centosplus`, `Plus`, `https://mirrors.hit.edu.cn/centos/$releasever/centosplus/$basearch/os/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`, 0, `additional packages that extend functionality of existing packages`) + '\n');
+    default:
+      return "";
   }
 
 }
