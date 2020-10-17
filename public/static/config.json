@@ -83,15 +83,15 @@
     "children": [
       {
         "label": "CentOS 6",
-        "value": "6"
+        "value": 6
       },
       {
         "label": "CentOS 7",
-        "value": "7"
+        "value": 7
       },
       {
         "label": "CentOS 8",
-        "value": "8"
+        "value": 8
       }
     ]
   }

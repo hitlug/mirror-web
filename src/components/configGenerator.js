@@ -41,6 +41,10 @@ export default class ConfigGenerator extends Component {
         configBlock = build_arch_block();
         this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
+      case "centos":
+        configBlock = build_centos_block(this.state.selectVersion);
+        this.setState({ showConfigBlock: true, configBlock: configBlock });
+        break;
     }
   };
 
@@ -94,7 +98,8 @@ class ConfigBlock extends Component {
   render() {
     let block = null;
     if (this.props.showConfigBlock) {
-      block = this.props.configBlock.split("\n").map(function(item) {
+      console.log(this.props.configBlock);
+      block = this.props.configBlock.split("\n").map(function (item) {
         return (
           <span>
             {item}
@@ -162,4 +167,55 @@ function build_debian_block(version) {
 
 function build_arch_block() {
   return "Server = http://mirrors.hit.edu.cn/archlinux/$repo/os/$arch";
+}
+
+function build_centos_subblock(handle, name, baseurl, mirrorlist, gpgkey, enabled, comment) {
+  return (
+    `#${comment}\n` +
+    `[${handle}]\n` +
+    `name=CentOS-$releasever - ${name}\n` +
+    `baseurl=${baseurl}\n` +
+    `#mirrorlist=${mirrorlist}\n` +
+    `enabled=${enabled}\ngpgcheck=1\n` +
+    `gpgkey=${gpgkey}\n`
+  );
+
+}
+
+function build_centos_block(version) {
+  let header = `# CentOS-Base.repo
+#
+# The mirror system uses the connecting IP address of the client and the
+# update status of each mirror to pick mirrors that are updated to and
+# geographically close to the client.  You should use this for CentOS updates
+# unless you are manually picking other mirrors.
+#
+# If the mirrorlist= does not work for you, as a fall back you can try the
+# remarked out baseurl= line instead.
+#
+#
+`;
+  switch (version) {
+    case 6:
+      return (header +
+        build_centos_subblock(`base`, `Base`, `https://mirrors.hit.edu.cn/centos/$releasever/os/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-6`, 1, ``) + '\n' +
+        build_centos_subblock(`updates`, `Updates`, `https://mirrors.hit.edu.cn/centos/$releasever/updates/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-6`, 1, `released updates`) + '\n' +
+        build_centos_subblock(`extras`, `Extras`, `https://mirrors.hit.edu.cn/centos/$releasever/extras/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-6`, 1, `additional packages that may be useful`) + '\n' +
+        build_centos_subblock(`centosplus`, `Plus`, `https://mirrors.hit.edu.cn/centos/$releasever/centosplus/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-6`, 0, `additional packages that extend functionality of existing packages`) + '\n' +
+        build_centos_subblock(`contrib`, `Contrib`, `https://mirrors.hit.edu.cn/centos/$releasever/contrib/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=contrib`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-6`, 0, `contrib - packages by Centos Users`) + '\n');
+    case 7:
+      return (header +
+        build_centos_subblock(`base`, `Base`, `https://mirrors.hit.edu.cn/centos/$releasever/os/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7`, 1, ``) + '\n' +
+        build_centos_subblock(`updates`, `Updates`, `https://mirrors.hit.edu.cn/centos/$releasever/updates/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7`, 1, `released updates`) + '\n' +
+        build_centos_subblock(`extras`, `Extras`, `https://mirrors.hit.edu.cn/centos/$releasever/extras/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7`, 1, `additional packages that may be useful`) + '\n' +
+        build_centos_subblock(`centosplus`, `Plus`, `https://mirrors.hit.edu.cn/centos/$releasever/centosplus/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7`, 0, `additional packages that extend functionality of existing packages`) + '\n');
+    case 8:
+      return (header +
+      build_centos_subblock(`BaseOS`, `Base`, `https://mirrors.hit.edu.cn/centos/$releasever/BaseOS/$basearch/os/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=BaseOS&infra=$infra`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`, 1, ``) + '\n' +
+      build_centos_subblock(`AppStream`, `AppStream`, `https://mirrors.hit.edu.cn/centos/$releasever/AppStream/$basearch/os/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=AppStream&infra=$infra`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`, 1, ``) + '\n' +
+      build_centos_subblock(`PowerTools`, `PowerTools`, `https://mirrors.hit.edu.cn/centos/$releasever/PowerTools/$basearch/os/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=PowerTools&infra=$infra`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`, 0, ``) + '\n' +
+      build_centos_subblock(`extras`, `Extras`, `https://mirrors.hit.edu.cn/centos/$releasever/extras/$basearch/os/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`, 1, `additional packages that may be useful`) + '\n' +
+      build_centos_subblock(`centosplus`, `Plus`, `https://mirrors.hit.edu.cn/centos/$releasever/centosplus/$basearch/os/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`, 0, `additional packages that extend functionality of existing packages`) + '\n');
+  }
+
 }
