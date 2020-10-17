@@ -4,8 +4,8 @@
     "label": "Arch Linux",
     "children": [
       {
-        "label": "2019.12.01 (x86_64, CLI-only)",
-        "value": "/archlinux/iso/latest/archlinux-2019.12.01-x86_64.iso"
+        "label": "2020.10.01 (x86_64, CLI-only)",
+        "value": "/archlinux/iso/latest/archlinux-2020.10.01-x86_64.iso"
       }
     ]
   },
@@ -14,100 +14,108 @@
     "label": "Debian",
     "children": [
       {
-        "label": "10.2.0 (amd64, CD installer with xfce)",
-        "value": "/debian-cd/current/amd64/iso-cd/debian-10.2.0-amd64-xfce-CD-1.iso"
+        "label": "10.6.0 (amd64, CD installer with xfce)",
+        "value": "/debian-cd/current/amd64/iso-cd/debian-10.6.0-amd64-xfce-CD-1.iso"
       },
       {
-        "label": "10.2.0 (i386, CD installer with xfce)",
-        "value": "/debian-cd/current/i386/iso-cd/debian-10.2.0-i386-xfce-CD-1.iso"
+        "label": "10.6.0 (i386, CD installer with xfce)",
+        "value": "/debian-cd/current/i386/iso-cd/debian-10.6.0-i386-xfce-CD-1.iso"
       },
       {
-        "label": "10.2.0 (amd64, DVD installer (Part 3))",
-        "value": "/debian-cd/current/amd64/iso-dvd/debian-10.2.0-amd64-DVD-3.iso"
+        "label": "10.6.0 (amd64, Network installer)",
+        "value": "/debian-cd/current/amd64/iso-cd/debian-10.6.0-amd64-netinst.iso"
       },
       {
-        "label": "10.2.0 (amd64, DVD installer (Part 2))",
-        "value": "/debian-cd/current/amd64/iso-dvd/debian-10.2.0-amd64-DVD-2.iso"
+        "label": "10.6.0 (i386, Network installer)",
+        "value": "/debian-cd/current/i386/iso-cd/debian-10.6.0-i386-netinst.iso"
       },
       {
-        "label": "10.2.0 (amd64, DVD installer (Part 1))",
-        "value": "/debian-cd/current/amd64/iso-dvd/debian-10.2.0-amd64-DVD-1.iso"
+        "label": "10.6.0 (amd64, DVD installer (Part 3))",
+        "value": "/debian-cd/current/amd64/iso-dvd/debian-10.6.0-amd64-DVD-3.iso"
       },
       {
-        "label": "10.2.0 (i386, DVD installer (Part 3))",
-        "value": "/debian-cd/current/i386/iso-dvd/debian-10.2.0-i386-DVD-3.iso"
+        "label": "10.6.0 (amd64, DVD installer (Part 2))",
+        "value": "/debian-cd/current/amd64/iso-dvd/debian-10.6.0-amd64-DVD-2.iso"
       },
       {
-        "label": "10.2.0 (i386, DVD installer (Part 2))",
-        "value": "/debian-cd/current/i386/iso-dvd/debian-10.2.0-i386-DVD-2.iso"
+        "label": "10.6.0 (amd64, DVD installer (Part 1))",
+        "value": "/debian-cd/current/amd64/iso-dvd/debian-10.6.0-amd64-DVD-1.iso"
       },
       {
-        "label": "10.2.0 (i386, DVD installer (Part 1))",
-        "value": "/debian-cd/current/i386/iso-dvd/debian-10.2.0-i386-DVD-1.iso"
+        "label": "10.6.0 (i386, DVD installer (Part 3))",
+        "value": "/debian-cd/current/i386/iso-dvd/debian-10.6.0-i386-DVD-3.iso"
       },
       {
-        "label": "10.2.0 (amd64, Live CD with xfce)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.2.0-amd64-xfce.iso"
+        "label": "10.6.0 (i386, DVD installer (Part 2))",
+        "value": "/debian-cd/current/i386/iso-dvd/debian-10.6.0-i386-DVD-2.iso"
       },
       {
-        "label": "10.2.0 (amd64, Live CD with standard)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.2.0-amd64-standard.iso"
+        "label": "10.6.0 (i386, DVD installer (Part 1))",
+        "value": "/debian-cd/current/i386/iso-dvd/debian-10.6.0-i386-DVD-1.iso"
       },
       {
-        "label": "10.2.0 (amd64, Live CD with mate)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.2.0-amd64-mate.iso"
+        "label": "10.6.0 (amd64, Live CD with xfce)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.6.0-amd64-xfce.iso"
       },
       {
-        "label": "10.2.0 (amd64, Live CD with lxqt)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.2.0-amd64-lxqt.iso"
+        "label": "10.6.0 (amd64, Live CD with standard)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.6.0-amd64-standard.iso"
       },
       {
-        "label": "10.2.0 (amd64, Live CD with lxde)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.2.0-amd64-lxde.iso"
+        "label": "10.6.0 (amd64, Live CD with mate)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.6.0-amd64-mate.iso"
       },
       {
-        "label": "10.2.0 (amd64, Live CD with kde)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.2.0-amd64-kde.iso"
+        "label": "10.6.0 (amd64, Live CD with lxqt)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.6.0-amd64-lxqt.iso"
       },
       {
-        "label": "10.2.0 (amd64, Live CD with gnome)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.2.0-amd64-gnome.iso"
+        "label": "10.6.0 (amd64, Live CD with lxde)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.6.0-amd64-lxde.iso"
       },
       {
-        "label": "10.2.0 (amd64, Live CD with cinnamon)",
-        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.2.0-amd64-cinnamon.iso"
+        "label": "10.6.0 (amd64, Live CD with kde)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.6.0-amd64-kde.iso"
       },
       {
-        "label": "10.2.0 (i386, Live CD with xfce)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.2.0-i386-xfce.iso"
+        "label": "10.6.0 (amd64, Live CD with gnome)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.6.0-amd64-gnome.iso"
       },
       {
-        "label": "10.2.0 (i386, Live CD with standard)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.2.0-i386-standard.iso"
+        "label": "10.6.0 (amd64, Live CD with cinnamon)",
+        "value": "/debian-cd/current-live/amd64/iso-hybrid/debian-live-10.6.0-amd64-cinnamon.iso"
       },
       {
-        "label": "10.2.0 (i386, Live CD with mate)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.2.0-i386-mate.iso"
+        "label": "10.6.0 (i386, Live CD with xfce)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.6.0-i386-xfce.iso"
       },
       {
-        "label": "10.2.0 (i386, Live CD with lxqt)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.2.0-i386-lxqt.iso"
+        "label": "10.6.0 (i386, Live CD with standard)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.6.0-i386-standard.iso"
       },
       {
-        "label": "10.2.0 (i386, Live CD with lxde)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.2.0-i386-lxde.iso"
+        "label": "10.6.0 (i386, Live CD with mate)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.6.0-i386-mate.iso"
       },
       {
-        "label": "10.2.0 (i386, Live CD with kde)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.2.0-i386-kde.iso"
+        "label": "10.6.0 (i386, Live CD with lxqt)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.6.0-i386-lxqt.iso"
       },
       {
-        "label": "10.2.0 (i386, Live CD with gnome)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.2.0-i386-gnome.iso"
+        "label": "10.6.0 (i386, Live CD with lxde)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.6.0-i386-lxde.iso"
       },
       {
-        "label": "10.2.0 (i386, Live CD with cinnamon)",
-        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.2.0-i386-cinnamon.iso"
+        "label": "10.6.0 (i386, Live CD with kde)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.6.0-i386-kde.iso"
+      },
+      {
+        "label": "10.6.0 (i386, Live CD with gnome)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.6.0-i386-gnome.iso"
+      },
+      {
+        "label": "10.6.0 (i386, Live CD with cinnamon)",
+        "value": "/debian-cd/current-live/i386/iso-hybrid/debian-live-10.6.0-i386-cinnamon.iso"
       }
     ]
   },
@@ -116,68 +124,88 @@
     "label": "CentOS",
     "children": [
       {
+        "label": "8.2.2004 (x86_64, minimal)",
+        "value": "/centos/8.2.2004/isos/x86_64/CentOS-8.2.2004-x86_64-minimal.iso"
+      },
+      {
+        "label": "8.2.2004 (x86_64, dvd1)",
+        "value": "/centos/8.2.2004/isos/x86_64/CentOS-8.2.2004-x86_64-dvd1.iso"
+      },
+      {
+        "label": "8.2.2004 (x86_64, boot)",
+        "value": "/centos/8.2.2004/isos/x86_64/CentOS-8.2.2004-x86_64-boot.iso"
+      },
+      {
+        "label": "8.2.2004 (ppc64le, minimal)",
+        "value": "/centos/8.2.2004/isos/ppc64le/CentOS-8.2.2004-ppc64le-minimal.iso"
+      },
+      {
+        "label": "8.2.2004 (aarch64, minimal)",
+        "value": "/centos/8.2.2004/isos/aarch64/CentOS-8.2.2004-aarch64-minimal.iso"
+      },
+      {
+        "label": "8.2.2004 (ppc64le, dvd1)",
+        "value": "/centos/8.2.2004/isos/ppc64le/CentOS-8.2.2004-ppc64le-dvd1.iso"
+      },
+      {
+        "label": "8.2.2004 (aarch64, dvd1)",
+        "value": "/centos/8.2.2004/isos/aarch64/CentOS-8.2.2004-aarch64-dvd1.iso"
+      },
+      {
+        "label": "8.2.2004 (ppc64le, boot)",
+        "value": "/centos/8.2.2004/isos/ppc64le/CentOS-8.2.2004-ppc64le-boot.iso"
+      },
+      {
+        "label": "8.2.2004 (aarch64, boot)",
+        "value": "/centos/8.2.2004/isos/aarch64/CentOS-8.2.2004-aarch64-boot.iso"
+      },
+      {
+        "label": "8.1.1911 (x86_64, dvd1)",
+        "value": "/centos/8.1.1911/isos/x86_64/CentOS-8.1.1911-x86_64-dvd1.iso"
+      },
+      {
+        "label": "8.1.1911 (x86_64, boot)",
+        "value": "/centos/8.1.1911/isos/x86_64/CentOS-8.1.1911-x86_64-boot.iso"
+      },
+      {
+        "label": "8.1.1911 (ppc64le, dvd1)",
+        "value": "/centos/8.1.1911/isos/ppc64le/CentOS-8.1.1911-ppc64le-dvd1.iso"
+      },
+      {
+        "label": "8.1.1911 (aarch64, dvd1)",
+        "value": "/centos/8.1.1911/isos/aarch64/CentOS-8.1.1911-aarch64-dvd1.iso"
+      },
+      {
+        "label": "8.1.1911 (ppc64le, boot)",
+        "value": "/centos/8.1.1911/isos/ppc64le/CentOS-8.1.1911-ppc64le-boot.iso"
+      },
+      {
+        "label": "8.1.1911 (aarch64, boot)",
+        "value": "/centos/8.1.1911/isos/aarch64/CentOS-8.1.1911-aarch64-boot.iso"
+      },
+      {
         "label": "7 (x86_64, NetInstall)",
-        "value": "/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-NetInstall-1908.iso"
+        "value": "/centos/7.8.2003/isos/x86_64/CentOS-7-x86_64-NetInstall-2003.iso"
       },
       {
         "label": "7 (x86_64, Minimal)",
-        "value": "/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso"
+        "value": "/centos/7.8.2003/isos/x86_64/CentOS-7-x86_64-Minimal-2003.iso"
       },
       {
         "label": "7 (x86_64, LiveKDE)",
-        "value": "/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-LiveKDE-1908.iso"
+        "value": "/centos/7.8.2003/isos/x86_64/CentOS-7-x86_64-LiveKDE-2003.iso"
       },
       {
         "label": "7 (x86_64, LiveGNOME)",
-        "value": "/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-LiveGNOME-1908.iso"
+        "value": "/centos/7.8.2003/isos/x86_64/CentOS-7-x86_64-LiveGNOME-2003.iso"
       },
       {
         "label": "7 (x86_64, Everything)",
-        "value": "/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-Everything-1908.iso"
+        "value": "/centos/7.8.2003/isos/x86_64/CentOS-7-x86_64-Everything-2003.iso"
       },
       {
         "label": "7 (x86_64, DVD)",
-        "value": "/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso"
-      },
-      {
-        "label": "6.10 (x86_64, netinstall)",
-        "value": "/centos/6.10/isos/x86_64/CentOS-6.10-x86_64-netinstall.iso"
-      },
-      {
-        "label": "6.10 (x86_64, minimal)",
-        "value": "/centos/6.10/isos/x86_64/CentOS-6.10-x86_64-minimal.iso"
-      },
-      {
-        "label": "6.10 (x86_64, bin-DVD2)",
-        "value": "/centos/6.10/isos/x86_64/CentOS-6.10-x86_64-bin-DVD2.iso"
-      },
-      {
-        "label": "6.10 (x86_64, bin-DVD1)",
-        "value": "/centos/6.10/isos/x86_64/CentOS-6.10-x86_64-bin-DVD1.iso"
-      },
-      {
-        "label": "6.10 (x86_64, LiveDVD)",
-        "value": "/centos/6.10/isos/x86_64/CentOS-6.10-x86_64-LiveDVD.iso"
-      },
-      {
-        "label": "6.10 (i386, netinstall)",
-        "value": "/centos/6.10/isos/i386/CentOS-6.10-i386-netinstall.iso"
-      },
-      {
-        "label": "6.10 (i386, minimal)",
-        "value": "/centos/6.10/isos/i386/CentOS-6.10-i386-minimal.iso"
-      },
-      {
-        "label": "6.10 (i386, bin-DVD2)",
-        "value": "/centos/6.10/isos/i386/CentOS-6.10-i386-bin-DVD2.iso"
-      },
-      {
-        "label": "6.10 (i386, bin-DVD1)",
-        "value": "/centos/6.10/isos/i386/CentOS-6.10-i386-bin-DVD1.iso"
-      },
-      {
-        "label": "6.10 (i386, LiveDVD)",
-        "value": "/centos/6.10/isos/i386/CentOS-6.10-i386-LiveDVD.iso"
+        "value": "/centos/7.8.2003/isos/x86_64/CentOS-7-x86_64-DVD-2003.iso"
       }
     ]
   },
@@ -186,20 +214,16 @@
     "label": "Ubuntu",
     "children": [
       {
-        "label": "19.10 (amd64, Desktop LiveDVD)",
-        "value": "/ubuntu-releases/eoan/ubuntu-19.10-desktop-amd64.iso"
+        "label": "20.04.1 (amd64, Desktop LiveDVD)",
+        "value": "/ubuntu-releases/focal/ubuntu-20.04.1-desktop-amd64.iso"
       },
       {
-        "label": "19.04 (amd64, Desktop LiveDVD)",
-        "value": "/ubuntu-releases/disco/ubuntu-19.04-desktop-amd64.iso"
+        "label": "18.04.5 (amd64, Desktop LiveDVD)",
+        "value": "/ubuntu-releases/bionic/ubuntu-18.04.5-desktop-amd64.iso"
       },
       {
-        "label": "18.04.3 (amd64, Desktop LiveDVD)",
-        "value": "/ubuntu-releases/bionic/ubuntu-18.04.3-desktop-amd64.iso"
-      },
-      {
-        "label": "16.04.6 (amd64, Desktop LiveDVD)",
-        "value": "/ubuntu-releases/xenial/ubuntu-16.04.6-desktop-amd64.iso"
+        "label": "16.04.7 (amd64, Desktop LiveDVD)",
+        "value": "/ubuntu-releases/xenial/ubuntu-16.04.7-desktop-amd64.iso"
       },
       {
         "label": "16.04.6 (i386, Desktop LiveDVD)",
@@ -214,28 +238,16 @@
         "value": "/ubuntu-releases/trusty/ubuntu-14.04.6-desktop-i386.iso"
       },
       {
-        "label": "12.04.5 (amd64, Desktop LiveDVD)",
-        "value": "/ubuntu-releases/precise/ubuntu-12.04.5-desktop-amd64.iso"
+        "label": "20.04.1 (amd64, Server)",
+        "value": "/ubuntu-releases/focal/ubuntu-20.04.1-live-server-amd64.iso"
       },
       {
-        "label": "12.04.5 (i386, Desktop LiveDVD)",
-        "value": "/ubuntu-releases/precise/ubuntu-12.04.5-desktop-i386.iso"
+        "label": "18.04.5 (amd64, Server)",
+        "value": "/ubuntu-releases/bionic/ubuntu-18.04.5-live-server-amd64.iso"
       },
       {
-        "label": "19.10 (amd64, Server)",
-        "value": "/ubuntu-releases/eoan/ubuntu-19.10-live-server-amd64.iso"
-      },
-      {
-        "label": "19.04 (amd64, Server)",
-        "value": "/ubuntu-releases/disco/ubuntu-19.04-live-server-amd64.iso"
-      },
-      {
-        "label": "18.04.3 (amd64, Server)",
-        "value": "/ubuntu-releases/bionic/ubuntu-18.04.3-live-server-amd64.iso"
-      },
-      {
-        "label": "16.04.6 (amd64, Server)",
-        "value": "/ubuntu-releases/xenial/ubuntu-16.04.6-server-amd64.iso"
+        "label": "16.04.7 (amd64, Server)",
+        "value": "/ubuntu-releases/xenial/ubuntu-16.04.7-server-amd64.iso"
       },
       {
         "label": "16.04.6 (i386, Server)",
@@ -260,16 +272,94 @@
     ]
   },
   {
+    "value": "Ubuntu \u884d\u751f\u7248",
+    "label": "Ubuntu \u884d\u751f\u7248",
+    "children": [
+      {
+        "label": "Ubuntu Kylin 20.04.1 (amd64)",
+        "value": "/ubuntu-cdimage/ubuntukylin/releases/focal/release/ubuntukylin-20.04.1-desktop-amd64.iso"
+      },
+      {
+        "label": "Kubuntu 20.04.1 (amd64)",
+        "value": "/ubuntu-cdimage/kubuntu/releases/focal/release/kubuntu-20.04.1-desktop-amd64.iso"
+      },
+      {
+        "label": "Lubuntu 20.04.1 (amd64)",
+        "value": "/ubuntu-cdimage/lubuntu/releases/focal/release/lubuntu-20.04.1-desktop-amd64.iso"
+      },
+      {
+        "label": "Xubuntu 20.04.1 (amd64)",
+        "value": "/ubuntu-cdimage/xubuntu/releases/focal/release/xubuntu-20.04.1-desktop-amd64.iso"
+      },
+      {
+        "label": "Ubuntu Gnome 16.04.5 (amd64)",
+        "value": "/ubuntu-cdimage/ubuntu-gnome/releases/xenial/release/ubuntu-gnome-16.04.5-desktop-amd64.iso"
+      },
+      {
+        "label": "Ubuntu Gnome 16.04.5 (i386)",
+        "value": "/ubuntu-cdimage/ubuntu-gnome/releases/xenial/release/ubuntu-gnome-16.04.5-desktop-i386.iso"
+      },
+      {
+        "label": "Ubuntu Mate 20.04.1 (amd64)",
+        "value": "/ubuntu-cdimage/ubuntu-mate/releases/focal/release/ubuntu-mate-20.04.1-desktop-amd64.iso"
+      }
+    ]
+  },
+  {
     "value": "Deepin",
     "label": "Deepin",
     "children": [
       {
         "label": "15.11 (amd64)",
         "value": "/deepin-cd/15.11/deepin-15.11-amd64.iso"
+      }
+    ]
+  },
+  {
+    "value": "Linux Mint",
+    "label": "Linux Mint",
+    "children": [
+      {
+        "label": "20 (64bit, xfce)",
+        "value": "/linuxmint-cd/stable/20/linuxmint-20-xfce-64bit.iso"
       },
       {
-        "label": "15.10.1 (amd64)",
-        "value": "/deepin-cd/15.10.1/deepin-15.10.1-amd64.iso"
+        "label": "20 (64bit, mate)",
+        "value": "/linuxmint-cd/stable/20/linuxmint-20-mate-64bit.iso"
+      },
+      {
+        "label": "20 (64bit, cinnamon)",
+        "value": "/linuxmint-cd/stable/20/linuxmint-20-cinnamon-64bit.iso"
+      }
+    ]
+  },
+  {
+    "value": "Kali",
+    "label": "Kali",
+    "children": [
+      {
+        "label": "2020.3 (amd64, live)",
+        "value": "/kali-images/current/kali-linux-2020.3-live-amd64.iso"
+      },
+      {
+        "label": "2020.3 (amd64, installer-netinst)",
+        "value": "/kali-images/current/kali-linux-2020.3-installer-netinst-amd64.iso"
+      },
+      {
+        "label": "2020.3 (amd64, installer)",
+        "value": "/kali-images/current/kali-linux-2020.3-installer-amd64.iso"
+      },
+      {
+        "label": "2020.3 (i386, live)",
+        "value": "/kali-images/current/kali-linux-2020.3-live-i386.iso"
+      },
+      {
+        "label": "2020.3 (i386, installer-netinst)",
+        "value": "/kali-images/current/kali-linux-2020.3-installer-netinst-i386.iso"
+      },
+      {
+        "label": "2020.3 (i386, installer)",
+        "value": "/kali-images/current/kali-linux-2020.3-installer-i386.iso"
       }
     ]
   },
@@ -278,12 +368,34 @@
     "label": "TeX \u6392\u7248\u7cfb\u7edf",
     "children": [
       {
-        "label": "TeX Live 2019 (Windows & Linux)",
-        "value": "/CTAN/systems/texlive/Images/texlive2019-20190410.iso"
+        "label": "TeX Live 2020 (Windows & Linux)",
+        "value": "/CTAN/systems/texlive/Images/texlive2020-20200406.iso"
       },
       {
-        "label": "MacTeX 20190508 (macOS)",
-        "value": "/CTAN/systems/mac/mactex/mactex-20190508.pkg"
+        "label": "MacTeX 20200407 (macOS)",
+        "value": "/CTAN/systems/mac/mactex/mactex-20200407.pkg"
+      },
+      {
+        "label": "MikTeX 20.10 (Windows, x64)",
+        "value": "/CTAN/systems/win32/miktex/setup/windows-x64/basic-miktex-20.10-x64.exe"
+      },
+      {
+        "label": "MikTeX 20.10 (Windows)",
+        "value": "/CTAN/systems/win32/miktex/setup/windows-x86/basic-miktex-20.10.exe"
+      },
+      {
+        "label": "MikTeX 20.10 (macOS, x86_64)",
+        "value": "/CTAN/systems/win32/miktex/setup/darwin-x86_64/miktex-20.10-darwin-x86_64.dmg"
+      }
+    ]
+  },
+  {
+    "value": "Docker",
+    "label": "Docker",
+    "children": [
+      {
+        "label": "19.03.13 (macOS)",
+        "value": "/docker-ce/mac/static/stable/x86_64/docker-19.03.13.tgz"
       }
     ]
   },
@@ -292,496 +404,160 @@
     "label": "Eclipse IDE",
     "children": [
       {
-        "label": "dsl 2019-03 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-dsl-2019-03-R-macosx-cocoa-x86_64.dmg"
+        "label": "dsl 2020-09 (macosx-cocoa, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-dsl-2020-09-R-macosx-cocoa-x86_64.dmg"
       },
       {
-        "label": "dsl 2019-03 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-dsl-2019-03-R-linux-gtk-x86_64.tar.gz"
+        "label": "dsl 2020-09 (linux-gtk, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-dsl-2020-09-R-linux-gtk-x86_64.tar.gz"
       },
       {
-        "label": "dsl 2019-03 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-dsl-2019-03-R-win32-x86_64.zip"
+        "label": "dsl 2020-09 (win32, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-dsl-2020-09-R-win32-x86_64.zip"
       },
       {
-        "label": "javascript 2019-03 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-javascript-2019-03-R-macosx-cocoa-x86_64.dmg"
+        "label": "javascript 2020-09 (macosx-cocoa, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-javascript-2020-09-R-macosx-cocoa-x86_64.dmg"
       },
       {
-        "label": "javascript 2019-03 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-javascript-2019-03-R-linux-gtk-x86_64.tar.gz"
+        "label": "javascript 2020-09 (linux-gtk, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-javascript-2020-09-R-linux-gtk-x86_64.tar.gz"
       },
       {
-        "label": "javascript 2019-03 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-javascript-2019-03-R-win32-x86_64.zip"
+        "label": "javascript 2020-09 (win32, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-javascript-2020-09-R-win32-x86_64.zip"
       },
       {
-        "label": "testing 2019-03 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-testing-2019-03-R-macosx-cocoa-x86_64.dmg"
+        "label": "scout 2020-09 (macosx-cocoa, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-scout-2020-09-R-macosx-cocoa-x86_64.dmg"
       },
       {
-        "label": "testing 2019-03 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-testing-2019-03-R-linux-gtk-x86_64.tar.gz"
+        "label": "scout 2020-09 (linux-gtk, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-scout-2020-09-R-linux-gtk-x86_64.tar.gz"
       },
       {
-        "label": "testing 2019-03 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-testing-2019-03-R-win32-x86_64.zip"
+        "label": "scout 2020-09 (win32, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-scout-2020-09-R-win32-x86_64.zip"
       },
       {
-        "label": "php 2019-03 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-php-2019-03-R-macosx-cocoa-x86_64.dmg"
+        "label": "rcp 2020-09 (macosx-cocoa, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-rcp-2020-09-R-macosx-cocoa-x86_64.dmg"
       },
       {
-        "label": "php 2019-03 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-php-2019-03-R-linux-gtk-x86_64.tar.gz"
+        "label": "rcp 2020-09 (linux-gtk, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-rcp-2020-09-R-linux-gtk-x86_64.tar.gz"
       },
       {
-        "label": "php 2019-03 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-php-2019-03-R-win32-x86_64.zip"
+        "label": "rcp 2020-09 (win32, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-rcp-2020-09-R-win32-x86_64.zip"
       },
       {
-        "label": "parallel 2019-03 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-parallel-2019-03-R-macosx-cocoa-x86_64.dmg"
+        "label": "parallel 2020-09 (macosx-cocoa, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-parallel-2020-09-R-macosx-cocoa-x86_64.dmg"
       },
       {
-        "label": "parallel 2019-03 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-parallel-2019-03-R-linux-gtk-x86_64.tar.gz"
+        "label": "parallel 2020-09 (linux-gtk, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-parallel-2020-09-R-linux-gtk-x86_64.tar.gz"
       },
       {
-        "label": "parallel 2019-03 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-parallel-2019-03-R-win32-x86_64.zip"
+        "label": "parallel 2020-09 (win32, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-parallel-2020-09-R-win32-x86_64.zip"
       },
       {
-        "label": "modeling 2019-03 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-modeling-2019-03-R-macosx-cocoa-x86_64.dmg"
+        "label": "committers 2020-09 (macosx-cocoa, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-committers-2020-09-R-macosx-cocoa-x86_64.dmg"
       },
       {
-        "label": "modeling 2019-03 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-modeling-2019-03-R-linux-gtk-x86_64.tar.gz"
+        "label": "committers 2020-09 (linux-gtk, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-committers-2020-09-R-linux-gtk-x86_64.tar.gz"
       },
       {
-        "label": "modeling 2019-03 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-modeling-2019-03-R-win32-x86_64.zip"
+        "label": "committers 2020-09 (win32, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-committers-2020-09-R-win32-x86_64.zip"
       },
       {
-        "label": "reporting 2019-03 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-reporting-2019-03-R-macosx-cocoa-x86_64.dmg"
+        "label": "php 2020-09 (macosx-cocoa, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-php-2020-09-R-macosx-cocoa-x86_64.dmg"
       },
       {
-        "label": "reporting 2019-03 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-reporting-2019-03-R-linux-gtk-x86_64.tar.gz"
+        "label": "php 2020-09 (linux-gtk, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-php-2020-09-R-linux-gtk-x86_64.tar.gz"
       },
       {
-        "label": "reporting 2019-03 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-reporting-2019-03-R-win32-x86_64.zip"
+        "label": "php 2020-09 (win32, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-php-2020-09-R-win32-x86_64.zip"
       },
       {
-        "label": "jee 2019-03 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-jee-2019-03-R-macosx-cocoa-x86_64.dmg"
+        "label": "rust 2020-09 (macosx-cocoa, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-rust-2020-09-R-macosx-cocoa-x86_64.dmg"
       },
       {
-        "label": "jee 2019-03 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-jee-2019-03-R-linux-gtk-x86_64.tar.gz"
+        "label": "rust 2020-09 (linux-gtk, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-rust-2020-09-R-linux-gtk-x86_64.tar.gz"
       },
       {
-        "label": "jee 2019-03 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-jee-2019-03-R-win32-x86_64.zip"
+        "label": "rust 2020-09 (win32, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-rust-2020-09-R-win32-x86_64.zip"
       },
       {
-        "label": "rcp 2019-03 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-rcp-2019-03-R-macosx-cocoa-x86_64.dmg"
+        "label": "testing 2020-09 (macosx-cocoa, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-testing-2020-09-R-macosx-cocoa-x86_64.dmg"
       },
       {
-        "label": "rcp 2019-03 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-rcp-2019-03-R-linux-gtk-x86_64.tar.gz"
+        "label": "testing 2020-09 (linux-gtk, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-testing-2020-09-R-linux-gtk-x86_64.tar.gz"
       },
       {
-        "label": "rcp 2019-03 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-rcp-2019-03-R-win32-x86_64.zip"
+        "label": "testing 2020-09 (win32, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-testing-2020-09-R-win32-x86_64.zip"
       },
       {
-        "label": "scout 2019-03 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-scout-2019-03-R-macosx-cocoa-x86_64.dmg"
+        "label": "modeling 2020-09 (macosx-cocoa, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-modeling-2020-09-R-macosx-cocoa-x86_64.dmg"
       },
       {
-        "label": "scout 2019-03 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-scout-2019-03-R-linux-gtk-x86_64.tar.gz"
+        "label": "modeling 2020-09 (linux-gtk, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-modeling-2020-09-R-linux-gtk-x86_64.tar.gz"
       },
       {
-        "label": "scout 2019-03 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-scout-2019-03-R-win32-x86_64.zip"
+        "label": "modeling 2020-09 (win32, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-modeling-2020-09-R-win32-x86_64.zip"
       },
       {
-        "label": "java 2019-03 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-java-2019-03-R-macosx-cocoa-x86_64.dmg"
+        "label": "cpp 2020-09 (macosx-cocoa, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-cpp-2020-09-R-macosx-cocoa-x86_64.dmg"
       },
       {
-        "label": "java 2019-03 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz"
+        "label": "cpp 2020-09 (linux-gtk, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-cpp-2020-09-R-linux-gtk-x86_64.tar.gz"
       },
       {
-        "label": "java 2019-03 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-java-2019-03-R-win32-x86_64.zip"
+        "label": "cpp 2020-09 (win32, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-cpp-2020-09-R-win32-x86_64.zip"
       },
       {
-        "label": "cpp 2019-03 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-cpp-2019-03-R-macosx-cocoa-x86_64.dmg"
+        "label": "jee 2020-09 (macosx-cocoa, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-jee-2020-09-R-macosx-cocoa-x86_64.dmg"
       },
       {
-        "label": "cpp 2019-03 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-cpp-2019-03-R-linux-gtk-x86_64.tar.gz"
+        "label": "jee 2020-09 (linux-gtk, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-jee-2020-09-R-linux-gtk-x86_64.tar.gz"
       },
       {
-        "label": "cpp 2019-03 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-cpp-2019-03-R-win32-x86_64.zip"
+        "label": "jee 2020-09 (win32, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-jee-2020-09-R-win32-x86_64.zip"
       },
       {
-        "label": "committers 2019-03 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-committers-2019-03-R-macosx-cocoa-x86_64.dmg"
+        "label": "java 2020-09 (macosx-cocoa, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-java-2020-09-R-macosx-cocoa-x86_64.dmg"
       },
       {
-        "label": "committers 2019-03 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-committers-2019-03-R-linux-gtk-x86_64.tar.gz"
+        "label": "java 2020-09 (linux-gtk, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-java-2020-09-R-linux-gtk-x86_64.tar.gz"
       },
       {
-        "label": "committers 2019-03 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-03/R/eclipse-committers-2019-03-R-win32-x86_64.zip"
-      },
-      {
-        "label": "modeling 2019-06 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-modeling-2019-06-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "modeling 2019-06 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-modeling-2019-06-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "modeling 2019-06 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-modeling-2019-06-R-win32-x86_64.zip"
-      },
-      {
-        "label": "javascript 2019-06 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-javascript-2019-06-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "javascript 2019-06 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-javascript-2019-06-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "javascript 2019-06 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-javascript-2019-06-R-win32-x86_64.zip"
-      },
-      {
-        "label": "jee 2019-06 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-jee-2019-06-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "jee 2019-06 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-jee-2019-06-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "jee 2019-06 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-jee-2019-06-R-win32-x86_64.zip"
-      },
-      {
-        "label": "php 2019-06 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-php-2019-06-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "php 2019-06 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-php-2019-06-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "php 2019-06 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-php-2019-06-R-win32-x86_64.zip"
-      },
-      {
-        "label": "committers 2019-06 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-committers-2019-06-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "committers 2019-06 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-committers-2019-06-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "committers 2019-06 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-committers-2019-06-R-win32-x86_64.zip"
-      },
-      {
-        "label": "testing 2019-06 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-testing-2019-06-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "testing 2019-06 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-testing-2019-06-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "testing 2019-06 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-testing-2019-06-R-win32-x86_64.zip"
-      },
-      {
-        "label": "reporting 2019-06 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-reporting-2019-06-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "reporting 2019-06 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-reporting-2019-06-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "reporting 2019-06 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-reporting-2019-06-R-win32-x86_64.zip"
-      },
-      {
-        "label": "dsl 2019-06 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-dsl-2019-06-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "dsl 2019-06 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-dsl-2019-06-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "dsl 2019-06 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-dsl-2019-06-R-win32-x86_64.zip"
-      },
-      {
-        "label": "java 2019-06 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-java-2019-06-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "java 2019-06 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-java-2019-06-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "java 2019-06 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-java-2019-06-R-win32-x86_64.zip"
-      },
-      {
-        "label": "scout 2019-06 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-scout-2019-06-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "scout 2019-06 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-scout-2019-06-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "scout 2019-06 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-scout-2019-06-R-win32-x86_64.zip"
-      },
-      {
-        "label": "rcp 2019-06 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-rcp-2019-06-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "rcp 2019-06 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-rcp-2019-06-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "rcp 2019-06 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-rcp-2019-06-R-win32-x86_64.zip"
-      },
-      {
-        "label": "parallel 2019-06 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-parallel-2019-06-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "parallel 2019-06 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-parallel-2019-06-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "parallel 2019-06 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-parallel-2019-06-R-win32-x86_64.zip"
-      },
-      {
-        "label": "cpp 2019-06 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-cpp-2019-06-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "cpp 2019-06 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-cpp-2019-06-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "cpp 2019-06 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-06/R/eclipse-cpp-2019-06-R-win32-x86_64.zip"
-      },
-      {
-        "label": "jee 2018-12 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-jee-2018-12-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "jee 2018-12 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-jee-2018-12-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "jee 2018-12 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-jee-2018-12-R-win32-x86_64.zip"
-      },
-      {
-        "label": "php 2018-12 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-php-2018-12-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "php 2018-12 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-php-2018-12-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "php 2018-12 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-php-2018-12-R-win32-x86_64.zip"
-      },
-      {
-        "label": "parallel 2018-12 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-parallel-2018-12-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "parallel 2018-12 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-parallel-2018-12-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "parallel 2018-12 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-parallel-2018-12-R-win32-x86_64.zip"
-      },
-      {
-        "label": "javascript 2018-12 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-javascript-2018-12-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "javascript 2018-12 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-javascript-2018-12-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "javascript 2018-12 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-javascript-2018-12-R-win32-x86_64.zip"
-      },
-      {
-        "label": "java 2018-12 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-java-2018-12-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "java 2018-12 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-java-2018-12-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "java 2018-12 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-java-2018-12-R-win32-x86_64.zip"
-      },
-      {
-        "label": "dsl 2018-12 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-dsl-2018-12-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "dsl 2018-12 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-dsl-2018-12-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "dsl 2018-12 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-dsl-2018-12-R-win32-x86_64.zip"
-      },
-      {
-        "label": "committers 2018-12 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-committers-2018-12-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "committers 2018-12 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-committers-2018-12-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "committers 2018-12 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-committers-2018-12-R-win32-x86_64.zip"
-      },
-      {
-        "label": "modeling 2018-12 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-modeling-2018-12-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "modeling 2018-12 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-modeling-2018-12-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "modeling 2018-12 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-modeling-2018-12-R-win32-x86_64.zip"
-      },
-      {
-        "label": "testing 2018-12 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-testing-2018-12-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "testing 2018-12 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-testing-2018-12-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "testing 2018-12 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-testing-2018-12-R-win32-x86_64.zip"
-      },
-      {
-        "label": "cpp 2018-12 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-cpp-2018-12-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "cpp 2018-12 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-cpp-2018-12-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "cpp 2018-12 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-cpp-2018-12-R-win32-x86_64.zip"
-      },
-      {
-        "label": "scout 2018-12 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-scout-2018-12-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "scout 2018-12 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-scout-2018-12-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "scout 2018-12 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-scout-2018-12-R-win32-x86_64.zip"
-      },
-      {
-        "label": "reporting 2018-12 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-reporting-2018-12-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "reporting 2018-12 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-reporting-2018-12-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "reporting 2018-12 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-reporting-2018-12-R-win32-x86_64.zip"
-      },
-      {
-        "label": "rcp 2018-12 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-rcp-2018-12-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "rcp 2018-12 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-rcp-2018-12-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "rcp 2018-12 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2018-12/R/eclipse-rcp-2018-12-R-win32-x86_64.zip"
-      },
-      {
-        "label": "javascript 2019-09 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-javascript-2019-09-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "javascript 2019-09 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-javascript-2019-09-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "javascript 2019-09 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-javascript-2019-09-R-win32-x86_64.zip"
-      },
-      {
-        "label": "testing 2019-09 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-testing-2019-09-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "testing 2019-09 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-testing-2019-09-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "testing 2019-09 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-testing-2019-09-R-win32-x86_64.zip"
+        "label": "java 2020-09 (win32, x86_64)",
+        "value": "/eclipse/technology/epp/downloads/release/2020-09/R/eclipse-java-2020-09-R-win32-x86_64.zip"
       },
       {
         "label": "reporting 2019-09 (macosx-cocoa, x86_64)",
@@ -794,126 +570,44 @@
       {
         "label": "reporting 2019-09 (win32, x86_64)",
         "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-reporting-2019-09-R-win32-x86_64.zip"
+      }
+    ]
+  },
+  {
+    "value": "KiCad",
+    "label": "KiCad",
+    "children": [
+      {
+        "label": "5.1.7_1 (Windows, x86_64)",
+        "value": "/kicad/windows/stable/kicad-5.1.7_1-x86_64.exe"
       },
       {
-        "label": "php 2019-09 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-php-2019-09-R-macosx-cocoa-x86_64.dmg"
+        "label": "5.1.7_1 (Windows, i686)",
+        "value": "/kicad/windows/stable/kicad-5.1.7_1-i686.exe"
       },
       {
-        "label": "php 2019-09 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-php-2019-09-R-linux-gtk-x86_64.tar.gz"
+        "label": "5.1.6_1 (Windows, x86_64)",
+        "value": "/kicad/windows/stable/kicad-5.1.6_1-x86_64.exe"
       },
       {
-        "label": "php 2019-09 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-php-2019-09-R-win32-x86_64.zip"
+        "label": "5.1.6_1 (Windows, i686)",
+        "value": "/kicad/windows/stable/kicad-5.1.6_1-i686.exe"
       },
       {
-        "label": "committers 2019-09 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-committers-2019-09-R-macosx-cocoa-x86_64.dmg"
+        "label": "5.1.7-0-10_14 (macOS, x86_64)",
+        "value": "/kicad/osx/stable/kicad-unified-5.1.7-0-10_14.dmg"
       },
       {
-        "label": "committers 2019-09 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-committers-2019-09-R-linux-gtk-x86_64.tar.gz"
+        "label": "5.1.6-0-10_14 (macOS, x86_64)",
+        "value": "/kicad/osx/stable/kicad-unified-5.1.6-0-10_14.dmg"
       },
       {
-        "label": "committers 2019-09 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-committers-2019-09-R-win32-x86_64.zip"
+        "label": "5.1.6-0 (macOS, x86_64)",
+        "value": "/kicad/osx/stable/kicad-unified-5.1.6-0.dmg"
       },
       {
-        "label": "scout 2019-09 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-scout-2019-09-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "scout 2019-09 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-scout-2019-09-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "scout 2019-09 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-scout-2019-09-R-win32-x86_64.zip"
-      },
-      {
-        "label": "cpp 2019-09 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-cpp-2019-09-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "cpp 2019-09 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-cpp-2019-09-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "cpp 2019-09 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-cpp-2019-09-R-win32-x86_64.zip"
-      },
-      {
-        "label": "dsl 2019-09 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-dsl-2019-09-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "dsl 2019-09 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-dsl-2019-09-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "dsl 2019-09 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-dsl-2019-09-R-win32-x86_64.zip"
-      },
-      {
-        "label": "java 2019-09 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-java-2019-09-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "java 2019-09 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-java-2019-09-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "java 2019-09 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-java-2019-09-R-win32-x86_64.zip"
-      },
-      {
-        "label": "parallel 2019-09 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-parallel-2019-09-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "parallel 2019-09 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-parallel-2019-09-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "parallel 2019-09 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-parallel-2019-09-R-win32-x86_64.zip"
-      },
-      {
-        "label": "modeling 2019-09 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-modeling-2019-09-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "modeling 2019-09 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-modeling-2019-09-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "modeling 2019-09 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-modeling-2019-09-R-win32-x86_64.zip"
-      },
-      {
-        "label": "rcp 2019-09 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-rcp-2019-09-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "rcp 2019-09 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-rcp-2019-09-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "rcp 2019-09 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-rcp-2019-09-R-win32-x86_64.zip"
-      },
-      {
-        "label": "jee 2019-09 (macosx-cocoa, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-jee-2019-09-R-macosx-cocoa-x86_64.dmg"
-      },
-      {
-        "label": "jee 2019-09 (linux-gtk, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-jee-2019-09-R-linux-gtk-x86_64.tar.gz"
-      },
-      {
-        "label": "jee 2019-09 (win32, x86_64)",
-        "value": "/eclipse/technology/epp/downloads/release/2019-09/R/eclipse-jee-2019-09-R-win32-x86_64.zip"
+        "label": "5.1.5-0-10_14 (macOS, x86_64)",
+        "value": "/kicad/osx/stable/kicad-unified-5.1.5-0-10_14.dmg"
       }
     ]
   }
