@@ -29,6 +29,9 @@ export default class App extends Component {
       }
     }).then(response => {
       const mirrorsList = response.data;
+      mirrorsList.sort((a, b) => {
+        return a.name < b.name ? -1 : 1;
+      });
       this.setState({
         mirrorsList: mirrorsList
       });
