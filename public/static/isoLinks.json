@@ -660,5 +660,19 @@
         "value": "/kicad/osx/stable/kicad-unified-5.1.6-0.dmg"
       }
     ]
+  },
+  {
+    "value": "openSUSE",
+    "label": "opensuse",
+    "children": [
+      {
+        "label": "Leap-15.2-DVD-x86_64",
+        "value": "/opensuse/distribution/leap/15.2/iso/openSUSE-Leap-15.2-DVD-x86_64.iso"
+      },
+      {
+        "label": "Leap-15.2-NET-x86_64",
+        "value": "/opensuse/distribution/leap/15.2/iso/openSUSE-Leap-15.2-NET-x86_64.iso"
+      }
+    ]
   }
 ]
