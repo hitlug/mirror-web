@@ -94,5 +94,15 @@
         "value": 8
       }
     ]
+  },
+  {
+    "label": "openSUSE",
+    "value": "opensuse",
+    "children": [
+      {
+        "label": "Leap 15.2",
+        "value": 15.2
+      }
+    ]
   }
 ]
