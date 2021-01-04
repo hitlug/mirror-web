@@ -45,6 +45,10 @@ export default class ConfigGenerator extends Component {
         configBlock = build_centos_block(this.state.selectVersion);
         this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
+      case "opensuse":
+        configBlock = build_opensuse_block(this.state.selectVersion);
+        this.setState({ showConfigBlock: true, configBlock: configBlock });
+        break;
       default:
         break;
     }
@@ -101,7 +105,7 @@ class ConfigBlock extends Component {
     let block = null;
     if (this.props.showConfigBlock) {
       console.log(this.props.configBlock);
-      block = this.props.configBlock.split("\n").map(function (item) {
+      block = this.props.configBlock.split("\n").map(function(item) {
         return (
           <span>
             {item}
@@ -171,7 +175,15 @@ function build_arch_block() {
   return "Server = http://mirrors.hit.edu.cn/archlinux/$repo/os/$arch";
 }
 
-function build_centos_subblock(handle, name, baseurl, mirrorlist, gpgkey, enabled, comment) {
+function build_centos_subblock(
+  handle,
+  name,
+  baseurl,
+  mirrorlist,
+  gpgkey,
+  enabled,
+  comment
+) {
   return (
     `#${comment}\n` +
     `[${handle}]\n` +
@@ -181,7 +193,6 @@ function build_centos_subblock(handle, name, baseurl, mirrorlist, gpgkey, enable
     `enabled=${enabled}\ngpgcheck=1\n` +
     `gpgkey=${gpgkey}\n`
   );
-
 }
 
 function build_centos_block(version) {
@@ -199,27 +210,186 @@ function build_centos_block(version) {
 `;
   switch (version) {
     case 6:
-      return (header +
-        build_centos_subblock(`base`, `Base`, `https://mirrors.hit.edu.cn/centos/$releasever/os/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6`, 1, ``) + '\n' +
-        build_centos_subblock(`updates`, `Updates`, `https://mirrors.hit.edu.cn/centos/$releasever/updates/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6`, 1, `released updates`) + '\n' +
-        build_centos_subblock(`extras`, `Extras`, `https://mirrors.hit.edu.cn/centos/$releasever/extras/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6`, 1, `additional packages that may be useful`) + '\n' +
-        build_centos_subblock(`centosplus`, `Plus`, `https://mirrors.hit.edu.cn/centos/$releasever/centosplus/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6`, 0, `additional packages that extend functionality of existing packages`) + '\n' +
-        build_centos_subblock(`contrib`, `Contrib`, `https://mirrors.hit.edu.cn/centos/$releasever/contrib/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=contrib`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6`, 0, `contrib - packages by Centos Users`) + '\n');
+      return (
+        header +
+        build_centos_subblock(
+          `base`,
+          `Base`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/os/$basearch/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6`,
+          1,
+          ``
+        ) +
+        "\n" +
+        build_centos_subblock(
+          `updates`,
+          `Updates`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/updates/$basearch/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6`,
+          1,
+          `released updates`
+        ) +
+        "\n" +
+        build_centos_subblock(
+          `extras`,
+          `Extras`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/extras/$basearch/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6`,
+          1,
+          `additional packages that may be useful`
+        ) +
+        "\n" +
+        build_centos_subblock(
+          `centosplus`,
+          `Plus`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/centosplus/$basearch/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6`,
+          0,
+          `additional packages that extend functionality of existing packages`
+        ) +
+        "\n" +
+        build_centos_subblock(
+          `contrib`,
+          `Contrib`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/contrib/$basearch/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=contrib`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6`,
+          0,
+          `contrib - packages by Centos Users`
+        ) +
+        "\n"
+      );
     case 7:
-      return (header +
-        build_centos_subblock(`base`, `Base`, `https://mirrors.hit.edu.cn/centos/$releasever/os/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7`, 1, ``) + '\n' +
-        build_centos_subblock(`updates`, `Updates`, `https://mirrors.hit.edu.cn/centos/$releasever/updates/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7`, 1, `released updates`) + '\n' +
-        build_centos_subblock(`extras`, `Extras`, `https://mirrors.hit.edu.cn/centos/$releasever/extras/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7`, 1, `additional packages that may be useful`) + '\n' +
-        build_centos_subblock(`centosplus`, `Plus`, `https://mirrors.hit.edu.cn/centos/$releasever/centosplus/$basearch/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7`, 0, `additional packages that extend functionality of existing packages`) + '\n');
+      return (
+        header +
+        build_centos_subblock(
+          `base`,
+          `Base`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/os/$basearch/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7`,
+          1,
+          ``
+        ) +
+        "\n" +
+        build_centos_subblock(
+          `updates`,
+          `Updates`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/updates/$basearch/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7`,
+          1,
+          `released updates`
+        ) +
+        "\n" +
+        build_centos_subblock(
+          `extras`,
+          `Extras`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/extras/$basearch/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7`,
+          1,
+          `additional packages that may be useful`
+        ) +
+        "\n" +
+        build_centos_subblock(
+          `centosplus`,
+          `Plus`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/centosplus/$basearch/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7`,
+          0,
+          `additional packages that extend functionality of existing packages`
+        ) +
+        "\n"
+      );
     case 8:
-      return (header +
-      build_centos_subblock(`BaseOS`, `Base`, `https://mirrors.hit.edu.cn/centos/$releasever/BaseOS/$basearch/os/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=BaseOS&infra=$infra`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`, 1, ``) + '\n' +
-      build_centos_subblock(`AppStream`, `AppStream`, `https://mirrors.hit.edu.cn/centos/$releasever/AppStream/$basearch/os/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=AppStream&infra=$infra`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`, 1, ``) + '\n' +
-      build_centos_subblock(`PowerTools`, `PowerTools`, `https://mirrors.hit.edu.cn/centos/$releasever/PowerTools/$basearch/os/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=PowerTools&infra=$infra`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`, 0, ``) + '\n' +
-      build_centos_subblock(`extras`, `Extras`, `https://mirrors.hit.edu.cn/centos/$releasever/extras/$basearch/os/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`, 1, `additional packages that may be useful`) + '\n' +
-      build_centos_subblock(`centosplus`, `Plus`, `https://mirrors.hit.edu.cn/centos/$releasever/centosplus/$basearch/os/`, `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus`, `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`, 0, `additional packages that extend functionality of existing packages`) + '\n');
+      return (
+        header +
+        build_centos_subblock(
+          `BaseOS`,
+          `Base`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/BaseOS/$basearch/os/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=BaseOS&infra=$infra`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`,
+          1,
+          ``
+        ) +
+        "\n" +
+        build_centos_subblock(
+          `AppStream`,
+          `AppStream`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/AppStream/$basearch/os/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=AppStream&infra=$infra`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`,
+          1,
+          ``
+        ) +
+        "\n" +
+        build_centos_subblock(
+          `PowerTools`,
+          `PowerTools`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/PowerTools/$basearch/os/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=PowerTools&infra=$infra`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`,
+          0,
+          ``
+        ) +
+        "\n" +
+        build_centos_subblock(
+          `extras`,
+          `Extras`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/extras/$basearch/os/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`,
+          1,
+          `additional packages that may be useful`
+        ) +
+        "\n" +
+        build_centos_subblock(
+          `centosplus`,
+          `Plus`,
+          `https://mirrors.hit.edu.cn/centos/$releasever/centosplus/$basearch/os/`,
+          `http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus`,
+          `file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial`,
+          0,
+          `additional packages that extend functionality of existing packages`
+        ) +
+        "\n"
+      );
     default:
       return "";
   }
+}
 
+function build_opensuse_block(version) {
+  switch (version) {
+    case 15.2:
+      return `
+# Please run on cli or save as shell script file
+# 请运行在 shell 终端或复制生成内容保存至 shell 脚本
+
+# Disable all sources
+# 禁用所有软件源
+sudo zypper mr -da
+
+# Add sources
+# 添加工大镜像源，以 openSUSE Leap 15.2 为例：
+# 命令中最后一个参数为每一个源指定了一个 alias （别称），可以根据个人喜好更改
+sudo zypper ar -fcg https://mirrors.hit.edu.cn/opensuse/distribution/leap/15.2/repo/oss HIT:15.2:OSS
+sudo zypper ar -fcg https://mirrors.hit.edu.cn/opensuse/distribution/leap/15.2/repo/non-oss HIT:15.2:NON-OSS
+sudo zypper ar -fcg https://mirrors.hit.edu.cn/opensuse/update/leap/15.2/oss HIT:15.2:UPDATE-OSS
+sudo zypper ar -fcg https://mirrors.hit.edu.cn/opensuse/update/leap/15.2/non-oss HIT:15.2:UPDATE-NON-OSS
+
+# Manually refresh the software source
+# 手动刷新软件源
+sudo zypper ref
+      `;
+    default:
+      return "";
+  }
 }
