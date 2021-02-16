@@ -19,7 +19,7 @@ export default class ConfigGenerator extends Component {
     this.setState({ configGeneratorVisible: false });
   };
 
-  onConfigChange = (selectedOptions, value) => {
+  onConfigChange = (selectedOptions) => {
     this.setState({
       selectDistrib: selectedOptions[0],
       selectVersion: selectedOptions[1]
