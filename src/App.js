@@ -12,21 +12,24 @@ const { Header, Footer, Content } = Layout;
 
 export default class App extends Component {
   state = {
+    // 镜像列表
     mirrorsList: null,
+    // ISO下载链接
     isoLinks: null,
+    // 发行版的版本名，及对应的版本号或版本别名
     config: null
   };
 
-  fetch_mirrors_list = (params = {}) => {
+  /**
+   * 获取镜像列表
+   */
+  fetch_mirrors_list = () => {
     this.setState({
       fetching_slots: true
     });
     axios({
       url: "/jobs",
-      method: "get",
-      data: {
-        ...params
-      }
+      method: "get"
     }).then(response => {
       const mirrorsList = response.data;
       mirrorsList.sort((a, b) => {
@@ -38,16 +41,16 @@ export default class App extends Component {
     });
   };
 
-  fetch_iso_links = (params = {}) => {
+  /**
+   * 获取ISO下载链接
+   */
+  fetch_iso_links = () => {
     this.setState({
       fetching_slots: true
     });
     axios({
       url: "/static/isoLinks.json",
-      method: "get",
-      data: {
-        ...params
-      }
+      method: "get"
     }).then(response => {
       const isoLinks = response.data;
       console.log(isoLinks);
@@ -57,16 +60,16 @@ export default class App extends Component {
     });
   };
 
-  fetch_config = (params = {}) => {
+  /**
+   * 获取发行版的版本名，及对应的版本号或版本别名
+   */
+  fetch_config = () => {
     this.setState({
       fetching_slots: true
     });
     axios({
       url: "/static/config.json",
-      method: "get",
-      data: {
-        ...params
-      }
+      method: "get"
     }).then(response => {
       const config = response.data;
       console.log(config);
@@ -98,20 +101,20 @@ export default class App extends Component {
         >
           <Row type="flex" justify="center" gutter={40}>
             <Col md={12}>
-              <MirrorsList mirrorsList={this.state.mirrorsList} />
+              <MirrorsList mirrorsList={this.state.mirrorsList}/>
             </Col>
             <Col md={6}>
               <div className="side-card">
-                <DownloadForm isoLinks={this.state.isoLinks} />
+                <DownloadForm isoLinks={this.state.isoLinks}/>
               </div>
               <div className="side-card">
-                <ConfigGenerator config={this.state.config} />
+                <ConfigGenerator config={this.state.config}/>
               </div>
               <div className="side-card">
-                <ContactCard />
+                <ContactCard/>
               </div>
               <div className="side-card">
-                <HelpCard />
+                <HelpCard/>
               </div>
             </Col>
           </Row>
