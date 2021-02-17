@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Table } from "antd";
 
+/**
+ * 镜像列表组件
+ */
 export default class MirrorsList extends Component {
   render() {
     const columns = [

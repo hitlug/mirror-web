@@ -1,23 +1,40 @@
 import React, { Component } from "react";
 import { Button, Form, Modal, Row, Col, Cascader } from "antd";
 
+/**
+ * 下载链接组件
+ */
 export default class DownloadForm extends Component {
   state = {
+    // 下载链接对话框可见性
     downloadFormVisible: false,
+    // 选择的发行版的下载链接地址
     selectDistrib: undefined
   };
 
+  /**
+   * 显示下载链接对话框
+   */
   showDownloadForm = () => {
     this.setState({ downloadFormVisible: true });
   };
 
+  /**
+   * 退出下载链接对话框
+   */
   handleDownloadFormCancel = () => {
     this.setState({ downloadFormVisible: false });
   };
 
-  onDownloadLinkChange = value => {
-    console.log(value);
-    this.setState({ selectDistrib: value[1] });
+  /**
+   * 确认选择发行版和版本
+   *
+   * @param selectedOptions 级联选择器各级的值。
+   *        其中[0]为发行版名称，[1]为下载链接地址
+   */
+  onDownloadLinkChange = (selectedOptions) => {
+    console.log(selectedOptions);
+    this.setState({ selectDistrib: selectedOptions[1] });
   };
 
   render() {

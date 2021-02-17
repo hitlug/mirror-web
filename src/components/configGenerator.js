@@ -2,23 +2,43 @@ import React, { Component } from "react";
 import { Button, Form, Modal, Row, Col, Cascader } from "antd";
 import "./configGenerator.css";
 
+/**
+ * 配置生成器组件
+ */
 export default class ConfigGenerator extends Component {
   state = {
+    // 配置生成器可见性
     configGeneratorVisible: false,
+    // 选择发行版
     selectDistrib: undefined,
+    // 选择的发行版的版本号或版本别名
     selectVersion: undefined,
+    // 是否显示软件源配置文本块
     showConfigBlock: false,
+    // 软件源配置文本块
     configBlock: undefined
   };
 
+  /**
+   * 显示配置生成器对话框
+   */
   showDownloadForm = () => {
     this.setState({ configGeneratorVisible: true });
   };
 
+  /**
+   * 退出配置生成器对话框
+   */
   handleConfigGeneratorCancel = () => {
     this.setState({ configGeneratorVisible: false });
   };
 
+  /**
+   * 确认选择发行版和版本
+   *
+   * @param selectedOptions 级联选择器各级的值。
+   *        其中[0]为发行版名称，[1]为版本别名
+   */
   onConfigChange = (selectedOptions) => {
     this.setState({
       selectDistrib: selectedOptions[0],
@@ -26,6 +46,9 @@ export default class ConfigGenerator extends Component {
     });
   };
 
+  /**
+   * 生成配置
+   */
   handleGenerateConfig = () => {
     let configBlock;
     switch (this.state.selectDistrib) {
@@ -100,16 +123,19 @@ export default class ConfigGenerator extends Component {
   }
 }
 
+/**
+ * 配置生成器的软件源文本块组件
+ */
 class ConfigBlock extends Component {
   render() {
     let block = null;
     if (this.props.showConfigBlock) {
       console.log(this.props.configBlock);
-      block = this.props.configBlock.split("\n").map(function(item) {
+      block = this.props.configBlock.split("\n").map(function (item) {
         return (
           <span>
             {item}
-            <br />
+            <br/>
           </span>
         );
       });
@@ -124,6 +150,13 @@ class ConfigBlock extends Component {
   }
 }
 
+/**
+ * 构建Ubuntu软件源配置的一行
+ *
+ * @param val 软件包格式
+ * @param version 版本别名
+ * @returns {string} 返回Ubuntu配置的一行
+ */
 function build_ubuntu_line(val, version) {
   return (
     val +
@@ -133,6 +166,12 @@ function build_ubuntu_line(val, version) {
   );
 }
 
+/**
+ * 构建Ubuntu软件源配置的文本块
+ *
+ * @param version 版本别名
+ * @returns {string} 返回Ubuntu软件源配置的文本块
+ */
 function build_ubuntu_block(version) {
   return (
     "# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释\n" +
@@ -150,6 +189,13 @@ function build_ubuntu_block(version) {
   );
 }
 
+/**
+ * 构建Debian软件源配置的一行
+ *
+ * @param val 软件包格式
+ * @param version 版本别名
+ * @returns {string} 返回Debian配置的一行
+ */
 function build_debian_line(val, version) {
   return (
     val +
@@ -159,6 +205,12 @@ function build_debian_line(val, version) {
   );
 }
 
+/**
+ * 构建Debian软件源配置的文本块
+ *
+ * @param version 版本别名
+ * @returns {string} 返回Debian软件源配置的文本块
+ */
 function build_debian_block(version) {
   return (
     "目前还未提供debian-security，请注意添加\n" +
@@ -171,10 +223,27 @@ function build_debian_block(version) {
   );
 }
 
+/**
+ * 构建ArchLinux软件源配置的文本块
+ *
+ * @returns {string} 返回ArchLinux软件源配置的文本块
+ */
 function build_arch_block() {
   return "Server = http://mirrors.hit.edu.cn/archlinux/$repo/os/$arch";
 }
 
+/**
+ * 构建CentOS软件源配置的文本块的一个段落
+ *
+ * @param handle
+ * @param name
+ * @param baseurl
+ * @param mirrorlist
+ * @param gpgkey
+ * @param enabled
+ * @param comment
+ * @returns {string} 返回CentOS软件源配置的文本块的一个段落
+ */
 function build_centos_subblock(
   handle,
   name,
@@ -195,6 +264,12 @@ function build_centos_subblock(
   );
 }
 
+/**
+ * 构建CentOS软件源配置的文本块
+ *
+ * @param version 版本号
+ * @returns {string} 返回CentOS软件源配置的文本块
+ */
 function build_centos_block(version) {
   let header = `# CentOS-Base.repo
 #
@@ -366,6 +441,12 @@ function build_centos_block(version) {
   }
 }
 
+/**
+ * 构建OpenSUSE软件源配置的文本块
+ *
+ * @param version 版本号
+ * @returns {string} 返回OpenSUSE软件源配置的文本块
+ */
 function build_opensuse_block(version) {
   switch (version) {
     case 15.2:
