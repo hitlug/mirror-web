@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, Modal, Row, Col, Cascader } from "antd";
+import { DownloadOutlined } from "@ant-design/icons";
 
 /**
  * 下载链接组件
@@ -42,7 +43,7 @@ export default class DownloadForm extends Component {
       <div>
         <h2>下载链接</h2>
         <p>各大主流Linux发行版的ISO文件下载</p>
-        <Button type="primary" icon="download" onClick={this.showDownloadForm}>
+        <Button type="primary" icon={<DownloadOutlined />} onClick={this.showDownloadForm}>
           获取下载链接
         </Button>
         <Modal
@@ -65,7 +66,7 @@ export default class DownloadForm extends Component {
                 <Col span={4}>
                   <Button
                     type="primary"
-                    icon="download"
+                    icon={<DownloadOutlined />}
                     href={this.state.selectDistrib}
                   >
                     下载
