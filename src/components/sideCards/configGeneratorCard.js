@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Button, Form, Modal, Row, Col, Cascader } from "antd";
-import "./configGenerator.css";
+import "./configGeneratorCard.css";
 
 /**
  * 配置生成器组件
  */
-export default class ConfigGenerator extends Component {
+export default class ConfigGeneratorCard extends Component {
   state = {
     // 配置生成器可见性
     configGeneratorVisible: false,
@@ -130,11 +130,11 @@ class ConfigBlock extends Component {
   render() {
     let block = null;
     if (this.props.showConfigBlock) {
-      block = this.props.configBlock.split("\n").map(function(item, id) {
+      block = this.props.configBlock.split("\n").map(function (item, id) {
         return (
           <span key={id}>
             {item}
-            <br />
+            <br/>
           </span>
         );
       });
