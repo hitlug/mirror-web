@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 import { Table, Tag } from "antd";
+import {
+  CheckCircleOutlined,
+  CloseCircleOutlined,
+  ExclamationCircleOutlined,
+  SyncOutlined
+} from "@ant-design/icons";
 
 /**
  * 镜像列表组件
@@ -16,25 +22,34 @@ export default class MirrorsList extends Component {
         title: "同步状态",
         dataIndex: "status",
         render: (status) => {
-          let color
+          let statusIcon, statusTagColor, statusLable
           switch (status) {
             case 'success':
-              color = 'green'
+              statusIcon = <CheckCircleOutlined/>
+              statusTagColor = 'success'
+              statusLable = 'Success'
               break
             case 'syncing':
-              color = 'blue'
+              statusIcon = <SyncOutlined spin/>
+              statusTagColor = 'processing'
+              statusLable = 'Syncing'
               break
             case 'failed':
-              color = 'red'
-              break
             case 'fail':
-              color = 'red'
+              statusIcon = <CloseCircleOutlined/>
+              statusTagColor = 'error'
+              statusLable = 'Failed'
               break
             default:
+              statusIcon = <ExclamationCircleOutlined/>
+              statusTagColor = 'warning'
+              statusLable = 'Unknown'
               break
           }
           return (
-            <Tag color={color}>{status}</Tag>
+            <Tag icon={statusIcon} color={statusTagColor}>
+              {statusLable}
+            </Tag>
           )
         }
       },
