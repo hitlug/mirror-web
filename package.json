@@ -25,5 +25,17 @@
     "prettier": "1.14.2",
     "pretty-quick": "^1.6.0",
     "react-app-rewired": "^2.1.8"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 2 chrome version",
+      "last 2 firefox version",
+      "last 2 safari version"
+    ]
   }
 }

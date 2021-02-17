@@ -39,7 +39,7 @@ export default class ConfigGenerator extends Component {
    * @param selectedOptions 级联选择器各级的值。
    *        其中[0]为发行版名称，[1]为版本别名
    */
-  onConfigChange = (selectedOptions) => {
+  onConfigChange = selectedOptions => {
     this.setState({
       selectDistrib: selectedOptions[0],
       selectVersion: selectedOptions[1]
@@ -130,22 +130,21 @@ class ConfigBlock extends Component {
   render() {
     let block = null;
     if (this.props.showConfigBlock) {
-      console.log(this.props.configBlock);
-      block = this.props.configBlock.split("\n").map(function (item) {
+      block = this.props.configBlock.split("\n").map(function(item, id) {
         return (
-          <span>
+          <span key={id}>
             {item}
-            <br/>
+            <br />
           </span>
         );
       });
     }
     return (
-      <div className="config-block">
-        <pre>
+      <Col className="config-block" span={24}>
+        <pre style={{ margin: 0 }}>
           <code>{block}</code>
         </pre>
-      </div>
+      </Col>
     );
   }
 }
