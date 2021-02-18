@@ -1,0 +1,46 @@
+[
+  {
+    "key": 1,
+    "title": "CTAN",
+    "path": "/doc/ctan",
+    "breadcrumbName": "CTAN"
+  },
+  {
+    "key": 2,
+    "title": "Alpine",
+    "path": "/doc/alpine",
+    "breadcrumbName": "Alpine"
+  },
+  {
+    "key": 3,
+    "title": "Anaconda",
+    "path": "/doc/anaconda",
+    "breadcrumbName": "Anaconda"
+  },
+  {
+    "key": 4,
+    "title": "Debian",
+    "path": "/doc/debian",
+    "breadcrumbName": "Debian",
+    "children": [
+      {
+        "key": 5,
+        "title": "10 buster",
+        "path": "/doc/debian/buster",
+        "breadcrumbName": "10 buster"
+      },
+      {
+        "key": 6,
+        "title": "9 stretch",
+        "path": "/doc/debian/stretch",
+        "breadcrumbName": "9 stretch"
+      },
+      {
+        "key": 7,
+        "title": "8 jessie",
+        "path": "/doc/debian/jessie",
+        "breadcrumbName": "8 jessie"
+      }
+    ]
+  }
+]
