@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, Route, Redirect } from "react-router-dom";
-import { Layout, Row, Col, Menu } from "antd";
+import { Layout, Row, Col } from "antd";
 import axios from "axios";
 import MirrorsList from "./components/mirrorsList";
 import SideCards from "./components/sideCards/sideCards";
@@ -90,20 +90,7 @@ class PageHeader extends React.Component {
       <Header>
         <Row>
           <Col offset={3}>
-            <div className="logo">哈尔滨工业大学开源镜像站</div>
-          </Col>
-          <Col offset={8}>
-            <Menu
-              theme="dark"
-              mode="horizontal"
-              defaultSelectedKeys={['/home']}>
-              <Menu.Item key="/home">
-                <Link to={'/home'}>主页</Link>
-              </Menu.Item>
-              <Menu.Item key="/doc">
-                <Link to={'/doc'}>帮助文档</Link>
-              </Menu.Item>
-            </Menu>
+            <Link className="logo" to={'/home'}>哈尔滨工业大学开源镜像站</Link>
           </Col>
         </Row>
       </Header>
