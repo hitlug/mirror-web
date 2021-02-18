@@ -47,6 +47,7 @@ export default class DocPage extends Component {
                 <Menu
                   mode="inline"
                   defaultOpenKeys={["0"]}
+                  defaultSelectedKeys={["0"]}
                   style={{ height: "100%" }}
                 >
                   {this.generateMenuItems(docMenu)}
@@ -79,7 +80,8 @@ class LinkedBreadcrumb extends React.Component {
    * 路由路径和面包屑标题的对应关系
    */
   breadcrumbNameMap = {
-    "/home": "主页"
+    "/home": "主页",
+    "/doc": "帮助文档"
   };
 
   /**

@@ -2,44 +2,42 @@
   {
     "key": 0,
     "title": "欢迎来到帮助文档",
-    "path": "/doc",
+    "path": "/doc/docHome"
+  },
+  {
+    "key": 1,
+    "title": "CTAN",
+    "path": "/doc/ctan"
+  },
+  {
+    "key": 2,
+    "title": "Alpine",
+    "path": "/doc/alpine"
+  },
+  {
+    "key": 3,
+    "title": "Anaconda",
+    "path": "/doc/anaconda"
+  },
+  {
+    "key": 4,
+    "title": "Debian",
+    "path": "/doc/debian",
     "children": [
       {
-        "key": 1,
-        "title": "CTAN",
-        "path": "/doc/ctan"
+        "key": 5,
+        "title": "10 buster",
+        "path": "/doc/debian/buster"
       },
       {
-        "key": 2,
-        "title": "Alpine",
-        "path": "/doc/alpine"
+        "key": 6,
+        "title": "9 stretch",
+        "path": "/doc/debian/stretch"
       },
       {
-        "key": 3,
-        "title": "Anaconda",
-        "path": "/doc/anaconda"
-      },
-      {
-        "key": 4,
-        "title": "Debian",
-        "path": "/doc/debian",
-        "children": [
-          {
-            "key": 5,
-            "title": "10 buster",
-            "path": "/doc/debian/buster"
-          },
-          {
-            "key": 6,
-            "title": "9 stretch",
-            "path": "/doc/debian/stretch"
-          },
-          {
-            "key": 7,
-            "title": "8 jessie",
-            "path": "/doc/debian/jessie"
-          }
-        ]
+        "key": 7,
+        "title": "8 jessie",
+        "path": "/doc/debian/jessie"
       }
     ]
   }
