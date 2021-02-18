@@ -1,13 +1,34 @@
 import React, { Component } from "react";
-import { Layout, Row, Col } from "antd";
+import { Link, Route, Redirect } from "react-router-dom";
+import { Layout, Row, Col, Menu } from "antd";
 import axios from "axios";
 import MirrorsList from "./components/mirrorsList";
 import SideCards from "./components/sideCards/sideCards";
+import DocPage from "./components/doc/docPage";
 import "./App.css";
 
 const { Header, Footer, Content } = Layout;
 
 export default class App extends Component {
+  render() {
+    return (
+      <Layout>
+        <PageHeader/>
+        <Route path={'/'}>
+          <Redirect to={'/home'}/>
+        </Route>
+        <Route path={'/home'} component={HomePage}/>
+        <Route path={'/doc'} component={DocPage}/>
+        <PageFooter/>
+      </Layout>
+    );
+  }
+}
+
+/**
+ * 镜像列表主页组件
+ */
+class HomePage extends React.Component {
   state = {
     // 镜像列表
     mirrorsList: null
@@ -34,45 +55,57 @@ export default class App extends Component {
     });
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.fetch_mirrors_list();
   }
 
   render() {
     return (
-      <Layout>
-        <PageHeader/>
-        <Content
-          style={{
-            padding: "24px",
-            background: "white"
-          }}
-        >
-          <Row type="flex" justify="center" gutter={40}>
-            <Col md={12}>
-              <MirrorsList mirrorsList={this.state.mirrorsList}/>
-            </Col>
-            <Col md={6}>
-              <SideCards/>
-            </Col>
-          </Row>
-        </Content>
-        <PageFooter/>
-      </Layout>
-    );
+      <Content
+        style={{
+          padding: "24px",
+          background: "white"
+        }}
+      >
+        <Row type="flex" justify="center" gutter={40}>
+          <Col md={12}>
+            <MirrorsList mirrorsList={this.state.mirrorsList}/>
+          </Col>
+          <Col md={6}>
+            <SideCards/>
+            <br/>
+          </Col>
+        </Row>
+      </Content>
+    )
   }
 }
 
 /**
- * 页面首组件
+ * 页面导航菜单组件
  */
 class PageHeader extends React.Component {
   render() {
     return (
       <Header>
-        <Col offset={3}>
-          <div className="logo">哈尔滨工业大学开源镜像站</div>
-        </Col>
+        <Row>
+          <Col offset={3}>
+            <div className="logo">哈尔滨工业大学开源镜像站</div>
+          </Col>
+          <Col offset={8}>
+            <Menu
+              theme="dark"
+              mode="horizontal"
+              defaultSelectedKeys={['/home']}>
+              <Menu.Item key="/home">
+                <Link to={'/home'}>主页</Link>
+              </Menu.Item>
+              <Menu.Item key="/doc">
+                <Link to={'/doc'}>帮助文档</Link>
+              </Menu.Item>
+            </Menu>
+          </Col>
+        </Row>
       </Header>
     )
   }
