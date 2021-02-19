@@ -7,8 +7,8 @@ export default class HelpCard extends Component {
       <div>
         <h2>相关链接</h2>
         <p>
-          <LinkOutlined/> Github:
-          <br/>
+          <LinkOutlined /> Github:
+          <br />
           <a href="https://github.com/hitlug">https://github.com/hitlug</a>
         </p>
       </div>

@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import DownloadFormCard from "./downloadFormCard";
 import ConfigGeneratorCard from "./configGeneratorCard";
 import ContactCard from "./contactCard";
 import HelpCard from "./helpCard";
 import DocCard from "./docCard";
 import axios from "axios";
+import "./sideCards.css";
 
 export default class SideCards extends Component {
   state = {
@@ -12,7 +13,7 @@ export default class SideCards extends Component {
     isoLinks: null,
     // 发行版的版本名，及对应的版本号或版本别名
     config: null
-  }
+  };
 
   /**
    * 获取ISO下载链接
@@ -53,27 +54,27 @@ export default class SideCards extends Component {
   };
 
   componentDidMount() {
-    this.fetch_iso_links()
-    this.fetch_config()
+    this.fetch_iso_links();
+    this.fetch_config();
   }
 
   render() {
     return (
       <div>
         <div className="side-card">
-          <DownloadFormCard isoLinks={this.state.isoLinks}/>
+          <DownloadFormCard isoLinks={this.state.isoLinks} />
         </div>
         <div className="side-card">
-          <ConfigGeneratorCard config={this.state.config}/>
+          <ConfigGeneratorCard config={this.state.config} />
         </div>
         <div className="side-card">
-          <DocCard/>
+          <DocCard />
         </div>
         <div className="side-card">
-          <ContactCard/>
+          <ContactCard />
         </div>
         <div className="side-card">
-          <HelpCard/>
+          <HelpCard />
         </div>
       </div>
     );
