@@ -92,10 +92,14 @@ export default class DocPage extends Component {
               {this.generateMenuItems(docMenu)}
             </Menu>
           </Sider>
-          <Layout>
+          <Layout
+            style={{
+              overflowX: "hidden"
+            }}
+          >
             <Header
               style={{
-                padding: 0,
+                padding: "12px 48px",
                 background: "white",
                 height: "auto"
               }}
