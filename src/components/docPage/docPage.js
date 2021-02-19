@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Layout, Menu, Breadcrumb, Divider } from "antd";
+import { Layout, Menu, Breadcrumb, Divider, Row, Col } from "antd";
 import { Link, withRouter } from "react-router-dom";
 import docMenu from "./menu.json";
 import "./docPage.css";
@@ -79,45 +79,53 @@ export default class DocPage extends Component {
 
   render() {
     return (
-      <Content style={{ padding: "50px" }}>
-        <Layout>
-          <Sider breakpoint="md" collapsedWidth="0">
-            <Menu
-              mode="inline"
-              defaultOpenKeys={["/doc/docHome"]}
-              defaultSelectedKeys={["/doc/docHome"]}
-              onSelect={this.onMenuItemSelected}
-              style={{ height: "100%" }}
-            >
-              {this.generateMenuItems(docMenu)}
-            </Menu>
-          </Sider>
-          <Layout
-            style={{
-              overflowX: "hidden"
-            }}
-          >
-            <Header
-              style={{
-                padding: "12px 48px",
-                background: "white",
-                height: "auto"
-              }}
-            >
-              <LinkedBreadcrumb />
-              <Divider />
-            </Header>
-            <Content
-              style={{
-                padding: "12px 48px",
-                background: "white"
-              }}
-            >
-              {this.state.docContent}
+      <div>
+        <Row>
+          <Col flex={1} />
+          <Col flex={22}>
+            <Content style={{ padding: "50px 0" }}>
+              <Layout>
+                <Sider breakpoint="md" collapsedWidth="0">
+                  <Menu
+                    mode="inline"
+                    defaultOpenKeys={["/doc/docHome"]}
+                    defaultSelectedKeys={["/doc/docHome"]}
+                    onSelect={this.onMenuItemSelected}
+                    style={{ height: "100%" }}
+                  >
+                    {this.generateMenuItems(docMenu)}
+                  </Menu>
+                </Sider>
+                <Layout
+                  style={{
+                    overflowX: "hidden"
+                  }}
+                >
+                  <Header
+                    style={{
+                      padding: "12px 48px",
+                      background: "white",
+                      height: "auto"
+                    }}
+                  >
+                    <LinkedBreadcrumb />
+                    <Divider />
+                  </Header>
+                  <Content
+                    style={{
+                      padding: "12px 48px",
+                      background: "white"
+                    }}
+                  >
+                    {this.state.docContent}
+                  </Content>
+                </Layout>
+              </Layout>
             </Content>
-          </Layout>
-        </Layout>
-      </Content>
+          </Col>
+          <Col flex={1} />
+        </Row>
+      </div>
     );
   }
 }
