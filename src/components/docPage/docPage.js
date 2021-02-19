@@ -160,7 +160,7 @@ class LinkedBreadcrumb extends React.Component {
       const url = `/${pathSnippets.slice(0, index + 1).join("/")}`;
       return (
         <Breadcrumb.Item key={url}>
-          <Link to={url}>{this.breadcrumbNameMap[url]}</Link>
+          {this.breadcrumbNameMap[url]}
         </Breadcrumb.Item>
       );
     });
