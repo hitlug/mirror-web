@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Layout, Menu, Breadcrumb } from "antd";
+import { Layout, Menu, Breadcrumb, Divider } from "antd";
 import { Link, withRouter } from "react-router-dom";
 import docMenu from "./menu.json";
 import "./docPage.css";
 
 const { SubMenu } = Menu;
-const { Content, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 /**
  * 帮助文档页面组件
@@ -79,8 +79,7 @@ export default class DocPage extends Component {
 
   render() {
     return (
-      <Content style={{ padding: "0 50px" }}>
-        <LinkedBreadcrumb />
+      <Content style={{ padding: "50px" }}>
         <Layout>
           <Sider breakpoint="md" collapsedWidth="0">
             <Menu
@@ -94,9 +93,19 @@ export default class DocPage extends Component {
             </Menu>
           </Sider>
           <Layout>
+            <Header
+              style={{
+                padding: 0,
+                background: "white",
+                height: "auto"
+              }}
+            >
+              <LinkedBreadcrumb />
+              <Divider />
+            </Header>
             <Content
               style={{
-                padding: "24px",
+                padding: "12px 48px",
                 background: "white"
               }}
             >
@@ -161,7 +170,7 @@ class LinkedBreadcrumb extends React.Component {
       </Breadcrumb.Item>
     ].concat(extraBreadcrumbItems);
     return (
-      <Breadcrumb style={{ margin: "16px 0" }}>{breadcrumbItems}</Breadcrumb>
+      <Breadcrumb style={{ margin: "20px" }}>{breadcrumbItems}</Breadcrumb>
     );
   });
 
