@@ -1,0 +1,27 @@
+[
+  {
+    "key": 0,
+    "title": "欢迎来到帮助文档",
+    "path": "/doc/docHome"
+  },
+  {
+    "key": 1,
+    "title": "CTAN",
+    "path": "/doc/ctan"
+  },
+  {
+    "key": 2,
+    "title": "Alpine",
+    "path": "/doc/alpine"
+  },
+  {
+    "key": 3,
+    "title": "Anaconda",
+    "path": "/doc/anaconda"
+  },
+  {
+    "key": 4,
+    "title": "Debian",
+    "path": "/doc/debian"
+  }
+]

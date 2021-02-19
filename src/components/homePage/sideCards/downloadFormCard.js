@@ -5,7 +5,7 @@ import { DownloadOutlined } from "@ant-design/icons";
 /**
  * 下载链接组件
  */
-export default class DownloadForm extends Component {
+export default class DownloadFormCard extends Component {
   state = {
     // 下载链接对话框可见性
     downloadFormVisible: false,

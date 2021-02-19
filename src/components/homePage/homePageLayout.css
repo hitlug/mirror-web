@@ -11,6 +11,11 @@
   float: left;
 }
 
-.side-card {
-  margin-bottom: 30px;
+.home-page-footer {
+  text-align: center;
+}
+
+.home-page-content {
+  padding: 24px;
+  background: white;
 }
