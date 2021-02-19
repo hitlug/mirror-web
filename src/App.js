@@ -14,11 +14,11 @@ export default class App extends Component {
     return (
       <Layout>
         <PageHeader />
-        <Route path={"/"}>
-          <Redirect to={"/home"} />
+        <Route exact path="/">
+          <Redirect to="/home" />
         </Route>
-        <Route path={"/home"} component={HomePage} />
-        <Route path={"/doc"} component={DocPage} />
+        <Route path="/home" component={HomePage} />
+        <Route path="/doc" component={DocPage} />
         <PageFooter />
       </Layout>
     );
