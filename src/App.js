@@ -6,7 +6,7 @@ import {
   HomePageHeader,
   HomePageContent,
   HomePageFooter
-} from "./components/homePageLayout";
+} from "./components/homePage/homePageLayout";
 
 export default class App extends Component {
   render() {

@@ -130,11 +130,11 @@ class ConfigBlock extends Component {
   render() {
     let block = null;
     if (this.props.showConfigBlock) {
-      block = this.props.configBlock.split("\n").map(function (item, id) {
+      block = this.props.configBlock.split("\n").map(function(item, id) {
         return (
           <span key={id}>
             {item}
-            <br/>
+            <br />
           </span>
         );
       });
