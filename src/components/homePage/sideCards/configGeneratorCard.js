@@ -53,23 +53,23 @@ export default class ConfigGeneratorCard extends Component {
     let configBlock;
     switch (this.state.selectDistrib) {
       case "ubuntu":
-        configBlock = build_ubuntu_block(this.state.selectVersion);
+        configBlock = buildUbuntuBlock(this.state.selectVersion);
         this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       case "debian":
-        configBlock = build_debian_block(this.state.selectVersion);
+        configBlock = buildDebianBlock(this.state.selectVersion);
         this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       case "archlinux":
-        configBlock = build_arch_block();
+        configBlock = buildArchBlock();
         this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       case "centos":
-        configBlock = build_centos_block(this.state.selectVersion);
+        configBlock = buildCentosBlock(this.state.selectVersion);
         this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       case "opensuse":
-        configBlock = build_opensuse_block(this.state.selectVersion);
+        configBlock = buildOpensuseBlock(this.state.selectVersion);
         this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       default:
@@ -156,7 +156,7 @@ class ConfigBlock extends Component {
  * @param version 版本别名
  * @returns {string} 返回Ubuntu配置的一行
  */
-function build_ubuntu_line(val, version) {
+function buildUbuntuLine(val, version) {
   return (
     val +
     " http://mirrors.hit.edu.cn/ubuntu/ " +
@@ -171,20 +171,20 @@ function build_ubuntu_line(val, version) {
  * @param version 版本别名
  * @returns {string} 返回Ubuntu软件源配置的文本块
  */
-function build_ubuntu_block(version) {
+function buildUbuntuBlock(version) {
   return (
     "# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释\n" +
-    build_ubuntu_line("deb", version) +
-    build_ubuntu_line("# deb-src", version) +
-    build_ubuntu_line("deb", version + "-updates") +
-    build_ubuntu_line("# deb-src", version + "-updates") +
-    build_ubuntu_line("deb", version + "-backports") +
-    build_ubuntu_line("# deb-src", version + "-backports") +
-    build_ubuntu_line("deb", version + "-security") +
-    build_ubuntu_line("# deb-src", version + "-security") +
+    buildUbuntuLine("deb", version) +
+    buildUbuntuLine("# deb-src", version) +
+    buildUbuntuLine("deb", version + "-updates") +
+    buildUbuntuLine("# deb-src", version + "-updates") +
+    buildUbuntuLine("deb", version + "-backports") +
+    buildUbuntuLine("# deb-src", version + "-backports") +
+    buildUbuntuLine("deb", version + "-security") +
+    buildUbuntuLine("# deb-src", version + "-security") +
     "\n# 预发布软件源，不建议启用\n" +
-    build_ubuntu_line("# deb", version + "-proposed") +
-    build_ubuntu_line("# deb-src", version + "-proposed")
+    buildUbuntuLine("# deb", version + "-proposed") +
+    buildUbuntuLine("# deb-src", version + "-proposed")
   );
 }
 
@@ -195,7 +195,7 @@ function build_ubuntu_block(version) {
  * @param version 版本别名
  * @returns {string} 返回Debian配置的一行
  */
-function build_debian_line(val, version) {
+function buildDebianLine(val, version) {
   return (
     val +
     " http://mirrors.hit.edu.cn/debian/ " +
@@ -210,15 +210,15 @@ function build_debian_line(val, version) {
  * @param version 版本别名
  * @returns {string} 返回Debian软件源配置的文本块
  */
-function build_debian_block(version) {
+function buildDebianBlock(version) {
   return (
     "目前还未提供debian-security，请注意添加\n" +
-    build_debian_line("deb", version) +
-    build_debian_line("# deb-src", version) +
-    build_debian_line("deb", version + "-updates") +
-    build_debian_line("# deb-src", version + "-updates") +
-    build_debian_line("deb", version + "-backports") +
-    build_debian_line("# deb-src", version + "-backports")
+    buildDebianLine("deb", version) +
+    buildDebianLine("# deb-src", version) +
+    buildDebianLine("deb", version + "-updates") +
+    buildDebianLine("# deb-src", version + "-updates") +
+    buildDebianLine("deb", version + "-backports") +
+    buildDebianLine("# deb-src", version + "-backports")
   );
 }
 
@@ -227,7 +227,7 @@ function build_debian_block(version) {
  *
  * @returns {string} 返回ArchLinux软件源配置的文本块
  */
-function build_arch_block() {
+function buildArchBlock() {
   return "Server = http://mirrors.hit.edu.cn/archlinux/$repo/os/$arch";
 }
 
@@ -243,7 +243,7 @@ function build_arch_block() {
  * @param comment
  * @returns {string} 返回CentOS软件源配置的文本块的一个段落
  */
-function build_centos_subblock(
+function buildCentosSubBlock(
   handle,
   name,
   baseurl,
@@ -269,7 +269,7 @@ function build_centos_subblock(
  * @param version 版本号
  * @returns {string} 返回CentOS软件源配置的文本块
  */
-function build_centos_block(version) {
+function buildCentosBlock(version) {
   let header = `# CentOS-Base.repo
 #
 # The mirror system uses the connecting IP address of the client and the
@@ -286,7 +286,7 @@ function build_centos_block(version) {
     case 6:
       return (
         header +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `base`,
           `Base`,
           `https://mirrors.hit.edu.cn/centos/$releasever/os/$basearch/`,
@@ -296,7 +296,7 @@ function build_centos_block(version) {
           ``
         ) +
         "\n" +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `updates`,
           `Updates`,
           `https://mirrors.hit.edu.cn/centos/$releasever/updates/$basearch/`,
@@ -306,7 +306,7 @@ function build_centos_block(version) {
           `released updates`
         ) +
         "\n" +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `extras`,
           `Extras`,
           `https://mirrors.hit.edu.cn/centos/$releasever/extras/$basearch/`,
@@ -316,7 +316,7 @@ function build_centos_block(version) {
           `additional packages that may be useful`
         ) +
         "\n" +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `centosplus`,
           `Plus`,
           `https://mirrors.hit.edu.cn/centos/$releasever/centosplus/$basearch/`,
@@ -326,7 +326,7 @@ function build_centos_block(version) {
           `additional packages that extend functionality of existing packages`
         ) +
         "\n" +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `contrib`,
           `Contrib`,
           `https://mirrors.hit.edu.cn/centos/$releasever/contrib/$basearch/`,
@@ -340,7 +340,7 @@ function build_centos_block(version) {
     case 7:
       return (
         header +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `base`,
           `Base`,
           `https://mirrors.hit.edu.cn/centos/$releasever/os/$basearch/`,
@@ -350,7 +350,7 @@ function build_centos_block(version) {
           ``
         ) +
         "\n" +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `updates`,
           `Updates`,
           `https://mirrors.hit.edu.cn/centos/$releasever/updates/$basearch/`,
@@ -360,7 +360,7 @@ function build_centos_block(version) {
           `released updates`
         ) +
         "\n" +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `extras`,
           `Extras`,
           `https://mirrors.hit.edu.cn/centos/$releasever/extras/$basearch/`,
@@ -370,7 +370,7 @@ function build_centos_block(version) {
           `additional packages that may be useful`
         ) +
         "\n" +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `centosplus`,
           `Plus`,
           `https://mirrors.hit.edu.cn/centos/$releasever/centosplus/$basearch/`,
@@ -384,7 +384,7 @@ function build_centos_block(version) {
     case 8:
       return (
         header +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `BaseOS`,
           `Base`,
           `https://mirrors.hit.edu.cn/centos/$releasever/BaseOS/$basearch/os/`,
@@ -394,7 +394,7 @@ function build_centos_block(version) {
           ``
         ) +
         "\n" +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `AppStream`,
           `AppStream`,
           `https://mirrors.hit.edu.cn/centos/$releasever/AppStream/$basearch/os/`,
@@ -404,7 +404,7 @@ function build_centos_block(version) {
           ``
         ) +
         "\n" +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `PowerTools`,
           `PowerTools`,
           `https://mirrors.hit.edu.cn/centos/$releasever/PowerTools/$basearch/os/`,
@@ -414,7 +414,7 @@ function build_centos_block(version) {
           ``
         ) +
         "\n" +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `extras`,
           `Extras`,
           `https://mirrors.hit.edu.cn/centos/$releasever/extras/$basearch/os/`,
@@ -424,7 +424,7 @@ function build_centos_block(version) {
           `additional packages that may be useful`
         ) +
         "\n" +
-        build_centos_subblock(
+        buildCentosSubBlock(
           `centosplus`,
           `Plus`,
           `https://mirrors.hit.edu.cn/centos/$releasever/centosplus/$basearch/os/`,
@@ -446,7 +446,7 @@ function build_centos_block(version) {
  * @param version 版本号
  * @returns {string} 返回OpenSUSE软件源配置的文本块
  */
-function build_opensuse_block(version) {
+function buildOpensuseBlock(version) {
   switch (version) {
     case 15.2:
       return `
