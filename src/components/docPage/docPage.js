@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Layout, Menu, Breadcrumb, Row, Col } from "antd";
+import { Layout, Menu, Breadcrumb } from "antd";
 import { Link, withRouter } from "react-router-dom";
 import docMenu from "./menu.json";
 import "./docPage.css";
@@ -81,28 +81,19 @@ export default class DocPage extends Component {
     return (
       <Content style={{ padding: "0 50px" }}>
         <LinkedBreadcrumb />
-        <Row>
-          <Col md={4}>
-            <Layout className="site-layout-background" style={{ padding: "0" }}>
-              <Sider
-                className="site-layout-background"
-                width={"100%"}
-                breakpoint={"md"}
-                collapsedWidth={0}
-              >
-                <Menu
-                  mode="inline"
-                  defaultOpenKeys={["/doc/docHome"]}
-                  defaultSelectedKeys={["/doc/docHome"]}
-                  onSelect={this.onMenuItemSelected}
-                  style={{ height: "100%" }}
-                >
-                  {this.generateMenuItems(docMenu)}
-                </Menu>
-              </Sider>
-            </Layout>
-          </Col>
-          <Col md={20}>
+        <Layout>
+          <Sider breakpoint="md" collapsedWidth="0">
+            <Menu
+              mode="inline"
+              defaultOpenKeys={["/doc/docHome"]}
+              defaultSelectedKeys={["/doc/docHome"]}
+              onSelect={this.onMenuItemSelected}
+              style={{ height: "100%" }}
+            >
+              {this.generateMenuItems(docMenu)}
+            </Menu>
+          </Sider>
+          <Layout>
             <Content
               style={{
                 padding: "24px",
@@ -111,8 +102,8 @@ export default class DocPage extends Component {
             >
               {this.state.docContent}
             </Content>
-          </Col>
-        </Row>
+          </Layout>
+        </Layout>
       </Content>
     );
   }
