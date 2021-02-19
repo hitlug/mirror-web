@@ -3,9 +3,9 @@
   "name": "哈尔滨工业大学开源镜像站",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon.svg",
+      "sizes": "1024x1024",
+      "type": "image/svg"
     }
   ],
   "start_url": "./index.html",
