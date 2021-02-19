@@ -7,7 +7,19 @@ import "./docPage.css";
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
 
+/**
+ * 帮助文档页面组件
+ */
 export default class DocPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // 帮助文档正文内容
+      docContent: undefined
+    };
+    this.onMenuItemSelected = this.onMenuItemSelected.bind(this);
+  }
+
   /**
    * 根据json文件递归生成文档导航菜单项目
    *
@@ -17,18 +29,52 @@ export default class DocPage extends Component {
     return source.map(menu => {
       if (menu.children) {
         return (
-          <SubMenu key={menu.key} title={menu.title}>
+          <SubMenu key={menu.path} title={menu.title}>
             {this.generateMenuItems(menu.children)}
           </SubMenu>
         );
       } else {
         return (
-          <Menu.Item key={menu.key}>
+          <Menu.Item key={menu.path}>
             <Link to={menu.path}>{menu.title}</Link>
           </Menu.Item>
         );
       }
     });
+  }
+
+  /**
+   * 动态导入文档并修改页面正文内容
+   *
+   * @param path 文档路由
+   */
+  importAndExecDoc(path) {
+    import("." + path + ".js")
+      .then(module => {
+        this.setState({
+          docContent: module.default()
+        });
+      })
+      .catch(() => {
+        console.log("import " + path + " failed");
+        this.setState({
+          docContent: <h1>No Document Here!</h1>
+        });
+      });
+  }
+
+  /**
+   * 菜单项目被选中后的回调，修改帮助文档显示的正文内容
+   *
+   * @param info 选中Menu项的信息。
+   *             其中.key是被选中的MenuItem的key
+   */
+  onMenuItemSelected(info) {
+    this.importAndExecDoc(info.key);
+  }
+
+  componentDidMount() {
+    this.importAndExecDoc("/doc/docHome");
   }
 
   render() {
@@ -46,8 +92,9 @@ export default class DocPage extends Component {
               >
                 <Menu
                   mode="inline"
-                  defaultOpenKeys={["0"]}
-                  defaultSelectedKeys={["0"]}
+                  defaultOpenKeys={["/doc/docHome"]}
+                  defaultSelectedKeys={["/doc/docHome"]}
+                  onSelect={this.onMenuItemSelected}
                   style={{ height: "100%" }}
                 >
                   {this.generateMenuItems(docMenu)}
@@ -58,12 +105,11 @@ export default class DocPage extends Component {
           <Col md={20}>
             <Content
               style={{
-                padding: "0 24px",
-                minHeight: 280,
+                padding: "24px",
                 background: "white"
               }}
             >
-              Content
+              {this.state.docContent}
             </Content>
           </Col>
         </Row>

@@ -22,23 +22,6 @@
   {
     "key": 4,
     "title": "Debian",
-    "path": "/doc/debian",
-    "children": [
-      {
-        "key": 5,
-        "title": "10 buster",
-        "path": "/doc/debian/buster"
-      },
-      {
-        "key": 6,
-        "title": "9 stretch",
-        "path": "/doc/debian/stretch"
-      },
-      {
-        "key": 7,
-        "title": "8 jessie",
-        "path": "/doc/debian/jessie"
-      }
-    ]
+    "path": "/doc/debian"
   }
 ]

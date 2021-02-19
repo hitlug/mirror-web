@@ -4,7 +4,7 @@ import { Layout, Row, Col } from "antd";
 import axios from "axios";
 import MirrorsList from "./components/mirrorsList";
 import SideCards from "./components/sideCards/sideCards";
-import DocPage from "./components/doc/docPage";
+import DocPage from "./components/docPage/docPage";
 import "./App.css";
 
 const { Header, Footer, Content } = Layout;
@@ -13,13 +13,13 @@ export default class App extends Component {
   render() {
     return (
       <Layout>
-        <PageHeader/>
-        <Route path={'/'}>
-          <Redirect to={'/home'}/>
+        <PageHeader />
+        <Route path={"/"}>
+          <Redirect to={"/home"} />
         </Route>
-        <Route path={'/home'} component={HomePage}/>
-        <Route path={'/doc'} component={DocPage}/>
-        <PageFooter/>
+        <Route path={"/home"} component={HomePage} />
+        <Route path={"/doc"} component={DocPage} />
+        <PageFooter />
       </Layout>
     );
   }
@@ -69,15 +69,15 @@ class HomePage extends React.Component {
       >
         <Row type="flex" justify="center" gutter={40}>
           <Col md={12}>
-            <MirrorsList mirrorsList={this.state.mirrorsList}/>
+            <MirrorsList mirrorsList={this.state.mirrorsList} />
           </Col>
           <Col md={6}>
-            <SideCards/>
-            <br/>
+            <SideCards />
+            <br />
           </Col>
         </Row>
       </Content>
-    )
+    );
   }
 }
 
@@ -90,11 +90,13 @@ class PageHeader extends React.Component {
       <Header>
         <Row>
           <Col offset={3}>
-            <Link className="logo" to={'/home'}>哈尔滨工业大学开源镜像站</Link>
+            <Link className="logo" to={"/home"}>
+              哈尔滨工业大学开源镜像站
+            </Link>
           </Col>
         </Row>
       </Header>
-    )
+    );
   }
 }
 
@@ -114,6 +116,6 @@ class PageFooter extends React.Component {
           本站由哈尔滨工业大学网络与信息中心支持创办，由哈尔滨工业大学Linux用户协会运行维护。
         </p>
       </Footer>
-    )
+    );
   }
 }
