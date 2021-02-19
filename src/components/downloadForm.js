@@ -33,7 +33,7 @@ export default class DownloadForm extends Component {
    * @param selectedOptions 级联选择器各级的值。
    *        其中[0]为发行版名称，[1]为下载链接地址
    */
-  onDownloadLinkChange = (selectedOptions) => {
+  onDownloadLinkChange = selectedOptions => {
     console.log(selectedOptions);
     this.setState({ selectDistrib: selectedOptions[1] });
   };
@@ -43,7 +43,11 @@ export default class DownloadForm extends Component {
       <div>
         <h2>下载链接</h2>
         <p>各大主流Linux发行版的ISO文件下载</p>
-        <Button type="primary" icon={<DownloadOutlined />} onClick={this.showDownloadForm}>
+        <Button
+          type="primary"
+          icon={<DownloadOutlined />}
+          onClick={this.showDownloadForm}
+        >
           获取下载链接
         </Button>
         <Modal
@@ -55,7 +59,7 @@ export default class DownloadForm extends Component {
           <Form layout="vertical">
             <Form.Item>
               <Row gutter={8}>
-                <Col span={20}>
+                <Col span={18}>
                   <Cascader
                     expandTrigger="hover"
                     placeholder="请选择发行版"
@@ -63,7 +67,7 @@ export default class DownloadForm extends Component {
                     onChange={this.onDownloadLinkChange}
                   />
                 </Col>
-                <Col span={4}>
+                <Col span={6}>
                   <Button
                     type="primary"
                     icon={<DownloadOutlined />}
