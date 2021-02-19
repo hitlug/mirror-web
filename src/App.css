@@ -14,3 +14,11 @@
 .side-card {
   margin-bottom: 30px;
 }
+
+body {
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
