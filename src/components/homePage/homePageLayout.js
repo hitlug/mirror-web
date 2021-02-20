@@ -72,7 +72,7 @@ export class HomePageHeader extends Component {
     return (
       <Header className="home-page-header">
         <Link to="/home">
-          <Logo className="logo" />
+          <Logo className="header-logo" />
         </Link>
       </Header>
     );
@@ -86,11 +86,18 @@ export class HomePageFooter extends Component {
   render() {
     return (
       <Footer className="home-page-footer">
-        <p>哈尔滨工业大学开源镜像站</p>
-        <p>
-          本站由哈尔滨工业大学网络与信息中心支持创办，
-          由哈尔滨工业大学Linux用户协会运行维护。
-        </p>
+        <Row type="flex" justify="center">
+          <Col md={6} style={{ padding: "64px 24px", textAlign: "end" }}>
+            <h1 style={{ fontWeight: "bolder" }}>哈尔滨工业大学开源镜像站</h1>
+          </Col>
+          <Col md={6}>
+            <Logo className="footer-logo" />
+          </Col>
+          <Col md={6} style={{ padding: "64px 24px", textAlign: "start" }}>
+            <p>本站由哈尔滨工业大学网络与信息中心支持创办</p>
+            <p>由哈尔滨工业大学Linux用户协会运行维护</p>
+          </Col>
+        </Row>
       </Footer>
     );
   }

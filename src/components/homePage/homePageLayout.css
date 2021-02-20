@@ -1,7 +1,13 @@
-.logo {
+.header-logo {
   width: 64px;
   height: 64px;
   padding: 12px;
+}
+
+.footer-logo {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
 }
 
 .home-page-header {
@@ -14,7 +20,7 @@
 }
 
 .home-page-content {
-  padding: 0 24px;
+  padding: 0 24px 64px 24px;
   background: white;
 }
 
