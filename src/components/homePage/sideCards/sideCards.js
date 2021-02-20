@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import DownloadFormCard from "./downloadFormCard";
 import ConfigGeneratorCard from "./configGeneratorCard";
-import ContactCard from "./contactCard";
 import HelpCard from "./helpCard";
 import DocCard from "./docCard";
 import axios from "axios";
@@ -69,9 +68,6 @@ export default class SideCards extends Component {
         </div>
         <div className="side-card">
           <DocCard />
-        </div>
-        <div className="side-card">
-          <ContactCard />
         </div>
         <div className="side-card">
           <HelpCard />
