@@ -4,6 +4,7 @@ import MirrorsList from "./mirrorsList";
 import SideCards from "./sideCards/sideCards";
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
 import "./homePageLayout.css";
 
 const { Header, Footer, Content } = Layout;
@@ -45,6 +46,11 @@ export class HomePageContent extends Component {
   render() {
     return (
       <Content className="home-page-content">
+        <Row type="flex" justify="center">
+          <Col md={18}>
+            <h1 className="home-title-text">哈尔滨工业大学开源镜像站</h1>
+          </Col>
+        </Row>
         <Row type="flex" justify="center" gutter={40}>
           <Col md={12}>
             <MirrorsList mirrorsList={this.state.mirrorsList} />
@@ -64,14 +70,10 @@ export class HomePageContent extends Component {
 export class HomePageHeader extends Component {
   render() {
     return (
-      <Header>
-        <Row>
-          <Col offset={3}>
-            <Link className="logo" to={"/home"}>
-              哈尔滨工业大学开源镜像站
-            </Link>
-          </Col>
-        </Row>
+      <Header className="home-page-header">
+        <Link to="/home">
+          <Logo className="logo" />
+        </Link>
       </Header>
     );
   }

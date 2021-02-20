@@ -1,14 +1,12 @@
 .logo {
-  line-height: 64px;
-  font-family: sans-serif;
-  font-size: 24px;
-  font-weight: 300;
-  color: white;
-  text-align: center;
-  width: 300px;
-  margin-left: 0;
-  margin-right: 24px;
-  float: left;
+  width: 64px;
+  height: 64px;
+  padding: 12px;
+}
+
+.home-page-header {
+  background: white;
+  border-bottom: 1px solid #cccccc;
 }
 
 .home-page-footer {
@@ -16,6 +14,17 @@
 }
 
 .home-page-content {
-  padding: 24px;
+  padding: 0 24px;
   background: white;
+}
+
+.home-title-text {
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  padding: 64px 20px;
+  margin: 0;
+  background: linear-gradient(to right, #1d4fa2, #177ddb);
+  -webkit-background-clip: text;
+  color: transparent;
 }
