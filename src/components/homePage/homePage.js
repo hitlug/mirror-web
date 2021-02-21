@@ -2,7 +2,7 @@ import axios from "axios";
 import { Col, Row, Layout, Tag, Table } from "antd";
 import SideCards from "./sideCards/sideCards";
 import React, { Component } from "react";
-import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { ReactComponent as Logo } from "../../../public/favicon.svg";
 import "./homePage.css";
 import {
   CheckCircleOutlined,

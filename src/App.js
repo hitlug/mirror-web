@@ -3,7 +3,7 @@ import { Route, Redirect, Link } from "react-router-dom";
 import { Col, Layout, Menu, Row } from "antd";
 import DocPage from "./components/docPage/docPage";
 import { HomePage } from "./components/homePage/homePage";
-import { ReactComponent as Logo } from "./assets/logo.svg";
+import { ReactComponent as Logo } from "../public/favicon.svg";
 import "./App.css";
 
 const { Header, Footer } = Layout;
