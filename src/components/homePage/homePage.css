@@ -4,6 +4,17 @@
   padding: 24px 20px;
 }
 
+@media (max-width: 768px) {
+  .home-title-logo {
+    /* 屏幕宽度在 768px ~ 320px 之间时
+       (即 iPad ~ iPhone 5)，
+       不显示Logo */
+    height: 0;
+    width: 0;
+    padding: 0;
+  }
+}
+
 .home-title-text {
   font-size: 40px;
   font-weight: 900;
@@ -13,6 +24,17 @@
   background: linear-gradient(to right, #1d4fa2, #1570c4);
   -webkit-background-clip: text;
   color: transparent;
+}
+
+@media (max-width: 768px) {
+  .home-title-text {
+    /* 屏幕宽度在 768px ~ 320px 之间时
+       (即 iPad ~ iPhone 5)，
+       字体大小在  40px ~  21px 之间线性变化，
+       字体间距在   3px ~  1px  之间线性变化 */
+    font-size: calc(19 / 448 * 100vw + 52px / 7);
+    letter-spacing: calc(1 / 224 * 100vw - 3px / 7);
+  }
 }
 
 .home-page-content {
