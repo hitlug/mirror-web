@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Col, Row, Layout } from "antd";
+import { Col, Row, Layout, Menu } from "antd";
 import MirrorsList from "./mirrorsList";
 import SideCards from "./sideCards/sideCards";
 import { Link } from "react-router-dom";
@@ -47,7 +47,10 @@ export class HomePageContent extends Component {
     return (
       <Content className="home-page-content">
         <Row type="flex" justify="center">
-          <Col md={18}>
+          <Col>
+            <Logo className="home-title-logo" />
+          </Col>
+          <Col>
             <h1 className="home-title-text">哈尔滨工业大学开源镜像站</h1>
           </Col>
         </Row>
@@ -71,9 +74,18 @@ export class HomePageHeader extends Component {
   render() {
     return (
       <Header className="home-page-header">
-        <Link to="/home">
-          <Logo className="header-logo" />
-        </Link>
+        <Menu
+          className="navbar-menu"
+          mode="horizontal"
+          defaultSelectedKeys={["0"]}
+        >
+          <Menu.Item className="navbar-menuitem" key={0}>
+            <Link to="/home">主页</Link>
+          </Menu.Item>
+          <Menu.Item className="navbar-menuitem" key={1}>
+            <Link to="/doc/docHome">帮助文档</Link>
+          </Menu.Item>
+        </Menu>
       </Header>
     );
   }

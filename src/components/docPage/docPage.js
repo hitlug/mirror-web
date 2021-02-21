@@ -79,53 +79,51 @@ export default class DocPage extends Component {
 
   render() {
     return (
-      <div>
-        <Row>
-          <Col flex={1} />
-          <Col flex={22}>
-            <Content style={{ padding: "50px 0" }}>
-              <Layout>
-                <Sider breakpoint="md" collapsedWidth="0">
-                  <Menu
-                    mode="inline"
-                    defaultOpenKeys={["/doc/docHome"]}
-                    defaultSelectedKeys={["/doc/docHome"]}
-                    onSelect={this.onMenuItemSelected}
-                    style={{ height: "100%" }}
-                  >
-                    {this.generateMenuItems(docMenu)}
-                  </Menu>
-                </Sider>
-                <Layout
+      <Row className="doc-content">
+        <Col flex={1} />
+        <Col flex={22}>
+          <Content style={{ padding: "50px 0" }}>
+            <Layout>
+              <Sider breakpoint="md" collapsedWidth="0">
+                <Menu
+                  mode="inline"
+                  defaultOpenKeys={["/doc/docHome"]}
+                  defaultSelectedKeys={["/doc/docHome"]}
+                  onSelect={this.onMenuItemSelected}
+                  style={{ height: "100%" }}
+                >
+                  {this.generateMenuItems(docMenu)}
+                </Menu>
+              </Sider>
+              <Layout
+                style={{
+                  overflowX: "hidden"
+                }}
+              >
+                <Header
                   style={{
-                    overflowX: "hidden"
+                    padding: "12px 48px",
+                    background: "white",
+                    height: "auto"
                   }}
                 >
-                  <Header
-                    style={{
-                      padding: "12px 48px",
-                      background: "white",
-                      height: "auto"
-                    }}
-                  >
-                    <LinkedBreadcrumb />
-                    <Divider />
-                  </Header>
-                  <Content
-                    style={{
-                      padding: "12px 48px",
-                      background: "white"
-                    }}
-                  >
-                    {this.state.docContent}
-                  </Content>
-                </Layout>
+                  <LinkedBreadcrumb />
+                  <Divider />
+                </Header>
+                <Content
+                  style={{
+                    padding: "12px 48px",
+                    background: "white"
+                  }}
+                >
+                  {this.state.docContent}
+                </Content>
               </Layout>
-            </Content>
-          </Col>
-          <Col flex={1} />
-        </Row>
-      </div>
+            </Layout>
+          </Content>
+        </Col>
+        <Col flex={1} />
+      </Row>
     );
   }
 }
