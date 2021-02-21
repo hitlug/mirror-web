@@ -1,0 +1,28 @@
+.navbar-menu {
+  height: 100%;
+  border-bottom: none;
+}
+
+.navbar-menuitem {
+  height: 100%;
+  text-align: center;
+}
+
+.page-header {
+  background: white;
+  border-bottom: 1px solid #cccccc;
+  height: 64px;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.page-footer {
+  text-align: center;
+}
+
+.footer-logo {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
