@@ -49,7 +49,7 @@ export default class DocPage extends Component {
    * @param path 文档路由
    */
   importAndExecDoc(path) {
-    import("." + path + ".js")
+    import("./doc/js/" + path.split("/")[2] + ".js")
       .then(module => {
         this.setState({
           docContent: module.default()
