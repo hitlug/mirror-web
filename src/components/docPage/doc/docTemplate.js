@@ -1,5 +1,17 @@
 import React from "react";
+import gfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { github } from "react-syntax-highlighter/src/styles/hljs";
+import "./docTemplate.css";
+
+const renderers = {
+  code: ({ language, value }) => {
+    return (
+      <SyntaxHighlighter style={github} language={language} children={value} />
+    );
+  }
+};
 
 export default class DocTemplate extends React.Component {
   constructor(props) {
@@ -24,6 +36,10 @@ export default class DocTemplate extends React.Component {
   }
 
   render() {
-    return <ReactMarkdown>{this.state.text}</ReactMarkdown>;
+    return (
+      <ReactMarkdown className="doc" plugins={[gfm]} renderers={renderers}>
+        {this.state.text}
+      </ReactMarkdown>
+    );
   }
 }

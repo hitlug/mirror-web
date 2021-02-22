@@ -49,6 +49,7 @@ export default class DocPage extends Component {
    * @param path 文档路由
    */
   importAndExecDoc(path) {
+    this.setState({ docContent: undefined });
     import("./doc/js/" + path.split("/")[2] + ".js")
       .then(module => {
         this.setState({
@@ -112,7 +113,7 @@ export default class DocPage extends Component {
                 </Header>
                 <Content
                   style={{
-                    padding: "12px 48px",
+                    padding: "12px 48px 48px",
                     background: "white"
                   }}
                 >
