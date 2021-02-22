@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { Route, Redirect, Link } from "react-router-dom";
+import { Route, Redirect, Link, withRouter } from "react-router-dom";
 import { Col, Layout, Menu, Row } from "antd";
 import DocPage from "./components/docPage/docPage";
 import { HomePage } from "./components/homePage/homePage";
 import { ReactComponent as Logo } from "../public/favicon.svg";
 import "./App.css";
+import PropTypes from "prop-types";
 
 const { Header, Footer } = Layout;
 
@@ -27,19 +28,26 @@ export default class App extends Component {
 /**
  * 页面顶部布局组件
  */
-class PageHeader extends Component {
+class PageHeaderWithoutRouter extends Component {
+  static propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
+  };
+
   render() {
     return (
       <Header className="page-header">
         <Menu
           className="navbar-menu"
           mode="horizontal"
-          defaultSelectedKeys={["0"]}
+          defaultSelectedKeys={["/home"]}
+          selectedKeys={[this.props.location.pathname]}
         >
-          <Menu.Item className="navbar-menuitem" key={0}>
+          <Menu.Item className="navbar-menuitem" key="/home">
             <Link to="/home">主页</Link>
           </Menu.Item>
-          <Menu.Item className="navbar-menuitem" key={1}>
+          <Menu.Item className="navbar-menuitem" key="/doc/docHome">
             <Link to="/doc/docHome">帮助文档</Link>
           </Menu.Item>
         </Menu>
@@ -47,6 +55,8 @@ class PageHeader extends Component {
     );
   }
 }
+
+const PageHeader = withRouter(PageHeaderWithoutRouter);
 
 /**
  * 页面底部布局组件
