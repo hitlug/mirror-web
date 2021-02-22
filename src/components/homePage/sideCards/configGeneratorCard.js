@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, Modal, Row, Col, Cascader } from "antd";
+import { ThunderboltOutlined } from "@ant-design/icons";
 import "./configGeneratorCard.css";
 
 /**
@@ -82,7 +83,11 @@ export default class ConfigGeneratorCard extends Component {
       <div>
         <h2>配置生成</h2>
         <p>生成发行版的配置文件</p>
-        <Button type="primary" onClick={this.showDownloadForm}>
+        <Button
+          type="primary"
+          icon={<ThunderboltOutlined />}
+          onClick={this.showDownloadForm}
+        >
           配置生成器
         </Button>
         <Modal
