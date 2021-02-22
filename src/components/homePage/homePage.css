@@ -38,7 +38,7 @@
 }
 
 .home-page-content {
-  padding: 0 24px;
-  margin: 64px 0;
+  padding: 0 24px 64px;
+  margin-top: 64px;
   background: white;
 }

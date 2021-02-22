@@ -54,17 +54,20 @@ class PageHeader extends Component {
 class PageFooter extends Component {
   render() {
     return (
-      <Footer className="page-footer">
+      <Footer>
         <Row type="flex" justify="center">
-          <Col md={6} style={{ padding: "64px 24px", textAlign: "end" }}>
-            <h1 style={{ fontWeight: "bolder" }}>哈尔滨工业大学开源镜像站</h1>
+          <Col md={12} className="footer-text">
+            <p>
+              <strong>哈尔滨工业大学开源镜像站</strong>
+              <br />
+              <br />
+              本站由哈尔滨工业大学网络与信息中心支持创办
+              <br />
+              由哈尔滨工业大学Linux用户协会运行维护
+            </p>
           </Col>
           <Col md={6}>
             <Logo className="footer-logo" />
-          </Col>
-          <Col md={6} style={{ padding: "64px 24px", textAlign: "start" }}>
-            <p>本站由哈尔滨工业大学网络与信息中心支持创办</p>
-            <p>由哈尔滨工业大学Linux用户协会运行维护</p>
           </Col>
         </Row>
       </Footer>

@@ -17,12 +17,29 @@
   z-index: 1;
 }
 
-.page-footer {
-  text-align: center;
+.footer-text {
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 576px) {
+  .footer-text {
+    text-align: center;
+  }
 }
 
 .footer-logo {
   width: 200px;
   height: 200px;
   padding: 20px;
+}
+
+@media (max-width: 576px) {
+  .footer-logo {
+    /* 屏幕宽度在 576px ~ 320px 之间时，
+       图片尺寸在 200px ~ 150px  之间线性变化 */
+    width: calc(25 / 128 * 100vw + 175px / 2);
+    height: calc(25 / 128 * 100vw + 175px / 2);
+  }
 }
