@@ -2,6 +2,18 @@
   background: #fff;
 }
 
-.doc-content {
+.doc-frame {
   margin-top: 64px;
+}
+
+.doc-content {
+  padding: 50px 0 0;
+}
+
+@media (max-width: 1600px) {
+  .doc-content {
+    /* 屏幕宽度在 1600px ~ 320px 之间时，
+       上外边距在   50px ~  15px  之间线性变化 */
+    padding-top: calc(7 / 256 * 100vw + 25px / 4);
+  }
 }
