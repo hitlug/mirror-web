@@ -42,12 +42,12 @@ class PageHeaderWithoutRouter extends Component {
           className="navbar-menu"
           mode="horizontal"
           defaultSelectedKeys={["/home"]}
-          selectedKeys={[this.props.location.pathname]}
+          selectedKeys={[this.props.location.pathname.split("/")[1]]}
         >
-          <Menu.Item className="navbar-menuitem" key="/home">
+          <Menu.Item className="navbar-menuitem" key="home">
             <Link to="/home">主页</Link>
           </Menu.Item>
-          <Menu.Item className="navbar-menuitem" key="/doc/docHome">
+          <Menu.Item className="navbar-menuitem" key="doc">
             <Link to="/doc/docHome">帮助文档</Link>
           </Menu.Item>
         </Menu>
