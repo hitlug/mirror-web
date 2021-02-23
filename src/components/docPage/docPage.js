@@ -109,7 +109,7 @@ export default class DocPage extends Component {
                   }}
                 >
                   <LinkedBreadcrumb />
-                  <Divider />
+                  <Divider style={{ marginBottom: "0" }} />
                 </Header>
                 <Content
                   style={{
