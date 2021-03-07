@@ -80,10 +80,10 @@ export default class DocPage extends Component {
 
   render() {
     return (
-      <Row className="doc-content">
+      <Row className="doc-frame">
         <Col flex={1} />
         <Col flex={22}>
-          <Content style={{ padding: "50px 0" }}>
+          <Content className="doc-content">
             <Layout>
               <Sider breakpoint="md" collapsedWidth="0">
                 <Menu
@@ -109,7 +109,7 @@ export default class DocPage extends Component {
                   }}
                 >
                   <LinkedBreadcrumb />
-                  <Divider />
+                  <Divider style={{ marginBottom: "0" }} />
                 </Header>
                 <Content
                   style={{
