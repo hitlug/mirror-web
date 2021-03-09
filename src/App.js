@@ -68,12 +68,11 @@ class PageFooter extends Component {
         <Row type="flex" justify="center">
           <Col md={12} className="footer-text">
             <p>
-              <strong>哈尔滨工业大学开源镜像站</strong>
+              <strong>{process.env.REACT_APP_SITE_TITLE}</strong>
               <br />
               <br />
-              本站由哈尔滨工业大学网络与信息中心支持创办
-              <br />
-              由哈尔滨工业大学Linux用户协会运行维护
+              本站由{process.env.REACT_APP_SPONSOR_NAME}支持创办
+              <br />由{process.env.REACT_APP_ORG_NAME}运行维护
             </p>
           </Col>
           <Col md={6}>

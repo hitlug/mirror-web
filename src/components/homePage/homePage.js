@@ -32,7 +32,7 @@ export class HomePage extends Component {
     axios({
       url: "/jobs",
       method: "get"
-    }).then(response => {
+    }).then((response) => {
       const mirrorsList = response.data;
       mirrorsList.sort((a, b) => {
         return a.name < b.name ? -1 : 1;
@@ -55,7 +55,9 @@ export class HomePage extends Component {
             <Logo className="home-title-logo" />
           </Col>
           <Col>
-            <h1 className="home-title-text">哈尔滨工业大学开源镜像站</h1>
+            <h1 className="home-title-text">
+              {process.env.REACT_APP_SITE_TITLE}
+            </h1>
           </Col>
         </Row>
         <Row type="flex" justify="center" gutter={40}>
@@ -80,12 +82,12 @@ class MirrorsList extends Component {
       {
         title: "镜像名称",
         dataIndex: "name",
-        render: text => <a href={"/" + text}>{text}</a>
+        render: (text) => <a href={"/" + text}>{text}</a>
       },
       {
         title: "同步状态",
         dataIndex: "status",
-        render: status => {
+        render: (status) => {
           let statusIcon, statusTagColor, statusLable;
           switch (status) {
             case "success":
@@ -120,11 +122,7 @@ class MirrorsList extends Component {
       {
         title: "Last Update",
         dataIndex: "last_update",
-        render: text =>
-          text
-            .split(" ")
-            .slice(0, 2)
-            .join(" ")
+        render: (text) => text.split(" ").slice(0, 2).join(" ")
       }
     ];
     const data = this.props.mirrorsList;

@@ -1,6 +1,6 @@
 {
-  "short_name": "哈尔滨工业大学开源镜像站",
-  "name": "哈尔滨工业大学开源镜像站",
+  "short_name": "%REACT_APP_SITE_TITLE%",
+  "name": "%REACT_APP_SITE_TITLE%",
   "icons": [
     {
       "src": "favicon.svg",
