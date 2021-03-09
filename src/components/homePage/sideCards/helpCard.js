@@ -8,15 +8,17 @@ export default class HelpCard extends Component {
       <div>
         <h2>相关链接</h2>
         <p>
-          <LinkOutlined /> 哈尔滨工业大学Linux用户协会:
+          <LinkOutlined /> {process.env.REACT_APP_ORG_NAME}:
           <br />
-          <a href="https://github.com/hitlug">https://github.com/hitlug</a>
+          <a href={process.env.REACT_APP_ORG_LINK}>
+            {process.env.REACT_APP_ORG_LINK}
+          </a>
         </p>
         <p>
           <LinkOutlined /> 新镜像申请及意见反馈:
           <br />
-          <a href="https://github.com/hitlug/issues">
-            https://github.com/hitlug/issues
+          <a href={process.env.REACT_APP_ORG_LINK + "/issues"}>
+            {process.env.REACT_APP_ORG_LINK + "/issues"}
           </a>
         </p>
         <p>
