@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Layout, Menu, Breadcrumb, Divider, Row, Col } from "antd";
+import { Layout, Menu, Breadcrumb, Divider, Row, Col, Spin } from "antd";
 import { Link, withRouter } from "react-router-dom";
 import docMenu from "./menu.json";
 import "./docPage.css";
@@ -15,7 +15,9 @@ export default class DocPage extends Component {
     super(props);
     this.state = {
       // 帮助文档正文内容
-      docContent: undefined
+      docContent: undefined,
+      // 是否已经获取了文档
+      loaded: false
     };
     this.onMenuItemSelected = this.onMenuItemSelected.bind(this);
   }
@@ -53,13 +55,15 @@ export default class DocPage extends Component {
     import("./doc/js/" + path.split("/")[2] + ".js")
       .then(module => {
         this.setState({
-          docContent: module.default()
+          docContent: module.default(),
+          loaded: true
         });
       })
       .catch(() => {
         console.log("import " + path + " failed");
         this.setState({
-          docContent: <h1>No Document Here!</h1>
+          docContent: <h1>No Document Here!</h1>,
+          loaded: true
         });
       });
   }
@@ -71,6 +75,9 @@ export default class DocPage extends Component {
    *             其中.key是被选中的MenuItem的key
    */
   onMenuItemSelected(info) {
+    this.setState({
+      loaded: false
+    });
     this.importAndExecDoc(info.key);
   }
 
@@ -117,7 +124,11 @@ export default class DocPage extends Component {
                     background: "white"
                   }}
                 >
-                  {this.state.docContent}
+                  {this.state.loaded ? (
+                    this.state.docContent
+                  ) : (
+                    <Spin size="large" />
+                  )}
                 </Content>
               </Layout>
             </Layout>
