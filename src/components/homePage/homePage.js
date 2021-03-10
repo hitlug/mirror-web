@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Col, Row, Layout, Tag, Table } from "antd";
+import { Col, Row, Layout, Tag, Table, Spin } from "antd";
 import SideCards from "./sideCards/sideCards";
 import React, { Component } from "react";
 import { ReactComponent as Logo } from "../../../public/favicon.svg";
@@ -19,7 +19,9 @@ const { Content } = Layout;
 export class HomePage extends Component {
   state = {
     // 镜像列表
-    mirrorsList: null
+    mirrorsList: null,
+    // 是否已经获取了镜像列表
+    loaded: false
   };
 
   /**
@@ -32,13 +34,14 @@ export class HomePage extends Component {
     axios({
       url: "/jobs",
       method: "get"
-    }).then((response) => {
+    }).then(response => {
       const mirrorsList = response.data;
       mirrorsList.sort((a, b) => {
         return a.name < b.name ? -1 : 1;
       });
       this.setState({
-        mirrorsList: mirrorsList
+        mirrorsList: mirrorsList,
+        loaded: true
       });
     });
   };
@@ -62,7 +65,10 @@ export class HomePage extends Component {
         </Row>
         <Row type="flex" justify="center" gutter={40}>
           <Col md={12}>
-            <MirrorsList mirrorsList={this.state.mirrorsList} />
+            <MirrorsList
+              mirrorsList={this.state.mirrorsList}
+              loaded={this.state.loaded}
+            />
           </Col>
           <Col md={6}>
             <SideCards />
@@ -78,16 +84,24 @@ export class HomePage extends Component {
  */
 class MirrorsList extends Component {
   render() {
+    if (!this.props.loaded) {
+      return (
+        <div style={{ textAlign: "center", margin: "50px" }}>
+          <Spin size="large" />
+        </div>
+      );
+    }
+
     const columns = [
       {
         title: "镜像名称",
         dataIndex: "name",
-        render: (text) => <a href={"/" + text}>{text}</a>
+        render: text => <a href={"/" + text}>{text}</a>
       },
       {
         title: "同步状态",
         dataIndex: "status",
-        render: (status) => {
+        render: status => {
           let statusIcon, statusTagColor, statusLable;
           switch (status) {
             case "success":
@@ -122,7 +136,11 @@ class MirrorsList extends Component {
       {
         title: "Last Update",
         dataIndex: "last_update",
-        render: (text) => text.split(" ").slice(0, 2).join(" ")
+        render: text =>
+          text
+            .split(" ")
+            .slice(0, 2)
+            .join(" ")
       }
     ];
     const data = this.props.mirrorsList;
