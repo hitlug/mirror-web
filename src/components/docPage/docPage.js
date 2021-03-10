@@ -127,7 +127,9 @@ export default class DocPage extends Component {
                   {this.state.loaded ? (
                     this.state.docContent
                   ) : (
-                    <Spin size="large" />
+                    <div style={{ textAlign: "center", margin: "50px" }}>
+                      <Spin size="large" />
+                    </div>
                   )}
                 </Content>
               </Layout>
