@@ -23,5 +23,10 @@
     "key": 4,
     "title": "Debian",
     "path": "/doc/debian"
+  },
+  {
+    "key": 5,
+    "title": "Ubuntu",
+    "path": "/doc/ubuntu"
   }
 ]
