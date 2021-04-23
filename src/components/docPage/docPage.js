@@ -28,6 +28,17 @@ export default class DocPage extends Component {
    * @param source 文档导航菜单json文件
    */
   generateMenuItems(source) {
+    source.sort((a, b) => {
+      if ("key" in a && "key" in b) {
+        return a.key - b.key;
+      } else if ("key" in a) {
+        return -1;
+      } else if ("key" in b) {
+        return 1;
+      } else {
+        return a.title < b.title ? -1 : 1;
+      }
+    });
     return source.map(menu => {
       if (menu.children) {
         return (
