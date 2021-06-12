@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, Modal, Row, Col, Cascader } from "antd";
+import { Button, Form, Modal, Row, Col, Cascader, message } from "antd";
 import { ThunderboltOutlined } from "@ant-design/icons";
 import "./configGeneratorCard.css";
 
@@ -51,30 +51,38 @@ export default class ConfigGeneratorCard extends Component {
    * 生成配置
    */
   handleGenerateConfig = () => {
-    let configBlock;
+    let configBlock = undefined;
+
     switch (this.state.selectDistrib) {
       case "ubuntu":
         configBlock = buildUbuntuBlock(this.state.selectVersion);
-        this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       case "debian":
         configBlock = buildDebianBlock(this.state.selectVersion);
-        this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       case "archlinux":
         configBlock = buildArchBlock();
-        this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       case "centos":
         configBlock = buildCentosBlock(this.state.selectVersion);
-        this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       case "opensuse":
         configBlock = buildOpensuseBlock(this.state.selectVersion);
-        this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       default:
         break;
+    }
+
+    if (configBlock !== undefined) {
+      this.setState({ showConfigBlock: true, configBlock: configBlock });
+      navigator.clipboard.writeText(configBlock).then(
+        function() {
+          message.success("复制成功", 1);
+        },
+        function() {
+          message.warning("复制失败", 1);
+        }
+      );
     }
   };
 
@@ -110,7 +118,7 @@ export default class ConfigGeneratorCard extends Component {
                 </Col>
                 <Col span={4}>
                   <Button type="primary" onClick={this.handleGenerateConfig}>
-                    生成
+                    生成并复制
                   </Button>
                 </Col>
               </Row>
