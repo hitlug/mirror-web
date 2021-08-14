@@ -1,6 +1,16 @@
 import React, { Component } from "react";
-import { Button, Form, Modal, Row, Col, Cascader, message } from "antd";
+import {
+  Tooltip,
+  Button,
+  Form,
+  Modal,
+  Row,
+  Col,
+  Cascader,
+  message
+} from "antd";
 import { ThunderboltOutlined } from "@ant-design/icons";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import "./configGeneratorCard.css";
 
 /**
@@ -75,14 +85,6 @@ export default class ConfigGeneratorCard extends Component {
 
     if (configBlock !== undefined) {
       this.setState({ showConfigBlock: true, configBlock: configBlock });
-      navigator.clipboard.writeText(configBlock).then(
-        function() {
-          message.success("复制成功", 1);
-        },
-        function() {
-          message.warning("复制失败", 1);
-        }
-      );
     }
   };
 
@@ -118,15 +120,24 @@ export default class ConfigGeneratorCard extends Component {
                 </Col>
                 <Col span={4}>
                   <Button type="primary" onClick={this.handleGenerateConfig}>
-                    生成并复制
+                    生成
                   </Button>
                 </Col>
               </Row>
               <Row>
-                <ConfigBlock
-                  showConfigBlock={this.state.showConfigBlock}
-                  configBlock={this.state.configBlock}
-                />
+                <Tooltip placement="bottom" title={"点击文本即可复制"}>
+                  <CopyToClipboard
+                    text={this.state.configBlock}
+                    onCopy={() => message.success("复制成功", 1)}
+                  >
+                    <span>
+                      <ConfigBlock
+                        showConfigBlock={this.state.showConfigBlock}
+                        configBlock={this.state.configBlock}
+                      />
+                    </span>
+                  </CopyToClipboard>
+                </Tooltip>
               </Row>
             </Form.Item>
           </Form>
@@ -225,7 +236,7 @@ function buildDebianLine(val, version) {
  */
 function buildDebianBlock(version) {
   return (
-    "目前还未提供debian-security，请注意添加\n" +
+    "# 目前还未提供debian-security，请注意添加\n" +
     buildDebianLine("deb", version) +
     buildDebianLine("# deb-src", version) +
     buildDebianLine("deb", version + "-updates") +

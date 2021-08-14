@@ -9,6 +9,7 @@
     "copy-webpack-plugin": "^6.4.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
+    "react-copy-to-clipboard": "^5.0.3",
     "react-dom": "^17.0.1",
     "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
