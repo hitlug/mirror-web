@@ -1,6 +1,16 @@
 import React, { Component } from "react";
-import { Button, Form, Modal, Row, Col, Cascader } from "antd";
+import {
+  Tooltip,
+  Button,
+  Form,
+  Modal,
+  Row,
+  Col,
+  Cascader,
+  message
+} from "antd";
 import { ThunderboltOutlined } from "@ant-design/icons";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import "./configGeneratorCard.css";
 
 /**
@@ -51,30 +61,30 @@ export default class ConfigGeneratorCard extends Component {
    * 生成配置
    */
   handleGenerateConfig = () => {
-    let configBlock;
+    let configBlock = undefined;
+
     switch (this.state.selectDistrib) {
       case "ubuntu":
         configBlock = buildUbuntuBlock(this.state.selectVersion);
-        this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       case "debian":
         configBlock = buildDebianBlock(this.state.selectVersion);
-        this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       case "archlinux":
         configBlock = buildArchBlock();
-        this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       case "centos":
         configBlock = buildCentosBlock(this.state.selectVersion);
-        this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       case "opensuse":
         configBlock = buildOpensuseBlock(this.state.selectVersion);
-        this.setState({ showConfigBlock: true, configBlock: configBlock });
         break;
       default:
         break;
+    }
+
+    if (configBlock !== undefined) {
+      this.setState({ showConfigBlock: true, configBlock: configBlock });
     }
   };
 
@@ -115,10 +125,19 @@ export default class ConfigGeneratorCard extends Component {
                 </Col>
               </Row>
               <Row>
-                <ConfigBlock
-                  showConfigBlock={this.state.showConfigBlock}
-                  configBlock={this.state.configBlock}
-                />
+                <Tooltip placement="bottom" title={"点击文本即可复制"}>
+                  <CopyToClipboard
+                    text={this.state.configBlock}
+                    onCopy={() => message.success("复制成功", 1)}
+                  >
+                    <span>
+                      <ConfigBlock
+                        showConfigBlock={this.state.showConfigBlock}
+                        configBlock={this.state.configBlock}
+                      />
+                    </span>
+                  </CopyToClipboard>
+                </Tooltip>
               </Row>
             </Form.Item>
           </Form>
@@ -217,7 +236,7 @@ function buildDebianLine(val, version) {
  */
 function buildDebianBlock(version) {
   return (
-    "目前还未提供debian-security，请注意添加\n" +
+    "# 目前还未提供debian-security，请注意添加\n" +
     buildDebianLine("deb", version) +
     buildDebianLine("# deb-src", version) +
     buildDebianLine("deb", version + "-updates") +
