@@ -27,5 +27,13 @@
   {
     "title": "Ubuntu",
     "path": "/doc/ubuntu"
+  },
+  {
+    "title": "ArchLinux",
+    "path": "/doc/archlinux"
+  },
+  {
+    "title": "ArchLinuxCN",
+    "path": "/doc/archlinuxcn"
   }
 ]
