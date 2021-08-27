@@ -8,8 +8,11 @@ import {
   CheckCircleOutlined,
   CloseCircleOutlined,
   ExclamationCircleOutlined,
+  QuestionCircleOutlined,
   SyncOutlined
 } from "@ant-design/icons";
+import docMenu from "../docPage/menu.json";
+import { Link } from "react-router-dom";
 
 const { Content } = Layout;
 
@@ -35,7 +38,21 @@ export class HomePage extends Component {
       url: "/jobs",
       method: "get"
     }).then(response => {
-      const mirrorsList = response.data;
+      const docMap = docMenu.reduce((res, cur) => {
+        if (cur.name !== undefined) {
+          res[cur.name] = cur;
+        }
+        return res;
+      }, {});
+
+      const mirrorsList = response.data.map(m =>
+        Object.assign(m, {
+          render_name_data: {
+            name: m.name,
+            docPath: docMap[m.name]?.path
+          }
+        })
+      );
       mirrorsList.sort((a, b) => {
         return a.name < b.name ? -1 : 1;
       });
@@ -95,8 +112,17 @@ class MirrorsList extends Component {
     const columns = [
       {
         title: "镜像名称",
-        dataIndex: "name",
-        render: text => <a href={"/" + text}>{text}</a>
+        dataIndex: "render_name_data",
+        render: data => (
+          <span>
+            <a href={"/" + data.name}>{data.name}</a>
+            {data.docPath === undefined ? null : (
+              <Link to={data.docPath}>
+                <QuestionCircleOutlined className="doc-link" />
+              </Link>
+            )}
+          </span>
+        )
       },
       {
         title: "同步状态",

@@ -6,34 +6,32 @@
   },
   {
     "title": "CTAN",
+    "name": "CTAN",
     "path": "/doc/ctan"
   },
   {
-    "title": "Alpine",
-    "path": "/doc/alpine"
-  },
-  {
-    "title": "Anaconda",
-    "path": "/doc/anaconda"
-  },
-  {
     "title": "Debian",
+    "name": "debian",
     "path": "/doc/debian"
   },
   {
     "title": "PyPI",
+    "name": "pypi",
     "path": "/doc/pypi"
   },
   {
     "title": "Ubuntu",
+    "name": "ubuntu",
     "path": "/doc/ubuntu"
   },
   {
     "title": "ArchLinux",
+    "name": "archlinux",
     "path": "/doc/archlinux"
   },
   {
     "title": "ArchLinuxCN",
+    "name": "archlinuxcn",
     "path": "/doc/archlinuxcn"
   }
 ]
