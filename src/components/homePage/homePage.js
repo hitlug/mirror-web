@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Col, Row, Layout, Tag, Table, Spin } from "antd";
+import { Col, Row, Layout, Tag, Table, Spin, Space } from "antd";
 import SideCards from "./sideCards/sideCards";
 import React, { Component } from "react";
 import { ReactComponent as Logo } from "../../../public/favicon.svg";
@@ -114,14 +114,14 @@ class MirrorsList extends Component {
         title: "镜像名称",
         dataIndex: "render_name_data",
         render: data => (
-          <span>
+          <Space>
             <a href={"/" + data.name}>{data.name}</a>
             {data.docPath === undefined ? null : (
               <Link to={data.docPath}>
-                <QuestionCircleOutlined className="doc-link" />
+                <QuestionCircleOutlined />
               </Link>
             )}
-          </span>
+          </Space>
         )
       },
       {
