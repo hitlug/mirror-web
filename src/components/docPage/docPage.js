@@ -21,7 +21,6 @@ export default class DocPage extends Component {
       // 是否已经获取了文档
       loaded: false
     };
-    this.onMenuItemSelected = this.onMenuItemSelected.bind(this);
   }
 
   /**
@@ -65,7 +64,11 @@ export default class DocPage extends Component {
    * @param path 文档路由
    */
   importAndExecDoc(path) {
+    if (path === "/doc") {
+      path = "/doc/docHome";
+    }
     this.setState({
+      loaded: false,
       docContent: undefined,
       docPath: path
     });
@@ -85,25 +88,13 @@ export default class DocPage extends Component {
       });
   }
 
-  /**
-   * 菜单项目被选中后的回调，修改帮助文档显示的正文内容
-   *
-   * @param info 选中Menu项的信息。
-   *             其中.key是被选中的MenuItem的key
-   */
-  onMenuItemSelected(info) {
-    this.setState({
-      loaded: false
-    });
-    this.importAndExecDoc(info.key);
+  componentDidMount() {
+    this.importAndExecDoc(this.props.location.pathname);
   }
 
-  componentDidMount() {
-    const pathname = this.props.location.pathname;
-    if (pathname === "/doc") {
-      this.importAndExecDoc("/doc/docHome");
-    } else {
-      this.importAndExecDoc(pathname);
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== this.state.docPath) {
+      this.importAndExecDoc(this.props.location.pathname);
     }
   }
 
@@ -119,7 +110,6 @@ export default class DocPage extends Component {
                   mode="inline"
                   openKeys={[this.state.docPath]}
                   selectedKeys={[this.state.docPath]}
-                  onSelect={this.onMenuItemSelected}
                   style={{ height: "100%" }}
                 >
                   {this.generateMenuItems(docMenu)}
