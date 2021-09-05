@@ -42,9 +42,7 @@ export default class DocPage extends Component {
       }
     });
     return source.map(menu => {
-      if (menu.path === undefined) {
-        menu.path = `/doc/${menu.name}`;
-      }
+      menu.path = `/doc/${menu.name}`;
       if (menu.children) {
         return (
           <SubMenu key={menu.path} title={menu.title}>

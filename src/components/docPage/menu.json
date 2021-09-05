@@ -2,7 +2,7 @@
   {
     "key": 0,
     "title": "欢迎来到帮助文档",
-    "path": "/doc/docHome"
+    "name": "docHome"
   },
   {
     "title": "CTAN",
