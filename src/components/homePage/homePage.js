@@ -38,14 +38,12 @@ export class HomePage extends Component {
       url: "/jobs",
       method: "get"
     }).then(response => {
-      console.log(docMenu);
       const docs = new Set();
       docMenu.forEach(cur => {
         if (cur.name !== undefined) {
           docs.add(cur.name);
         }
       });
-      console.log(docs);
 
       const mirrorsList = response.data.map(m =>
         Object.assign(m, {
@@ -55,7 +53,6 @@ export class HomePage extends Component {
           }
         })
       );
-      console.log(mirrorsList);
       mirrorsList.sort((a, b) => {
         return a.name < b.name ? -1 : 1;
       });
