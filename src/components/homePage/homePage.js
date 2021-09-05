@@ -38,21 +38,24 @@ export class HomePage extends Component {
       url: "/jobs",
       method: "get"
     }).then(response => {
-      const docMap = docMenu.reduce((res, cur) => {
+      console.log(docMenu);
+      const docs = new Set();
+      docMenu.forEach(cur => {
         if (cur.name !== undefined) {
-          res[cur.name] = cur;
+          docs.add(cur.name);
         }
-        return res;
-      }, {});
+      });
+      console.log(docs);
 
       const mirrorsList = response.data.map(m =>
         Object.assign(m, {
           render_name_data: {
             name: m.name,
-            docPath: docMap[m.name]?.path
+            has_doc: docs.has(m.name)
           }
         })
       );
+      console.log(mirrorsList);
       mirrorsList.sort((a, b) => {
         return a.name < b.name ? -1 : 1;
       });
@@ -115,12 +118,12 @@ class MirrorsList extends Component {
         dataIndex: "render_name_data",
         render: data => (
           <Space>
-            <a href={"/" + data.name}>{data.name}</a>
-            {data.docPath === undefined ? null : (
-              <Link to={data.docPath}>
+            <a href={`/${data.name}`}>{data.name}</a>
+            {data.has_doc ? (
+              <Link to={`/doc/${data.name}`}>
                 <QuestionCircleOutlined />
               </Link>
-            )}
+            ) : null}
           </Space>
         )
       },

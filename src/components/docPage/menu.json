@@ -6,32 +6,26 @@
   },
   {
     "title": "CTAN",
-    "name": "CTAN",
-    "path": "/doc/ctan"
+    "name": "CTAN"
   },
   {
     "title": "Debian",
-    "name": "debian",
-    "path": "/doc/debian"
+    "name": "debian"
   },
   {
     "title": "PyPI",
-    "name": "pypi",
-    "path": "/doc/pypi"
+    "name": "pypi"
   },
   {
     "title": "Ubuntu",
-    "name": "ubuntu",
-    "path": "/doc/ubuntu"
+    "name": "ubuntu"
   },
   {
     "title": "ArchLinux",
-    "name": "archlinux",
-    "path": "/doc/archlinux"
+    "name": "archlinux"
   },
   {
     "title": "ArchLinuxCN",
-    "name": "archlinuxcn",
-    "path": "/doc/archlinuxcn"
+    "name": "archlinuxcn"
   }
 ]
