@@ -2,38 +2,30 @@
   {
     "key": 0,
     "title": "欢迎来到帮助文档",
-    "path": "/doc/docHome"
+    "name": "docHome"
   },
   {
     "title": "CTAN",
-    "path": "/doc/ctan"
-  },
-  {
-    "title": "Alpine",
-    "path": "/doc/alpine"
-  },
-  {
-    "title": "Anaconda",
-    "path": "/doc/anaconda"
+    "name": "CTAN"
   },
   {
     "title": "Debian",
-    "path": "/doc/debian"
+    "name": "debian"
   },
   {
     "title": "PyPI",
-    "path": "/doc/pypi"
+    "name": "pypi"
   },
   {
     "title": "Ubuntu",
-    "path": "/doc/ubuntu"
+    "name": "ubuntu"
   },
   {
     "title": "ArchLinux",
-    "path": "/doc/archlinux"
+    "name": "archlinux"
   },
   {
     "title": "ArchLinuxCN",
-    "path": "/doc/archlinuxcn"
+    "name": "archlinuxcn"
   }
 ]

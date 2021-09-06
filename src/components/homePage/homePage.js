@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Col, Row, Layout, Tag, Table, Spin } from "antd";
+import { Col, Row, Layout, Tag, Table, Spin, Space } from "antd";
 import SideCards from "./sideCards/sideCards";
 import React, { Component } from "react";
 import { ReactComponent as Logo } from "../../../public/favicon.svg";
@@ -8,8 +8,11 @@ import {
   CheckCircleOutlined,
   CloseCircleOutlined,
   ExclamationCircleOutlined,
+  QuestionCircleOutlined,
   SyncOutlined
 } from "@ant-design/icons";
+import docMenu from "../docPage/menu.json";
+import { Link } from "react-router-dom";
 
 const { Content } = Layout;
 
@@ -35,7 +38,21 @@ export class HomePage extends Component {
       url: "/jobs",
       method: "get"
     }).then(response => {
-      const mirrorsList = response.data;
+      const docs = new Set();
+      docMenu.forEach(cur => {
+        if (cur.name !== undefined) {
+          docs.add(cur.name);
+        }
+      });
+
+      const mirrorsList = response.data.map(m =>
+        Object.assign(m, {
+          render_name_data: {
+            name: m.name,
+            has_doc: docs.has(m.name)
+          }
+        })
+      );
       mirrorsList.sort((a, b) => {
         return a.name < b.name ? -1 : 1;
       });
@@ -95,8 +112,17 @@ class MirrorsList extends Component {
     const columns = [
       {
         title: "镜像名称",
-        dataIndex: "name",
-        render: text => <a href={"/" + text}>{text}</a>
+        dataIndex: "render_name_data",
+        render: data => (
+          <Space>
+            <a href={`/${data.name}`}>{data.name}</a>
+            {data.has_doc ? (
+              <Link to={`/doc/${data.name}`}>
+                <QuestionCircleOutlined />
+              </Link>
+            ) : null}
+          </Space>
+        )
       },
       {
         title: "同步状态",

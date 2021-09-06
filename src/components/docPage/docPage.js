@@ -16,6 +16,8 @@ export default class DocPage extends Component {
     this.state = {
       // 帮助文档正文内容
       docContent: undefined,
+      // 帮助文档的路径
+      docPath: "/doc/docHome",
       // 是否已经获取了文档
       loaded: false
     };
@@ -40,6 +42,7 @@ export default class DocPage extends Component {
       }
     });
     return source.map(menu => {
+      menu.path = `/doc/${menu.name}`;
       if (menu.children) {
         return (
           <SubMenu key={menu.path} title={menu.title}>
@@ -62,7 +65,10 @@ export default class DocPage extends Component {
    * @param path 文档路由
    */
   importAndExecDoc(path) {
-    this.setState({ docContent: undefined });
+    this.setState({
+      docContent: undefined,
+      docPath: path
+    });
     import("./doc/js/" + path.split("/")[2] + ".js")
       .then(module => {
         this.setState({
@@ -93,7 +99,12 @@ export default class DocPage extends Component {
   }
 
   componentDidMount() {
-    this.importAndExecDoc("/doc/docHome");
+    const pathname = this.props.location.pathname;
+    if (pathname === "/doc") {
+      this.importAndExecDoc("/doc/docHome");
+    } else {
+      this.importAndExecDoc(pathname);
+    }
   }
 
   render() {
@@ -106,8 +117,8 @@ export default class DocPage extends Component {
               <Sider breakpoint="md" collapsedWidth="0">
                 <Menu
                   mode="inline"
-                  defaultOpenKeys={["/doc/docHome"]}
-                  defaultSelectedKeys={["/doc/docHome"]}
+                  openKeys={[this.state.docPath]}
+                  selectedKeys={[this.state.docPath]}
                   onSelect={this.onMenuItemSelected}
                   style={{ height: "100%" }}
                 >
