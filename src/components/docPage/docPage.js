@@ -64,9 +64,6 @@ export default class DocPage extends Component {
    * @param path 文档路由
    */
   importAndExecDoc(path) {
-    if (path === "/doc") {
-      path = "/doc/docHome";
-    }
     this.setState({
       loaded: false,
       docContent: undefined,
@@ -88,13 +85,24 @@ export default class DocPage extends Component {
       });
   }
 
+  normalizePath() {
+    let path = this.props.location.pathname;
+    if (/^\/doc\/?$/.test(path)) {
+      path = "/doc/docHome";
+      this.props.history.replace("/doc/docHome");
+    }
+    return path;
+  }
+
   componentDidMount() {
-    this.importAndExecDoc(this.props.location.pathname);
+    const path = this.normalizePath();
+    this.importAndExecDoc(path);
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.location.pathname !== this.state.docPath) {
-      this.importAndExecDoc(this.props.location.pathname);
+    const path = this.normalizePath();
+    if (path !== this.state.docPath) {
+      this.importAndExecDoc(path);
     }
   }
 
