@@ -37,4 +37,10 @@ jobs:
           REACT_APP_ORG_NAME: 哈尔滨工业大学Linux用户协会
           REACT_APP_ORG_LINK: https://github.com/hitlug
           REACT_APP_SPONSOR_NAME: 哈尔滨工业大学网络与信息中心
+          GENERATE_SOURCEMAP: false
         run: yarn build
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Production Build
+          path: build
