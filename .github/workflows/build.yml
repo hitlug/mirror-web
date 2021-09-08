@@ -69,7 +69,7 @@ jobs:
       - name: Page Build
         env:
           REACT_APP_SITE_TITLE: 哈尔滨工业大学(深圳)开源镜像站
-          REACT_APP_ORG_NAME: 哈尔滨工业大学(深圳)Linux用户协会
+          REACT_APP_ORG_NAME: 哈尔滨工业大学(深圳)计算机研究协会
           REACT_APP_ORG_LINK: https://github.com/hitszcra
           REACT_APP_SPONSOR_NAME: 哈尔滨工业大学(深圳)网络与计算中心与实验与创新实践中心
           GENERATE_SOURCEMAP: false
