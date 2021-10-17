@@ -18,7 +18,7 @@ Termux 自带了 `apt` 包管理器，但是官方并不推荐直接使用 `apt`
 
 ```text
 # sources.list
-ddeb https://mirrors.hit.edu.cn/termux/apt/termux-main stable main
+deb https://mirrors.hit.edu.cn/termux/apt/termux-main stable main
 
 # game.list
 deb https://mirrors.hit.edu.cn/termux/apt/termux-games games stable
