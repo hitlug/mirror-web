@@ -47,10 +47,7 @@ export class HomePage extends Component {
 
       const mirrorsList = response.data.map(m =>
         Object.assign(m, {
-          render_name_data: {
-            name: m.name,
-            has_doc: docs.has(m.name)
-          }
+          has_doc: docs.has(m.name)
         })
       );
       mirrorsList.sort((a, b) => {
@@ -112,12 +109,11 @@ class MirrorsList extends Component {
     const columns = [
       {
         title: "镜像名称",
-        dataIndex: "render_name_data",
-        render: data => (
+        render: item => (
           <Space>
-            <a href={`/${data.name}`}>{data.name}</a>
-            {data.has_doc ? (
-              <Link to={`/doc/${data.name}`}>
+            <a href={`/${item.name}`}>{item.name}</a>
+            {item.has_doc ? (
+              <Link to={`/doc/${item.name}`}>
                 <QuestionCircleOutlined />
               </Link>
             ) : null}
