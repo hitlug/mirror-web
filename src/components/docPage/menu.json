@@ -31,5 +31,9 @@
   {
     "title": "Termux",
     "name": "termux"
+  },
+  {
+    "title": "crates.io-index.git",
+    "name": "crates.io-index.git"
   }
 ]
