@@ -130,7 +130,7 @@ export default class ConfigGeneratorCard extends Component {
                     text={this.state.configBlock}
                     onCopy={() => message.success("复制成功", 1)}
                   >
-                    <span>
+                    <span style={{ width: "100%" }}>
                       <ConfigBlock
                         showConfigBlock={this.state.showConfigBlock}
                         configBlock={this.state.configBlock}
