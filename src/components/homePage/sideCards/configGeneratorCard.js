@@ -90,7 +90,7 @@ export default class ConfigGeneratorCard extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <h2>配置生成</h2>
         <p>生成发行版的配置文件</p>
         <Button
@@ -125,50 +125,27 @@ export default class ConfigGeneratorCard extends Component {
                 </Col>
               </Row>
               <Row>
-                <Tooltip placement="bottom" title={"点击文本即可复制"}>
-                  <CopyToClipboard
-                    text={this.state.configBlock}
-                    onCopy={() => message.success("复制成功", 1)}
-                  >
-                    <span style={{ width: "100%" }}>
-                      <ConfigBlock
-                        showConfigBlock={this.state.showConfigBlock}
-                        configBlock={this.state.configBlock}
-                      />
-                    </span>
-                  </CopyToClipboard>
-                </Tooltip>
+                { /* 配置生成器的软件源文本块组件 */}
+                <Col className="config-block" span={24}>
+                  {this.state.showConfigBlock ?
+                    <Tooltip placement="bottom" title="点击文本即可复制">
+                      <CopyToClipboard
+                        text={this.state.configBlock}
+                        onCopy={() => message.success("复制成功", 1)}
+                      >
+                        <pre style={{ margin: 0 }}>
+                          {this.state.configBlock}
+                        </pre>
+                      </CopyToClipboard>
+                    </Tooltip>
+                    : null
+                  }
+                </Col>
               </Row>
             </Form.Item>
           </Form>
         </Modal>
-      </div>
-    );
-  }
-}
-
-/**
- * 配置生成器的软件源文本块组件
- */
-class ConfigBlock extends Component {
-  render() {
-    let block = null;
-    if (this.props.showConfigBlock) {
-      block = this.props.configBlock.split("\n").map(function(item, id) {
-        return (
-          <span key={id}>
-            {item}
-            <br />
-          </span>
-        );
-      });
-    }
-    return (
-      <Col className="config-block" span={24}>
-        <pre style={{ margin: 0 }}>
-          <code>{block}</code>
-        </pre>
-      </Col>
+      </>
     );
   }
 }
