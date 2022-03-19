@@ -477,7 +477,7 @@ function buildOpensuseBlock(version) {
 ## Note that autorefresh is disabled by default,run sudo zypper ref to refresh
 ## 注意自动刷新被默认禁用，运行 sudo zypper ref 来刷新
 `;
-  result = "";
+  var result = "";
   switch (version) {
     case "Leap 15.3+":
       result =
