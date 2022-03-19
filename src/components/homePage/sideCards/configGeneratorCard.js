@@ -247,7 +247,7 @@ function buildDebianLine(val, version) {
 function buildDebianBlock(version) {
   return (
     "# 目前还未提供debian-security，请注意添加\n" +
-    buildAlpineLine("deb", version) +
+    buildDebianLine("deb", version) +
     buildDebianLine("# deb-src", version) +
     buildDebianLine("deb", version + "-updates") +
     buildDebianLine("# deb-src", version + "-updates") +
