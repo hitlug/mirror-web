@@ -35,5 +35,9 @@
   {
     "title": "crates.io-index.git",
     "name": "crates.io-index.git"
+  },
+  {
+    "title": "Alpine",
+    "name": "alpine"
   }
 ]
