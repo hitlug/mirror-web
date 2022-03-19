@@ -517,5 +517,4 @@ function buildOpensuseBlock(version) {
     default:
       return "";
   }
-  return result;
 }
