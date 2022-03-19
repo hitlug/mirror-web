@@ -125,9 +125,9 @@ export default class ConfigGeneratorCard extends Component {
                 </Col>
               </Row>
               <Row>
-                { /* 配置生成器的软件源文本块组件 */}
+                {/* 配置生成器的软件源文本块组件 */}
                 <Col className="config-block" span={24}>
-                  {this.state.showConfigBlock ?
+                  {this.state.showConfigBlock ? (
                     <Tooltip placement="bottom" title="点击文本即可复制">
                       <CopyToClipboard
                         text={this.state.configBlock}
@@ -138,8 +138,7 @@ export default class ConfigGeneratorCard extends Component {
                         </pre>
                       </CopyToClipboard>
                     </Tooltip>
-                    : null
-                  }
+                  ) : null}
                 </Col>
               </Row>
             </Form.Item>
@@ -449,20 +448,16 @@ function buildCentosBlock(version) {
  * @param path
  * @returns {string} 返回OpenSUSE软件源配置的文本块的一个段落
  */
-function buildOpensuseSubBlock(
-  handle,
-  name,
-  path
-) {
+function buildOpensuseSubBlock(handle, name, path) {
   return (
     `[HIT:${handle}]\n` +
     `name=HIT:${name}\n` +
     `enabled=1\n` +
-	`autorefresh=0\n` +
+    `autorefresh=0\n` +
     `baseurl=https://mirrors.hit.edu.cn/opensuse/\n` +
-	`path=${path}\n` +
-	`type=rpm-md\n` +
-	`keeppackages=0\n`
+    `path=${path}\n` +
+    `type=rpm-md\n` +
+    `keeppackages=0\n`
   );
 }
 /**
@@ -472,7 +467,7 @@ function buildOpensuseSubBlock(
  * @returns {string} 返回OpenSUSE软件源配置的文本块
  */
 function buildOpensuseBlock(version) {
-  let header=`
+  let header = `
 ## How-to:
 ## 帮助：
 ## Run sudo zypper modifyrepo -ad to disable all repositories first
@@ -482,39 +477,45 @@ function buildOpensuseBlock(version) {
 ## Note that autorefresh is disabled by default,run sudo zypper ref to refresh
 ## 注意自动刷新被默认禁用，运行 sudo zypper ref 来刷新
 `;
-  result="";
+  result = "";
   switch (version) {
-	case 'Leap,15.3+':
-      result=buildOpensuseSubBlock(
-        `repo-backports-update`,
-        `Update repository of openSUSE Backports`,
-        `/update/leap/$releasever/backports/`
-	  ) + buildOpensuseSubBlock(
-		`repo-sle-update`,
-		`Update repository with updates from SUSE Linux Enterprise 15`,
-		`/update/leap/$releasever/sle/`
-	  );
-    case 'Leap,15.2-':
-      result+=buildOpensuseSubBlock(	
-		`repo-non-oss`,
-		`Non-OSS Repository`,
-		`/distribution/leap/$releasever/repo/non-oss/`
-	  ) + buildOpensuseSubBlock(
-		`repo-oss`,
-		`OSS Repository`,
-		`/distribution/leap/$releasever/repo/oss/`
-	  ) + buildOpensuseSubBlock(
-		`repo-update-non-oss`,
-		`Update for non-oss software`,
-		`/update/leap/$releasever/non-oss/`
-	  ) + buildOpensuseSubBlock(
-		`repo-update`,
-		`Main update repo`,
-		`/update/leap/$releasever/oss`
-	  );
-      return header+result;
-	default:
-	  return "";
+    case "Leap 15.3+":
+      result =
+        buildOpensuseSubBlock(
+          `repo-backports-update`,
+          `Update repository of openSUSE Backports`,
+          `/update/leap/$releasever/backports/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-sle-update`,
+          `Update repository with updates from SUSE Linux Enterprise 15`,
+          `/update/leap/$releasever/sle/`
+        );
+    case "Leap 15.2-":
+      result +=
+        buildOpensuseSubBlock(
+          `repo-non-oss`,
+          `Non-OSS Repository`,
+          `/distribution/leap/$releasever/repo/non-oss/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-oss`,
+          `OSS Repository`,
+          `/distribution/leap/$releasever/repo/oss/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-update-non-oss`,
+          `Update for non-oss software`,
+          `/update/leap/$releasever/non-oss/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-update`,
+          `Main update repo`,
+          `/update/leap/$releasever/oss`
+        );
+      return header + result;
+    default:
+      return "";
   }
   return result;
 }
