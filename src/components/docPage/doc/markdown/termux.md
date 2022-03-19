@@ -6,6 +6,14 @@ Termux 自带了 `apt` 包管理器，但是官方并不推荐直接使用 `apt`
 
 ## 更换镜像
 
+以下两种方式任选其一即可。
+
+### 使用 termux-change-repo 工具
+
+运行 `pkg in termux-tools`
+
+安装后运行 `termux-change-repo` ，并按照提示，首先选择需要更改镜像的仓库，之后选择 "Mirrors by HIT" 并回车确认。
+
 ### 修改 sources.list
 
 修改以下文件：
@@ -24,5 +32,5 @@ deb https://mirrors.hit.edu.cn/termux/apt/termux-main stable main
 deb https://mirrors.hit.edu.cn/termux/apt/termux-games games stable
 
 # science.list
-deb https://mirrors.hit.edu.cn/termux/apt/termux-science science stable 
+deb https://mirrors.hit.edu.cn/termux/apt/termux-science science stable
 ```
