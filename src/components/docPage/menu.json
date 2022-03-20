@@ -32,6 +32,10 @@
     "title": "Termux",
     "name": "termux"
   },
+   {
+    "title": "Gentoo",
+    "name": "gentoo"
+  },
   {
     "title": "crates.io-index.git",
     "name": "crates.io-index.git"
