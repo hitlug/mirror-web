@@ -490,6 +490,7 @@ function buildOpensuseBlock(version) {
           `Update repository with updates from SUSE Linux Enterprise 15`,
           `/update/leap/$releasever/sle/`
         );
+    //For Leap 15.3+ ,append the content for Leap 15.2-
     case "Leap 15.2-":
       result +=
         buildOpensuseSubBlock(
@@ -513,6 +514,30 @@ function buildOpensuseBlock(version) {
           `/update/leap/$releasever/oss`
         );
       return header + result;
+    case "Tumbleweed":
+      return (
+        header +
+        buildOpensuseSubBlock(
+          `repo-oss`,
+          `OSS Repository`,
+          `/tumbleweed/repo/oss/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-non-oss`,
+          `Non-OSS Repository`,
+          `/tumbleweed/repo/non-oss/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-update`,
+          `Update for OSS Repository`,
+          `/update/tumbleweed/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-update-non-oss`,
+          `Update for Non-OSS Repository`,
+          `/update/tumbleweed-non-oss/`
+        )
+      );
     default:
       return "";
   }
