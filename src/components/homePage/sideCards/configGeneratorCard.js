@@ -79,6 +79,9 @@ export default class ConfigGeneratorCard extends Component {
       case "opensuse":
         configBlock = buildOpensuseBlock(this.state.selectVersion);
         break;
+      case "alpine":
+        configBlock = buildAlpineBlock(this.state.selectVersion);
+        break;
       default:
         break;
     }
@@ -190,6 +193,36 @@ function buildUbuntuBlock(version) {
 }
 
 /**
+ * 构建Alpine软件源配置的一行
+ *
+ * @param val 版本别名
+ * @returns {string} 返回Alpine配置的一行
+ */
+function buildAlpineLine(val) {
+  return (
+    " http://mirrors.hit.edu.cn/alpine/v" +
+    val +
+    "/main\n" +
+    " http://mirrors.hit.edu.cn/alpine/v" +
+    val +
+    "/community\n"
+  );
+}
+
+/**
+ * 构建Alpine软件源配置的文本块
+ *
+ * @param val 版本别名
+ * @returns {string} 返回Alpine软件源配置的文本块
+ */
+function buildAlpineBlock(version) {
+  return (
+    buildAlpineLine(version)
+  );
+}
+
+
+/**
  * 构建Debian软件源配置的一行
  *
  * @param val 软件包格式
@@ -222,6 +255,7 @@ function buildDebianBlock(version) {
     buildDebianLine("# deb-src", version + "-backports")
   );
 }
+
 
 /**
  * 构建ArchLinux软件源配置的文本块
