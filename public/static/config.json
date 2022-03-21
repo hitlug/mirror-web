@@ -68,67 +68,67 @@
     "value": "alpine",
     "children": [
       {
-        "label": "Alpine V3.15",
+        "label": "V3.15",
         "value": 3.15
       },
       {
-        "label": "Alpine V3.14",
+        "label": "V3.14",
         "value": 3.14
       },
       {
-        "label": "Alpine V3.13",
+        "label": "V3.13",
         "value": 3.13
       },
       {
-        "label": "Alpine V3.12",
+        "label": "V3.12",
         "value": 3.12
       },
       {
-        "label": "Alpine V3.11",
+        "label": "V3.11",
         "value": 3.11
       },
       {
-        "label": "Alpine V3.10",
+        "label": "V3.10",
         "value": 3.10
       },
       {
-        "label": "Alpine V3.9",
+        "label": "V3.9",
         "value": 3.9
       },
       {
-        "label": "Alpine V3.8",
+        "label": "V3.8",
         "value": 3.8
       },
       {
-        "label": "Alpine V3.7",
+        "label": "V3.7",
         "value": 3.7
       },
       {
-        "label": "Alpine V3.6",
+        "label": "V3.6",
         "value": 3.6
       },
       {
-        "label": "Alpine V3.5",
+        "label": "V3.5",
         "value": 3.5
       },
       {
-        "label": "Alpine V3.4",
+        "label": "V3.4",
         "value": 3.4
       },
       {
-        "label": "Alpine V3.3",
+        "label": "V3.3",
         "value": 3.3
       },
       {
-        "label": "Alpine V3.2",
+        "label": "V3.2",
         "value": 3.2
       },
       {
-        "label": "Alpine V3.1",
+        "label": "V3.1",
         "value": 3.1
       },
       {
-        "label": "Alpine V3.0",
+        "label": "V3.0",
         "value": 3.0
       }
     ]
