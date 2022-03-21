@@ -467,8 +467,7 @@ function buildOpensuseSubBlock(handle, name, path) {
  * @returns {string} 返回OpenSUSE软件源配置的文本块
  */
 function buildOpensuseBlock(version) {
-  let header = `
-## How-to:
+  let header = `## How-to:
 ## 帮助：
 ## Run sudo zypper modifyrepo -ad to disable all repositories first
 ## 首先运行 sudo zypper modifyrepo -ad 来禁用所有软件源
