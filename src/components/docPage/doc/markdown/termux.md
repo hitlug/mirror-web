@@ -26,3 +26,11 @@ deb https://mirrors.hit.edu.cn/termux/apt/termux-games games stable
 # science.list
 deb https://mirrors.hit.edu.cn/termux/apt/termux-science science stable 
 ```
+
+## 社区源
+
+镜像站还提供了如下社区维护的源，如需使用请自行添加：
+
+* https://mirrors.hit.edu.cn/termux/x11-packages
+* https://mirrors.hit.edu.cn/termux/unstable-packages
+* https://mirrors.hit.edu.cn/termux/termux-root-packages-24
