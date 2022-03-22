@@ -1,7 +1,10 @@
 default:
-  image: node
+  image: node:16
 build:
   stage: build
   script:
-    - npm install
-    - npm run-script build
+    - yarn
+    - yarn build
+  artifacts:
+    paths:
+      - build
