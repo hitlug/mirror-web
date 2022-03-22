@@ -128,9 +128,9 @@ export default class ConfigGeneratorCard extends Component {
                 </Col>
               </Row>
               <Row>
-                { /* 配置生成器的软件源文本块组件 */}
+                {/* 配置生成器的软件源文本块组件 */}
                 <Col className="config-block" span={24}>
-                  {this.state.showConfigBlock ?
+                  {this.state.showConfigBlock ? (
                     <Tooltip placement="bottom" title="点击文本即可复制">
                       <CopyToClipboard
                         text={this.state.configBlock}
@@ -141,8 +141,7 @@ export default class ConfigGeneratorCard extends Component {
                         </pre>
                       </CopyToClipboard>
                     </Tooltip>
-                    : null
-                  }
+                  ) : null}
                 </Col>
               </Row>
             </Form.Item>
@@ -476,34 +475,103 @@ function buildCentosBlock(version) {
 }
 
 /**
+ * 构建OpenSUSE软件源配置的文本块的一个段落
+ *
+ * @param handle
+ * @param name
+ * @param path
+ * @returns {string} 返回OpenSUSE软件源配置的文本块的一个段落
+ */
+function buildOpensuseSubBlock(handle, name, path) {
+  return (
+    `[HIT:${handle}]\n` +
+    `name=HIT:${name}\n` +
+    `enabled=1\n` +
+    `autorefresh=0\n` +
+    `baseurl=https://mirrors.hit.edu.cn/opensuse/\n` +
+    `path=${path}\n` +
+    `type=rpm-md\n` +
+    `keeppackages=0\n`
+  );
+}
+/**
  * 构建OpenSUSE软件源配置的文本块
  *
  * @param version 版本号
  * @returns {string} 返回OpenSUSE软件源配置的文本块
  */
 function buildOpensuseBlock(version) {
+  let header = `## How-to:
+## 帮助：
+## Run sudo zypper modifyrepo -ad to disable all repositories first
+## 首先运行 sudo zypper modifyrepo -ad 来禁用所有软件源
+## Save the content as HIT.repo file under /etc/zypp/repos.d/
+## 将内容保存在 /etc/zypp/repos.d/ 下的 HIT.repo 中
+## Note that autorefresh is disabled by default,run sudo zypper ref to refresh
+## 注意自动刷新被默认禁用，运行 sudo zypper ref 来刷新
+`;
+  var result = "";
   switch (version) {
-    case 15.2:
-      return `
-# Please run on cli or save as shell script file
-# 请运行在 shell 终端或复制生成内容保存至 shell 脚本
-
-# Disable all sources
-# 禁用所有软件源
-sudo zypper mr -da
-
-# Add sources
-# 添加工大镜像源，以 openSUSE Leap 15.2 为例：
-# 命令中最后一个参数为每一个源指定了一个 alias （别称），可以根据个人喜好更改
-sudo zypper ar -fcg https://mirrors.hit.edu.cn/opensuse/distribution/leap/15.2/repo/oss HIT:15.2:OSS
-sudo zypper ar -fcg https://mirrors.hit.edu.cn/opensuse/distribution/leap/15.2/repo/non-oss HIT:15.2:NON-OSS
-sudo zypper ar -fcg https://mirrors.hit.edu.cn/opensuse/update/leap/15.2/oss HIT:15.2:UPDATE-OSS
-sudo zypper ar -fcg https://mirrors.hit.edu.cn/opensuse/update/leap/15.2/non-oss HIT:15.2:UPDATE-NON-OSS
-
-# Manually refresh the software source
-# 手动刷新软件源
-sudo zypper ref
-      `;
+    case "Leap 15.3+":
+      result =
+        buildOpensuseSubBlock(
+          `repo-backports-update`,
+          `Update repository of openSUSE Backports`,
+          `/update/leap/$releasever/backports/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-sle-update`,
+          `Update repository with updates from SUSE Linux Enterprise 15`,
+          `/update/leap/$releasever/sle/`
+        );
+    //For Leap 15.3+ ,append the content for Leap 15.2-
+    case "Leap 15.2-":
+      result +=
+        buildOpensuseSubBlock(
+          `repo-non-oss`,
+          `Non-OSS Repository`,
+          `/distribution/leap/$releasever/repo/non-oss/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-oss`,
+          `OSS Repository`,
+          `/distribution/leap/$releasever/repo/oss/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-update-non-oss`,
+          `Update for non-oss software`,
+          `/update/leap/$releasever/non-oss/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-update`,
+          `Main update repo`,
+          `/update/leap/$releasever/oss`
+        );
+      return header + result;
+    case "Tumbleweed":
+      return (
+        header +
+        buildOpensuseSubBlock(
+          `repo-oss`,
+          `OSS Repository`,
+          `/tumbleweed/repo/oss/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-non-oss`,
+          `Non-OSS Repository`,
+          `/tumbleweed/repo/non-oss/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-update`,
+          `Update for OSS Repository`,
+          `/update/tumbleweed/`
+        ) +
+        buildOpensuseSubBlock(
+          `repo-update-non-oss`,
+          `Update for Non-OSS Repository`,
+          `/update/tumbleweed-non-oss/`
+        )
+      );
     default:
       return "";
   }

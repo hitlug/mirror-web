@@ -18,7 +18,7 @@
     "value": "debian",
     "children": [
       {
-        "label": "11 bullseye(testing)",
+        "label": "11 bullseye",
         "value": "bullseye"
       },
       {
@@ -138,8 +138,16 @@
     "value": "opensuse",
     "children": [
       {
-        "label": "Leap 15.2",
-        "value": 15.2
+        "label": "Leap 15.2-",
+        "value": "Leap 15.2-"
+      },
+      {
+        "label": "Leap 15.3+",
+        "value": "Leap 15.3+"
+      },
+      {
+        "label": "Tumbleweed",
+        "value": "Tumbleweed"
       }
     ]
   }
