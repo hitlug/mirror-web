@@ -13,6 +13,20 @@
       }
     ]
   },
+{
+    "label": "Ubuntu-ports",
+    "value": "ubuntu-ports",
+    "children": [
+      {
+        "label": "20.04 LTS",
+        "value": "focal"
+      },
+      {
+        "label": "18.04 LTS",
+        "value": "bionic"
+      }
+    ]
+  },
   {
     "label": "Debian",
     "value": "debian",
