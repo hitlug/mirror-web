@@ -67,6 +67,9 @@ export default class ConfigGeneratorCard extends Component {
       case "ubuntu":
         configBlock = buildUbuntuBlock(this.state.selectVersion);
         break;
+      case "ubuntu-ports":
+        configBlock = buildUbuntuportsBlock(this.state.selectVersion);
+        break;
       case "debian":
         configBlock = buildDebianBlock(this.state.selectVersion);
         break;
@@ -188,6 +191,44 @@ function buildUbuntuBlock(version) {
     "\n# 预发布软件源，不建议启用\n" +
     buildUbuntuLine("# deb", version + "-proposed") +
     buildUbuntuLine("# deb-src", version + "-proposed")
+  );
+}
+/**
+ * 构建Ubuntu-ports软件源配置的一行
+ *
+ * @param val 软件包格式
+ * @param version 版本别名
+ * @returns {string} 返回Ubuntu-ports配置的一行
+ */
+function buildUbuntuportsLine(val, version) {
+  return (
+    val +
+    " http://mirrors.hit.edu.cn/ubuntu-ports/ " +
+    version +
+    " main restricted universe multiverse\n"
+  );
+}
+
+/**
+ * 构建Ubuntu-Ports软件源配置的文本块
+ *
+ * @param version 版本别名
+ * @returns {string} 返回Ubuntu-Ports软件源配置的文本块
+ */
+function buildUbuntuportsBlock(version) {
+  return (
+    "# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释\n" +
+    buildUbuntuportsLine("deb", version) +
+    buildUbuntuportsLine("# deb-src", version) +
+    buildUbuntuportsLine("deb", version + "-updates") +
+    buildUbuntuportsLine("# deb-src", version + "-updates") +
+    buildUbuntuportsLine("deb", version + "-backports") +
+    buildUbuntuportsLine("# deb-src", version + "-backports") +
+    buildUbuntuportsLine("deb", version + "-security") +
+    buildUbuntuportsLine("# deb-src", version + "-security") +
+    "\n# 预发布软件源，不建议启用\n" +
+    buildUbuntuportsLine("# deb", version + "-proposed") +
+    buildUbuntuportsLine("# deb-src", version + "-proposed")
   );
 }
 
