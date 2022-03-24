@@ -4,12 +4,32 @@
     "value": "ubuntu",
     "children": [
       {
+        "label": "22.04",
+        "value": "jammy"
+      },
+      {
+        "label": "21.10",
+        "value": "impish"
+      },
+      {
+        "label": "21.04",
+        "value": "hirsute"
+      },
+      {
         "label": "20.04 LTS",
         "value": "focal"
       },
       {
         "label": "18.04 LTS",
         "value": "bionic"
+      },
+      {
+        "label": "16.04 LTS",
+        "value": "xenial"
+      },
+      {
+        "label": "14.04 LTS",
+        "value": "trusty"
       }
     ]
   },
@@ -32,6 +52,40 @@
       {
         "label": "8 jessie",
         "value": "jessie"
+      }
+    ]
+  },
+{
+    "label": "Ubuntu-ports",
+    "value": "ubuntu-ports",
+    "children": [
+      {
+        "label": "22.04",
+        "value": "jammy"
+      },
+      {
+        "label": "21.10",
+        "value": "impish"
+      },
+      {
+        "label": "21.04",
+        "value": "hirsute"
+      },
+      {
+        "label": "20.04 LTS",
+        "value": "focal"
+      },
+      {
+        "label": "18.04 LTS",
+        "value": "bionic"
+      },
+      {
+        "label": "16.04 LTS",
+        "value": "xenial"
+      },
+      {
+        "label": "14.04 LTS",
+        "value": "trusty"
       }
     ]
   },
