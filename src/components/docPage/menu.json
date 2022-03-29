@@ -33,6 +33,10 @@
     "name": "archlinuxcn"
   },
   {
+    "title": "Kali",
+    "name": "kali"
+  },
+  {
     "title": "Termux",
     "name": "termux"
   },
