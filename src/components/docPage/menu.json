@@ -49,6 +49,10 @@
     "name": "crates.io-index.git"
   },
   {
+    "title": "RubyGems",
+    "name": "rubygems"
+  },
+  {
     "title": "Alpine",
     "name": "alpine"
   }
