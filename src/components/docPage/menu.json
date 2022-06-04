@@ -44,7 +44,11 @@
     "title": "Termux",
     "name": "termux"
   },
-   {
+  {
+    "title": "Deepin",
+    "name": "deepin"
+  },
+  {
     "title": "Gentoo",
     "name": "gentoo"
   },
