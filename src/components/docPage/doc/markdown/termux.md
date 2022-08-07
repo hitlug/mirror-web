@@ -12,7 +12,7 @@ Termux 自带了 `apt` 包管理器，但是官方并不推荐直接使用 `apt`
 
 运行 `pkg in termux-tools`
 
-安装后运行 `termux-change-repo` ，并按照提示，首先选择需要更改镜像的仓库，之后选择 "Mirrors by HIT" 并回车确认。
+安装后运行 `termux-change-repo` ，并按照提示，首先选择“Single Mirror”，之后选择 "mirrors.hit.edu.cn" 并回车确认。
 
 ### 修改 sources.list
 
