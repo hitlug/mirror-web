@@ -5,12 +5,20 @@
     "name": "docHome"
   },
   {
+    "title": "Anaconda",
+    "name": "anaconda"
+  },
+  {
     "title": "BlackArch",
     "name": "blackarch"
   },
   {
     "title": "CTAN",
     "name": "CTAN"
+  },
+  {
+  "title": "CentOS",
+  "name": "centos"
   },
   {
     "title": "Debian",

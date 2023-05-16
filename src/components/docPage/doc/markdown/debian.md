@@ -16,7 +16,7 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list_backup
 
 + buster
 
-  ```
+  ```shell
   # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
   # 目前还未提供debian-security，请注意添加
   deb https://mirrors.hit.edu.cn/debian/ buster main contrib non-free
@@ -29,7 +29,7 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list_backup
 
 + stretch
 
-  ```
+  ```shell
   # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
   # 目前还未提供debian-security，请注意添加
   deb https://mirrors.hit.edu.cn/debian/ stretch main contrib non-free
@@ -42,7 +42,7 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list_backup
 
 + jessie
 
-  ```
+  ```shell
   # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
   # 目前还未提供debian-security，请注意添加
   deb https://mirrors.hit.edu.cn/debian/ stretch main contrib non-free
@@ -55,7 +55,7 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list_backup
 
 + bullseye
 
-  ```
+  ```shell
   # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
   # 目前还未提供debian-security，请注意添加
   deb https://mirrors.hit.edu.cn/debian/ bullseye main contrib non-free
