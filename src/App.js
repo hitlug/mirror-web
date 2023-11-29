@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Redirect, Link, Switch, useLocation } from "react-router-dom";
+import { Route, Link, useLocation, Routes, Navigate } from "react-router-dom";
 import { Col, Layout, Menu, Row } from "antd";
 import DocPage from "./components/docPage/docPage";
 import { HomePage } from "./components/homePage/homePage";
@@ -14,15 +14,11 @@ export default class App extends Component {
     return (
       <Layout>
         <PageHeader />
-        <Switch>
-          <Route exact path="/" children={() => <Redirect to="/home" />} />
-          <Route path="/home">
-            <HomePage />
-          </Route>
-          <Route path="/doc">
-            <DocPage />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" replace />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/doc/*" element={<DocPage />} />
+        </Routes>
         <PageFooter />
       </Layout>
     );

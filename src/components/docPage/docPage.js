@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Layout, Menu, Breadcrumb, Divider, Row, Col, Spin } from "antd";
-import { Link, useLocation, useHistory } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import docMenu from "./menu.json";
 import "./docPage.css";
 
@@ -19,7 +19,7 @@ export default function DocPage() {
   const [docLoaded, setDocLoaded] = useState(false);
 
   const { pathname } = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   /**
    * 动态导入文档并修改页面正文内容
@@ -46,7 +46,7 @@ export default function DocPage() {
     let normalizedPath = pathname;
     if (/^\/doc\/?$/.test(pathname)) {
       normalizedPath = "/doc/docHome";
-      history.replace("/doc/docHome");
+      navigate("/doc/docHome", { replace: true });
       return;
     }
 
