@@ -65,7 +65,7 @@ export default function DocPage() {
                 selectedKeys={[activeDocPath]}
                 style={{ height: "100%" }}
                 items={generateMenuItems(docMenu)}
-                onClick={({key}) => navigate(key)}
+                onClick={({key}) => { setDocLoaded(false); navigate(key); } }
               />
             </Sider>
             <Layout
