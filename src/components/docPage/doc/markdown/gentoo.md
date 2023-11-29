@@ -12,10 +12,6 @@ sudo cp /etc/portage/make.conf /etc/portage/make.conf_backup
 
 复制以下内容到 `/etc/portage/make.conf` 以添加哈工大镜像源。
 
----
-
-```
+```text
 GENTOO_MIRRORS="http://mirrors.hit.edu.cn/gentoo/"
 ```
-
----

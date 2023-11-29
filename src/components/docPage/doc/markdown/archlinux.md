@@ -6,7 +6,7 @@
 
 将以下内容复制到 `/etc/pacman.d/mirrorlist` 文件的开头：
 
-```
+```text
 Server = https://mirrors.hit.edu.cn/archlinux/$repo/os/$arch
 ```
 

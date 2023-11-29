@@ -15,9 +15,7 @@ sudo vim /etc/apt/sources.list
 复制以下内容到 `/etc/apt/sources.list` 以添加哈工大镜像源。
 (**_此处以 Ubuntu 20.04 LTS 为例_**，具体请根据您的版本在 [主页](#/home) > 配置生成器 > Ubuntu 中选择)
 
----
-
-```
+```text
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
 deb http://mirrors.hit.edu.cn/ubuntu/ focal main restricted universe multiverse
 # deb-src http://mirrors.hit.edu.cn/ubuntu/ focal main restricted universe multiverse
@@ -32,5 +30,3 @@ deb http://mirrors.hit.edu.cn/ubuntu/ focal-security main restricted universe mu
 # deb http://mirrors.hit.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
 # deb-src http://mirrors.hit.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
 ```
-
----

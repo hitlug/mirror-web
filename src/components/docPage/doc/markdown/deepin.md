@@ -14,12 +14,8 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list_backup
 
 将上文中的配置文件替换为以下内容即可使用哈尔滨工业大学提供的镜像源服务，仅支持**Deepin V20**。
 
----
-
-```
+```text
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
 deb [by-hash=force] https://mirrors.hit.edu.cn/deepin/ apricot main contrib non-free
 # deb-src https://mirrors.hit.edu.cn/deepin/ apricot main contrib non-free
 ```
-
----

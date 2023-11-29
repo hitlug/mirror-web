@@ -1,31 +1,9 @@
 import React from "react";
 import gfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { coy } from "react-syntax-highlighter/dist/esm/styles/prism";
-import htmlParser from "react-markdown/plugins/html-parser";
+import rehypePrism from "@mapbox/rehype-prism";
+import "prismjs/themes/prism.min.css"
 import "./docTemplate.css";
-
-/**
- * 代码高亮渲染器
- */
-const renderers = {
-  code: ({ language, value }) => {
-    return (
-      <SyntaxHighlighter style={coy} language={language} children={value} />
-    );
-  }
-};
-
-/**
- * HTML解析器
- */
-const parse = htmlParser({
-  isValidNode: node => node.type !== "script",
-  processingInstructions: [
-    /* ... */
-  ]
-});
 
 /**
  * 帮助文档模板类
@@ -56,10 +34,8 @@ export default class DocTemplate extends React.Component {
     return (
       <ReactMarkdown
         className="doc"
-        plugins={[gfm]}
-        renderers={renderers}
-        htmlParser={parse}
-        allowDangerousHtml
+        remarkPlugins={[gfm]}
+        rehypePlugins={[rehypePrism]}
       >
         {this.state.text}
       </ReactMarkdown>

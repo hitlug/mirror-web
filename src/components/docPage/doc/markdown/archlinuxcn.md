@@ -16,7 +16,7 @@ sudo cp /etc/pacman.conf /etc/pacman.conf_backup
 
 将以下内容复制到 `/etc/pacman.conf` 文件的**末尾**
 
-```
+```text
 [archlinuxcn]
 Server = https://mirrors.hit.edu.cn/archlinuxcn/$arch
 ```

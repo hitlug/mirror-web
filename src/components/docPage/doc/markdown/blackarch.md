@@ -6,7 +6,7 @@
 
 将以下内容复制到 `/etc/pacman.conf` 文件的末尾：
 
-```
+```text
 [blackarch]
 Server = https://mirrors.hit.edu.cn/blackarch/$repo/os/$arch
 ```
@@ -29,7 +29,7 @@ sudo pacman -Syy
 sudo pacman -Syyu
 ```
 
-## 3.安装密钥环  
+## 3.安装密钥环
 
 ```shell
 sudo pacman -Sy blackarch-keyring
