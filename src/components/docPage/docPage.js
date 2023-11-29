@@ -162,6 +162,7 @@ function LinkedBreadcrumb() {
   }
 
   const { pathname } = useLocation();
+  const pathSnippets = pathname.split("/");
 
   const breadcrumbItems = [
     {
@@ -172,12 +173,14 @@ function LinkedBreadcrumb() {
       title: "帮助文档",
       href: "/#/doc",
     },
-  ].concat(pathname
-    .split("/")
-    .slice(2)
-    .filter(i => i.length > 0)
-    .map((path) => ({ title: breadcrumbNameMap.get(path), path }))
-  );
+  ];
+
+  for (let i = 2; i < pathSnippets.length; i++) {
+    breadcrumbItems.push({
+      title: breadcrumbNameMap.get(pathSnippets[i]),
+      href: "/#" + pathSnippets.slice(0, i + 1).join("/"),
+    })
+  }
 
   return (
     <Breadcrumb style={{ margin: "20px" }} items={breadcrumbItems} />
