@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Redirect, Link, withRouter } from "react-router-dom";
+import { Route, Redirect, Link, Switch, useLocation } from "react-router-dom";
 import { Col, Layout, Menu, Row } from "antd";
 import DocPage from "./components/docPage/docPage";
 import { HomePage } from "./components/homePage/homePage";
@@ -14,11 +14,15 @@ export default class App extends Component {
     return (
       <Layout>
         <PageHeader />
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-        <Route path="/home" component={HomePage} />
-        <Route path="/doc" component={DocPage} />
+        <Switch>
+          <Route exact path="/" children={() => <Redirect to="/home" />} />
+          <Route path="/home">
+            <HomePage />
+          </Route>
+          <Route path="/doc">
+            <DocPage />
+          </Route>
+        </Switch>
         <PageFooter />
       </Layout>
     );
@@ -28,58 +32,48 @@ export default class App extends Component {
 /**
  * 页面顶部布局组件
  */
-class PageHeaderWithoutRouter extends Component {
-  static propTypes = {
-    match: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired
-  };
+function PageHeader() {
+  const location = useLocation();
 
-  render() {
-    return (
-      <Header className="page-header">
-        <Menu
-          className="navbar-menu"
-          mode="horizontal"
-          defaultSelectedKeys={["/home"]}
-          selectedKeys={[this.props.location.pathname.split("/")[1]]}
-        >
-          <Menu.Item className="navbar-menuitem" key="home">
-            <Link to="/home">主页</Link>
-          </Menu.Item>
-          <Menu.Item className="navbar-menuitem" key="doc">
-            <Link to="/doc/docHome">帮助文档</Link>
-          </Menu.Item>
-        </Menu>
-      </Header>
-    );
-  }
+  return (
+    <Header className="page-header">
+      <Menu
+        className="navbar-menu"
+        mode="horizontal"
+        defaultSelectedKeys={["/home"]}
+        selectedKeys={[location.pathname.split("/")[1]]}
+      >
+        <Menu.Item className="navbar-menuitem" key="home">
+          <Link to="/home">主页</Link>
+        </Menu.Item>
+        <Menu.Item className="navbar-menuitem" key="doc">
+          <Link to="/doc/docHome">帮助文档</Link>
+        </Menu.Item>
+      </Menu>
+    </Header>
+  );
 }
-
-const PageHeader = withRouter(PageHeaderWithoutRouter);
 
 /**
  * 页面底部布局组件
  */
-class PageFooter extends Component {
-  render() {
-    return (
-      <Footer>
-        <Row type="flex" justify="center">
-          <Col md={12} className="footer-text">
-            <p>
-              <strong>{process.env.REACT_APP_SITE_TITLE}</strong>
-              <br />
-              <br />
-              本站由{process.env.REACT_APP_SPONSOR_NAME}支持创办
-              <br />由{process.env.REACT_APP_ORG_NAME}运行维护
-            </p>
-          </Col>
-          <Col md={6}>
-            <Logo className="footer-logo" />
-          </Col>
-        </Row>
-      </Footer>
-    );
-  }
+function PageFooter() {
+  return (
+    <Footer>
+      <Row type="flex" justify="center">
+        <Col md={12} className="footer-text">
+          <p>
+            <strong>{process.env.REACT_APP_SITE_TITLE}</strong>
+            <br />
+            <br />
+            本站由{process.env.REACT_APP_SPONSOR_NAME}支持创办
+            <br />由{process.env.REACT_APP_ORG_NAME}运行维护
+          </p>
+        </Col>
+        <Col md={6}>
+          <Logo className="footer-logo" />
+        </Col>
+      </Row>
+    </Footer>
+  );
 }

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Col, Row, Layout, Tag, Table, Spin, Space } from "antd";
 import SideCards from "./sideCards/sideCards";
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { ReactComponent as Logo } from "../../../public/favicon.svg";
 import "./homePage.css";
 import {
@@ -19,78 +19,63 @@ const { Content } = Layout;
 /**
  * 镜像列表主页组件
  */
-export class HomePage extends Component {
-  state = {
-    // 镜像列表
-    mirrorsList: null,
-    // 是否已经获取了镜像列表
-    loaded: false
-  };
+export function HomePage() {
+  // 镜像列表
+  const [mirrorsList, setMirrorsList] = useState(null);
+  // 是否已经获取了镜像列表
+  const [loaded, setLoaded] = useState(false);
 
   /**
    * 获取镜像列表
    */
-  fetch_mirrors_list = () => {
-    this.setState({
-      fetching_slots: true
+  useEffect(async () => {
+    const response = await axios.get("/jobs");
+
+    const docs = new Set();
+    docMenu.forEach(cur => {
+      if (cur.name !== undefined) {
+        docs.add(cur.name);
+      }
     });
-    axios({
-      url: "/jobs",
-      method: "get"
-    }).then(response => {
-      const docs = new Set();
-      docMenu.forEach(cur => {
-        if (cur.name !== undefined) {
-          docs.add(cur.name);
-        }
-      });
 
-      const mirrorsList = response.data.map(m =>
-        Object.assign(m, {
-          has_doc: docs.has(m.name)
-        })
-      );
-      mirrorsList.sort((a, b) => {
-        return a.name < b.name ? -1 : 1;
-      });
-      this.setState({
-        mirrorsList: mirrorsList,
-        loaded: true
-      });
-    });
-  };
-
-  componentDidMount() {
-    this.fetch_mirrors_list();
-  }
-
-  render() {
-    return (
-      <Content className="home-page-content">
-        <Row type="flex" justify="center">
-          <Col>
-            <Logo className="home-title-logo" />
-          </Col>
-          <Col>
-            <h1 className="home-title-text">
-              {process.env.REACT_APP_SITE_TITLE}
-            </h1>
-          </Col>
-        </Row>
-        <Row type="flex" justify="center" gutter={40}>
-          <Col md={12}>
-            <MirrorsList
-              mirrorsList={this.state.mirrorsList}
-              loaded={this.state.loaded}
-            />
-          </Col>
-          <Col md={6}>
-            <SideCards />
-          </Col>
-        </Row>
-      </Content>
+    const mirrorsList = response.data.map(m =>
+      Object.assign(m, {
+        has_doc: docs.has(m.name)
+      })
     );
-  }
+    mirrorsList.sort((a, b) => {
+      return a.name < b.name ? -1 : 1;
+    });
+
+    setLoaded(true);
+    setMirrorsList(mirrorsList);
+  });
+
+  return (
+    <Content className="home-page-content">
+      <Row type="flex" justify="center">
+        <Col>
+          <Logo className="home-title-logo" />
+        </Col>
+        <Col>
+          <h1 className="home-title-text">
+            {process.env.REACT_APP_SITE_TITLE}
+          </h1>
+        </Col>
+      </Row>
+      <Row type="flex" justify="center" gutter={40}>
+        <Col md={12}>
+          <MirrorsList
+            mirrorsList={mirrorsList}
+            loaded={loaded}
+          />
+        </Col>
+        <Col md={6}>
+          <SideCards />
+        </Col>
+      </Row>
+    </Content>
+  );
 }
 
 /**
