@@ -28,28 +28,30 @@ export function HomePage() {
   /**
    * 获取镜像列表
    */
-  useEffect(async () => {
-    const response = await axios.get("/jobs");
+  useEffect(() => {
+    (async () => {
+      const response = await axios.get("/jobs");
 
-    const docs = new Set();
-    docMenu.forEach(cur => {
-      if (cur.name !== undefined) {
-        docs.add(cur.name);
-      }
-    });
+      const docs = new Set();
+      docMenu.forEach(cur => {
+        if (cur.name !== undefined) {
+          docs.add(cur.name);
+        }
+      });
 
-    const mirrorsList = response.data.map(m =>
-      Object.assign(m, {
-        has_doc: docs.has(m.name)
-      })
-    );
-    mirrorsList.sort((a, b) => {
-      return a.name < b.name ? -1 : 1;
-    });
+      const mirrorsList = response.data.map(m =>
+        Object.assign(m, {
+          has_doc: docs.has(m.name)
+        })
+      );
+      mirrorsList.sort((a, b) => {
+        return a.name < b.name ? -1 : 1;
+      });
 
-    setLoaded(true);
-    setMirrorsList(mirrorsList);
-  });
+      setLoaded(true);
+      setMirrorsList(mirrorsList);
+    })();
+  }, []);
 
   return (
     <Content className="home-page-content">
