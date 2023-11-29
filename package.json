@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-app-rewired --openssl-legacy-provider start",
     "build": "react-app-rewired --openssl-legacy-provider build",
-    "test": "react-app-rewired test --env=jsdom",
+    "test": "react-app-rewired --openssl-legacy-provider test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "pretty-quick --staged"
   },
