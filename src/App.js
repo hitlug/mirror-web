@@ -5,7 +5,6 @@ import DocPage from "./components/docPage/docPage";
 import { HomePage } from "./components/homePage/homePage";
 import { ReactComponent as Logo } from "../public/favicon.svg";
 import "./App.css";
-import PropTypes from "prop-types";
 
 const { Header, Footer } = Layout;
 
