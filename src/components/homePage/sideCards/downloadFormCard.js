@@ -51,7 +51,7 @@ export default class DownloadFormCard extends Component {
           获取下载链接
         </Button>
         <Modal
-          visible={this.state.downloadFormVisible}
+          open={this.state.downloadFormVisible}
           title={"下载链接"}
           onCancel={this.handleDownloadFormCancel}
           footer={null}

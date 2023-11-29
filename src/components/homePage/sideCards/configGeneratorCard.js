@@ -107,7 +107,7 @@ export default class ConfigGeneratorCard extends Component {
           配置生成器
         </Button>
         <Modal
-          visible={this.state.configGeneratorVisible}
+          open={this.state.configGeneratorVisible}
           title={"配置生成器"}
           onCancel={this.handleConfigGeneratorCancel}
           footer={null}

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Layout, Menu, Breadcrumb, Divider, Row, Col, Spin } from "antd";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import docMenu from "./menu.json";
 import "./docPage.css";
 
-const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
 /**
@@ -65,9 +64,9 @@ export default function DocPage() {
                 openKeys={[activeDocPath]}
                 selectedKeys={[activeDocPath]}
                 style={{ height: "100%" }}
-              >
-                {generateMenuItems(docMenu)}
-              </Menu>
+                items={generateMenuItems(docMenu)}
+                onClick={({key}) => navigate(key)}
+              />
             </Sider>
             <Layout
               style={{
@@ -127,17 +126,16 @@ function generateMenuItems(source) {
   return source.map(menu => {
     menu.path = `/doc/${menu.name}`;
     if (menu.children) {
-      return (
-        <SubMenu key={menu.path} title={menu.title}>
-          {generateMenuItems(menu.children)}
-        </SubMenu>
-      );
+      return {
+        key: menu.path,
+        label: menu.title,
+        children: generateMenuItems(menu.children),
+      };
     } else {
-      return (
-        <Menu.Item key={menu.path}>
-          <Link to={menu.path}>{menu.title}</Link>
-        </Menu.Item>
-      );
+      return {
+        key: menu.path,
+        label: menu.title,
+      }
     }
   });
 }
@@ -145,60 +143,43 @@ function generateMenuItems(source) {
 /**
  * 可导航的面包屑组件
  */
-class LinkedBreadcrumb extends React.Component {
+function LinkedBreadcrumb() {
   /**
-   * 路由路径和面包屑标题的对应关系
-   */
-  breadcrumbNameMap = {
-    "/home": "主页",
-    "/doc": "帮助文档"
-  };
+  * 路由路径和面包屑标题的对应关系
+  */
+  const breadcrumbNameMap = new Map([
+    ["/home", "主页"],
+    ["/doc", "帮助文档"],
+  ]);
 
   /**
-   * 根据json文件递归生成面包屑导航项目
+   * 根据json文件生成面包屑导航项目
    *
    * @param source 文档导航菜单json文件
    */
-  generateBreadcrumbNameMap(source) {
-    for (let index in source) {
-      if (source.hasOwnProperty(index)) {
-        this.breadcrumbNameMap[source[index].path] = source[index].title;
-        if (source[index].children) {
-          this.generateBreadcrumbNameMap(source[index].children);
-        }
-      }
-    }
+  for (const item of docMenu) {
+    breadcrumbNameMap.set(item.name, item.title)
   }
 
-  componentDidMount() {
-    this.generateBreadcrumbNameMap(docMenu);
-  }
+  const { pathname } = useLocation();
 
-  /**
-   * 面包屑导航组件
-   */
-  Component = () => {
-    const location = useLocation();
-    const pathSnippets = location.pathname.split("/").filter(i => i);
-    const extraBreadcrumbItems = pathSnippets.map((_, index) => {
-      const url = `/${pathSnippets.slice(0, index + 1).join("/")}`;
-      return (
-        <Breadcrumb.Item key={url}>
-          {this.breadcrumbNameMap[url]}
-        </Breadcrumb.Item>
-      );
-    });
-    const breadcrumbItems = [
-      <Breadcrumb.Item key="home">
-        <Link to="/home">主页</Link>
-      </Breadcrumb.Item>
-    ].concat(extraBreadcrumbItems);
-    return (
-      <Breadcrumb style={{ margin: "20px" }}>{breadcrumbItems}</Breadcrumb>
-    );
-  };
+  const breadcrumbItems = [
+    {
+      title: "主页",
+      href: "/#/home",
+    },
+    {
+      title: "帮助文档",
+      href: "/#/doc",
+    },
+  ].concat(pathname
+    .split("/")
+    .slice(2)
+    .filter(i => i.length > 0)
+    .map((path) => ({ title: breadcrumbNameMap.get(path), path }))
+  );
 
-  render() {
-    return <this.Component />;
-  }
+  return (
+    <Breadcrumb style={{ margin: "20px" }} items={breadcrumbItems} />
+  );
 }

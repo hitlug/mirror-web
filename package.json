@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ant-design/icons": "^4.5.0",
+    "@ant-design/icons": "^5.2.6",
     "@mapbox/rehype-prism": "^0.9.0",
-    "antd": "^4.13.1",
+    "antd": "^5.11.5",
     "axios": "^1.6.2",
     "copy-webpack-plugin": "^11.0.0",
     "prismjs": "^1.29.0",
@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-app-rewired --openssl-legacy-provider start",
-    "build": "react-app-rewired build",
+    "build": "react-app-rewired --openssl-legacy-provider build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "pretty-quick --staged"

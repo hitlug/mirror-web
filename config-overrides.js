@@ -1,6 +1,5 @@
 const {
   override,
-  fixBabelImports,
   removeModuleScopePlugin,
   addWebpackPlugin
 } = require("customize-cra");
@@ -9,11 +8,6 @@ const copyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = override(
   removeModuleScopePlugin(),
-  fixBabelImports("import", {
-    libraryName: "antd",
-    libraryDirectory: "es",
-    style: "css"
-  }),
   addWebpackPlugin(
     new copyWebpackPlugin({
       patterns: ["./public/manifest.json"].map(file => ({

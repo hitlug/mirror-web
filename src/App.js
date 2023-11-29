@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Link, useLocation, Routes, Navigate } from "react-router-dom";
+import { Route, useLocation, Routes, Navigate, useNavigate } from "react-router-dom";
 import { Col, Layout, Menu, Row } from "antd";
 import DocPage from "./components/docPage/docPage";
 import { HomePage } from "./components/homePage/homePage";
@@ -29,22 +29,32 @@ export default class App extends Component {
  */
 function PageHeader() {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const hrefMap = new Map([
+    ["home", "/home"],
+    ["doc", "/doc/docHome"],
+  ]);
 
   return (
     <Header className="page-header">
       <Menu
         className="navbar-menu"
         mode="horizontal"
-        defaultSelectedKeys={["/home"]}
+        defaultSelectedKeys={["home"]}
         selectedKeys={[location.pathname.split("/")[1]]}
-      >
-        <Menu.Item className="navbar-menuitem" key="home">
-          <Link to="/home">主页</Link>
-        </Menu.Item>
-        <Menu.Item className="navbar-menuitem" key="doc">
-          <Link to="/doc/docHome">帮助文档</Link>
-        </Menu.Item>
-      </Menu>
+        onClick={({key}) => navigate(hrefMap.get(key))}
+        items={[
+          {
+            key: "home",
+            label: "主页",
+          },
+          {
+            key: "doc",
+            label: "帮助文档",
+          },
+        ]}
+      />
     </Header>
   );
 }
