@@ -120,14 +120,6 @@
       {
         "label": "11 bullseye",
         "value": "bullseye"
-      },
-      {
-        "label": "10 buster",
-        "value": "buster"
-      },
-      {
-        "label": "9 stretch",
-        "value": "stretch"
       }
     ]
   },
