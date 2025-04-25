@@ -4,32 +4,78 @@
     "value": "ubuntu",
     "children": [
       {
-        "label": "22.04",
+        "label": "25.04 (plucky)",
+        "value": "plucky"
+      },
+      {
+        "label": "24.10 (oracular)",
+        "value": "oracular"
+      },
+      {
+        "label": "24.04 LTS (noble)",
+        "value": "noble"
+      },
+      {
+        "label": "22.04 LTS (jammy)",
         "value": "jammy"
       },
       {
-        "label": "21.10",
-        "value": "impish"
-      },
-      {
-        "label": "21.04",
-        "value": "hirsute"
-      },
-      {
-        "label": "20.04 LTS",
+        "label": "20.04 LTS (focal)",
         "value": "focal"
       },
       {
-        "label": "18.04 LTS",
+        "label": "18.04 LTS (bionic)",
         "value": "bionic"
       },
       {
-        "label": "16.04 LTS",
+        "label": "16.04 LTS (xenial)",
         "value": "xenial"
       },
       {
-        "label": "14.04 LTS",
+        "label": "14.04 LTS (trusty)",
         "value": "trusty"
+      },
+      {
+        "label": "25.10 (questing)",
+        "value": "questing"
+      },
+      {
+        "label": "devel (devel)",
+        "value": "devel"
+      }
+    ]
+  },
+  {
+    "label": "Ubuntu (deb822-style)",
+    "value": "ubuntu-deb822",
+    "children": [
+      {
+        "label": "25.04 (plucky)",
+        "value": "plucky"
+      },
+      {
+        "label": "24.10 (oracular)",
+        "value": "oracular"
+      },
+      {
+        "label": "24.04 LTS (noble)",
+        "value": "noble"
+      },
+      {
+        "label": "22.04 LTS (jammy)",
+        "value": "jammy"
+      },
+      {
+        "label": "20.04 LTS (focal)",
+        "value": "focal"
+      },
+      {
+        "label": "25.10 (questing)",
+        "value": "questing"
+      },
+      {
+        "label": "devel (devel)",
+        "value": "devel"
       }
     ]
   },
@@ -37,6 +83,10 @@
     "label": "Debian",
     "value": "debian",
     "children": [
+      {
+        "label": "12 bookworm",
+        "value": "bookworm"
+      },
       {
         "label": "11 bullseye",
         "value": "bullseye"
@@ -52,40 +102,112 @@
       {
         "label": "8 jessie",
         "value": "jessie"
+      },
+      {
+        "label": "13 trixie",
+        "value": "trixie"
       }
     ]
   },
-{
+  {
+    "label": "Debian-deb822-style",
+    "value": "debian-deb822",
+    "children": [
+      {
+        "label": "12 bookworm",
+        "value": "bookworm"
+      },
+      {
+        "label": "11 bullseye",
+        "value": "bullseye"
+      },
+      {
+        "label": "10 buster",
+        "value": "buster"
+      },
+      {
+        "label": "9 stretch",
+        "value": "stretch"
+      }
+    ]
+  },
+  {
     "label": "Ubuntu-ports",
     "value": "ubuntu-ports",
     "children": [
       {
-        "label": "22.04",
+        "label": "25.04 (plucky)",
+        "value": "plucky"
+      },
+      {
+        "label": "24.10 (oracular)",
+        "value": "oracular"
+      },
+      {
+        "label": "24.04 LTS (noble)",
+        "value": "noble"
+      },
+      {
+        "label": "22.04 LTS (jammy)",
         "value": "jammy"
       },
       {
-        "label": "21.10",
-        "value": "impish"
-      },
-      {
-        "label": "21.04",
-        "value": "hirsute"
-      },
-      {
-        "label": "20.04 LTS",
+        "label": "20.04 LTS (focal)",
         "value": "focal"
       },
       {
-        "label": "18.04 LTS",
+        "label": "18.04 LTS (bionic)",
         "value": "bionic"
       },
       {
-        "label": "16.04 LTS",
+        "label": "16.04 LTS (xenial)",
         "value": "xenial"
       },
       {
-        "label": "14.04 LTS",
+        "label": "14.04 LTS (trusty)",
         "value": "trusty"
+      },
+      {
+        "label": "25.10 (questing)",
+        "value": "questing"
+      },
+      {
+        "label": "devel (devel)",
+        "value": "devel"
+      }
+    ]
+  },
+  {
+    "label": "Ubuntu-ports (deb822-style)",
+    "value": "ubuntu-ports-deb822",
+    "children": [
+      {
+        "label": "25.04 (plucky)",
+        "value": "plucky"
+      },
+      {
+        "label": "24.10 (oracular)",
+        "value": "oracular"
+      },
+      {
+        "label": "24.04 LTS (noble)",
+        "value": "noble"
+      },
+      {
+        "label": "22.04 LTS (jammy)",
+        "value": "jammy"
+      },
+      {
+        "label": "20.04 LTS (focal)",
+        "value": "focal"
+      },
+      {
+        "label": "25.10 (questing)",
+        "value": "questing"
+      },
+      {
+        "label": "devel (devel)",
+        "value": "devel"
       }
     ]
   },
@@ -121,6 +243,34 @@
     "label": "Alpine",
     "value": "alpine",
     "children": [
+      {
+        "label": "V3.22",
+        "value": "3.22"
+      },
+      {
+        "label": "V3.21",
+        "value": "3.21"
+      },
+      {
+        "label": "V3.20",
+        "value": "3.20"
+      },
+      {
+        "label": "V3.19",
+        "value": "3.19"
+      },
+      {
+        "label": "V3.18",
+        "value": "3.18"
+      },
+      {
+        "label": "V3.17",
+        "value": "3.17"
+      },
+      {
+        "label": "V3.16",
+        "value": "3.16"
+      },
       {
         "label": "V3.15",
         "value": "3.15"
