@@ -25,7 +25,7 @@ jobs:
           GENERATE_SOURCEMAP: false
         run: yarn build
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Production Build
           path: build
@@ -51,7 +51,7 @@ jobs:
           GENERATE_SOURCEMAP: false
         run: yarn build
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Production Build(深圳)
           path: build
