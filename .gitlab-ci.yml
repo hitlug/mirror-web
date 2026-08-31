@@ -1,5 +1,5 @@
 default:
-  image: node:16
+  image: node:20
 
 build:
   stage: build
@@ -19,9 +19,8 @@ build:
         - .yarn-cache/
 
   script:
-    - yarn install --cache-folder .yarn-cache
-    - yarn build
+    - make build
 
   artifacts:
     paths:
-      - build
+      - dist

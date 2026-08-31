@@ -8,6 +8,10 @@
 
 # production
 /build
+/dist
+
+# package manager cache
+/.yarn-cache
 
 # misc
 .DS_Store
