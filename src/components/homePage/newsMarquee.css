@@ -3,6 +3,7 @@
   grid-template-columns: 108px minmax(0, 1fr);
   width: min(920px, 100%);
   height: 56px;
+  margin: 0 auto;
   overflow: hidden;
   box-sizing: border-box;
   border: 3px solid #82d8ff;
