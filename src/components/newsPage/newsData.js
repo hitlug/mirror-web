@@ -16,6 +16,17 @@ export function sortNewsItems(items) {
 }
 
 /**
+ * Select the explicitly configured marquee item, falling back to pinned news.
+ */
+export function selectMarqueeNews(items) {
+  return (
+    items.find((item) => item.showInMarquee === true) ||
+    items.find((item) => item.pinned === true) ||
+    items[0]
+  );
+}
+
+/**
  * Return the public URL for a news article body.
  */
 export function getNewsArticleUrl(slug) {

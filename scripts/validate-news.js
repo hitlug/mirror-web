@@ -26,6 +26,7 @@ function isIsoDate(value) {
 function validateNewsItems(items) {
   const errors = [];
   const slugs = new Set();
+  let marqueeItemCount = 0;
 
   if (!Array.isArray(items)) {
     return ["public/news/index.json 的顶层结构必须是数组"];
@@ -75,6 +76,18 @@ function validateNewsItems(items) {
     if (item.draft !== undefined && typeof item.draft !== "boolean") {
       errors.push(`${location}的 draft 必须是布尔值`);
     }
+    if (
+      item.showInMarquee !== undefined &&
+      typeof item.showInMarquee !== "boolean"
+    ) {
+      errors.push(`${location}的 showInMarquee 必须是布尔值`);
+    }
+    if (item.showInMarquee === true) {
+      marqueeItemCount += 1;
+    }
+    if (item.marqueeText !== undefined && !isNonEmptyString(item.marqueeText)) {
+      errors.push(`${location}的 marqueeText 必须是非空字符串`);
+    }
 
     if (validSlug) {
       const articlePath = path.join(articleRoot, `${item.slug}.md`);
@@ -96,6 +109,10 @@ function validateNewsItems(items) {
         );
       }
     }
+  }
+
+  if (marqueeItemCount > 1) {
+    errors.push("最多只能有一条新闻设置 showInMarquee 为 true");
   }
 
   return errors;

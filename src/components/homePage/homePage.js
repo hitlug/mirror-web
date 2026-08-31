@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Col, Row, Layout, Tag, Table, Spin, Space } from "antd";
+import NewsMarquee from "./NewsMarquee";
 import SideCards from "./sideCards/sideCards";
 import React, { Component, useEffect, useState } from "react";
 import { ReactComponent as Logo } from "../../../public/favicon.svg";
@@ -9,7 +10,7 @@ import {
   CloseCircleOutlined,
   ExclamationCircleOutlined,
   QuestionCircleOutlined,
-  SyncOutlined
+  SyncOutlined,
 } from "@ant-design/icons";
 import docMenu from "../docPage/menu.json";
 import { Link } from "react-router-dom";
@@ -33,16 +34,16 @@ export function HomePage() {
       const response = await axios.get("/jobs");
 
       const docs = new Set();
-      docMenu.forEach(cur => {
+      docMenu.forEach((cur) => {
         if (cur.name !== undefined) {
           docs.add(cur.name);
         }
       });
 
-      const mirrorsList = response.data.map(m =>
+      const mirrorsList = response.data.map((m) =>
         Object.assign(m, {
-          has_doc: docs.has(m.name)
-        })
+          has_doc: docs.has(m.name),
+        }),
       );
       mirrorsList.sort((a, b) => {
         return a.name < b.name ? -1 : 1;
@@ -55,6 +56,11 @@ export function HomePage() {
 
   return (
     <Content className="home-page-content">
+      <Row className="home-marquee-row" justify="center">
+        <Col xs={24} md={18}>
+          <NewsMarquee />
+        </Col>
+      </Row>
       <Row type="flex" justify="center">
         <Col>
           <Logo className="home-title-logo" />
@@ -67,10 +73,7 @@ export function HomePage() {
       </Row>
       <Row type="flex" justify="center" gutter={40}>
         <Col md={12}>
-          <MirrorsList
-            mirrorsList={mirrorsList}
-            loaded={loaded}
-          />
+          <MirrorsList mirrorsList={mirrorsList} loaded={loaded} />
         </Col>
         <Col md={6}>
           <SideCards />
@@ -96,7 +99,7 @@ class MirrorsList extends Component {
     const columns = [
       {
         title: "镜像名称",
-        render: item => (
+        render: (item) => (
           <Space>
             <a href={`/${item.name}`}>{item.name}</a>
             {item.has_doc ? (
@@ -105,12 +108,12 @@ class MirrorsList extends Component {
               </Link>
             ) : null}
           </Space>
-        )
+        ),
       },
       {
         title: "同步状态",
         dataIndex: "status",
-        render: status => {
+        render: (status) => {
           let statusIcon, statusTagColor, statusLable;
           switch (status) {
             case "success":
@@ -140,17 +143,13 @@ class MirrorsList extends Component {
               {statusLable}
             </Tag>
           );
-        }
+        },
       },
       {
         title: "Last Update",
         dataIndex: "last_update",
-        render: text =>
-          text
-            .split(" ")
-            .slice(0, 2)
-            .join(" ")
-      }
+        render: (text) => text.split(" ").slice(0, 2).join(" "),
+      },
     ];
     const data = this.props.mirrorsList;
     return (

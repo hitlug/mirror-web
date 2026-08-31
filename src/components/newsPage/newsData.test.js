@@ -1,4 +1,8 @@
-import { getNewsArticleUrl, sortNewsItems } from "./newsData";
+import {
+  getNewsArticleUrl,
+  selectMarqueeNews,
+  sortNewsItems,
+} from "./newsData";
 
 it("sorts pinned news first and then by publication date", () => {
   const items = sortNewsItems([
@@ -14,4 +18,13 @@ it("encodes a news slug when creating its article URL", () => {
   expect(getNewsArticleUrl("release notes")).toBe(
     "/news/articles/release%20notes.md",
   );
+});
+
+it("selects the explicitly configured marquee news", () => {
+  const items = [
+    { slug: "pinned", pinned: true },
+    { slug: "marquee", showInMarquee: true },
+  ];
+
+  expect(selectMarqueeNews(items).slug).toBe("marquee");
 });

@@ -45,11 +45,15 @@ make clean
   "author": "MirrorZ 项目",
   "summary": "教育网联合镜像站正式发布。",
   "tags": ["开源动态"],
-  "pinned": true
+  "pinned": true,
+  "showInMarquee": true,
+  "marqueeText": "MirrorZ 震撼发布"
 }
 ```
 
 `slug` 只能包含小写字母、数字和连字符，发布日期使用
 `YYYY-MM-DD` 格式，`author` 用于标注新闻作者。可选的 `pinned`
-用于置顶，`draft` 为 `true` 时不在页面中展示。构建会检查重复
-`slug`、日期格式、缺失正文和孤立正文文件。
+用于置顶，`draft` 为 `true` 时不在页面中展示。设置
+`showInMarquee` 可将一条新闻显示在首页跑马灯中，`marqueeText`
+用于设置较短的跑马灯文案；同时只能指定一条跑马灯新闻。构建会检查
+重复 `slug`、日期格式、缺失正文和孤立正文文件。
