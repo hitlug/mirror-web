@@ -17,6 +17,14 @@
   z-index: 1;
 }
 
+.page-loading {
+  min-height: calc(100vh - 264px);
+  margin-top: 64px;
+  padding: 80px 24px;
+  text-align: center;
+  background: white;
+}
+
 .footer-text {
   text-align: left;
   display: flex;

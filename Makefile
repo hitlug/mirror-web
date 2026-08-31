@@ -10,7 +10,7 @@ REACT_APP_ORG_NAME ?= 哈尔滨工业大学Linux用户协会
 REACT_APP_ORG_LINK ?= https://github.com/hitlug
 REACT_APP_SPONSOR_NAME ?= 哈尔滨工业大学网络与信息中心
 
-.PHONY: install build clean
+.PHONY: install validate-news build clean
 
 install:
 	$(YARN) install \
@@ -18,7 +18,10 @@ install:
 		--non-interactive \
 		--cache-folder "$(YARN_CACHE_FOLDER)"
 
-build: install
+validate-news:
+	node scripts/validate-news.js
+
+build: install validate-news
 	CI=true \
 	BUILD_PATH="$(DIST_DIR)" \
 	GENERATE_SOURCEMAP=false \

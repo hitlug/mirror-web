@@ -25,3 +25,31 @@ make build \
 ```shell
 make clean
 ```
+
+## 发布新闻
+
+新闻索引位于 `public/news/index.json`，正文位于
+`public/news/articles/`。发布一条新闻时：
+
+1. 在 `public/news/articles/` 中创建以新闻 `slug` 命名的 Markdown 文件。
+2. 在 `public/news/index.json` 中添加对应的元数据。
+3. 执行 `make build`，通过内容校验后生成新的 `dist/`。
+
+索引记录示例：
+
+```json
+{
+  "slug": "2026-08-23-cernet-mirrors-launch",
+  "title": "教育网联合镜像站正式发布",
+  "publishedAt": "2026-08-23",
+  "author": "MirrorZ 项目",
+  "summary": "教育网联合镜像站正式发布。",
+  "tags": ["开源动态"],
+  "pinned": true
+}
+```
+
+`slug` 只能包含小写字母、数字和连字符，发布日期使用
+`YYYY-MM-DD` 格式，`author` 用于标注新闻作者。可选的 `pinned`
+用于置顶，`draft` 为 `true` 时不在页面中展示。构建会检查重复
+`slug`、日期格式、缺失正文和孤立正文文件。

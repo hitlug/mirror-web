@@ -1,27 +1,49 @@
-import React, { Component } from "react";
-import { Route, useLocation, Routes, Navigate, useNavigate } from "react-router-dom";
-import { Col, Layout, Menu, Row } from "antd";
+import React, { Component, lazy, Suspense } from "react";
+import {
+  Route,
+  useLocation,
+  Routes,
+  Navigate,
+  useNavigate,
+} from "react-router-dom";
+import { Col, Layout, Menu, Row, Spin } from "antd";
 import DocPage from "./components/docPage/docPage";
 import { HomePage } from "./components/homePage/homePage";
 import { ReactComponent as Logo } from "../public/favicon.svg";
 import "./App.css";
 
 const { Header, Footer } = Layout;
+const NewsListPage = lazy(() => import("./components/newsPage/NewsListPage"));
+const NewsDetailPage = lazy(
+  () => import("./components/newsPage/NewsDetailPage"),
+);
 
 export default class App extends Component {
   render() {
     return (
       <Layout>
         <PageHeader />
-        <Routes>
-          <Route path="/" element={<Navigate to="/home" replace />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/doc/*" element={<DocPage />} />
-        </Routes>
+        <Suspense fallback={<PageLoading />}>
+          <Routes>
+            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/news" element={<NewsListPage />} />
+            <Route path="/news/:slug" element={<NewsDetailPage />} />
+            <Route path="/doc/*" element={<DocPage />} />
+          </Routes>
+        </Suspense>
         <PageFooter />
       </Layout>
     );
   }
+}
+
+function PageLoading() {
+  return (
+    <div className="page-loading">
+      <Spin size="large" />
+    </div>
+  );
 }
 
 /**
@@ -33,6 +55,7 @@ function PageHeader() {
 
   const hrefMap = new Map([
     ["home", "/home"],
+    ["news", "/news"],
     ["doc", "/doc/docHome"],
   ]);
 
@@ -43,11 +66,15 @@ function PageHeader() {
         mode="horizontal"
         defaultSelectedKeys={["home"]}
         selectedKeys={[location.pathname.split("/")[1]]}
-        onClick={({key}) => navigate(hrefMap.get(key))}
+        onClick={({ key }) => navigate(hrefMap.get(key))}
         items={[
           {
             key: "home",
             label: "主页",
+          },
+          {
+            key: "news",
+            label: "新闻",
           },
           {
             key: "doc",
