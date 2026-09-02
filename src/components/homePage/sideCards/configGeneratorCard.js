@@ -70,8 +70,17 @@ export default class ConfigGeneratorCard extends Component {
       case "ubuntu-ports":
         configBlock = buildUbuntuportsBlock(this.state.selectVersion);
         break;
+      case "ubuntu-deb822":
+        configBlock = buildUbuntuDeb822Block(this.state.selectVersion);
+        break;
+      case "ubuntu-ports-deb822":
+        configBlock = buildUbuntuPortsDeb822Block(this.state.selectVersion);
+        break;
       case "debian":
         configBlock = buildDebianBlock(this.state.selectVersion);
+        break;
+      case "debian-deb822":
+        configBlock = buildDebianDeb822Block(this.state.selectVersion);
         break;
       case "archlinux":
         configBlock = buildArchBlock();
@@ -233,6 +242,94 @@ function buildUbuntuportsBlock(version) {
 }
 
 /**
+ * 构建Ubuntu deb822格式软件源配置的文本块
+ *
+ * @param version 版本别名
+ * @returns {string} 返回Ubuntu deb822格式软件源配置的文本块
+ */
+function buildUbuntuDeb822Block(version) {
+  return (
+    "# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释\n" +
+    "Types: deb\n" +
+    "URIs: http://mirrors.hit.edu.cn/ubuntu/\n" +
+    "Suites: " + version + " " + version + "-updates " + version + "-backports\n" +
+    "Components: main universe restricted multiverse\n" +
+    "Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n\n" +
+    "# Types: deb-src\n" +
+    "# URIs: http://mirrors.hit.edu.cn/ubuntu/\n" +
+    "# Suites: " + version + " " + version + "-updates " + version + "-backports\n" +
+    "# Components: main universe restricted multiverse\n" +
+    "# Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n\n" +
+    "Types: deb\n" +
+    "URIs: http://mirrors.hit.edu.cn/ubuntu/\n" +
+    "Suites: " + version + "-security\n" +
+    "Components: main universe restricted multiverse\n" +
+    "Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n\n" +
+    "# Types: deb-src\n" +
+    "# URIs: http://mirrors.hit.edu.cn/ubuntu/\n" +
+    "# Suites: " + version + "-security\n" +
+    "# Components: main universe restricted multiverse\n" +
+    "# Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n\n" +
+    "# 预发布软件源，不建议启用\n" +
+    "# Types: deb\n" +
+    "# URIs: http://mirrors.hit.edu.cn/ubuntu/\n" +
+    "# Suites: " + version + "-proposed\n" +
+    "# Components: main universe restricted multiverse\n" +
+    "# Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n\n" +
+    "# 预发布软件源，不建议启用\n" +
+    "# Types: deb-src\n" +
+    "# URIs: http://mirrors.hit.edu.cn/ubuntu/\n" +
+    "# Suites: " + version + "-proposed\n" +
+    "# Components: main universe restricted multiverse\n" +
+    "# Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n"
+  );
+}
+
+/**
+ * 构建Ubuntu-ports deb822格式软件源配置的文本块
+ *
+ * @param version 版本别名
+ * @returns {string} 返回Ubuntu-ports deb822格式软件源配置的文本块
+ */
+function buildUbuntuPortsDeb822Block(version) {
+  return (
+    "# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释\n" +
+    "Types: deb\n" +
+    "URIs: http://mirrors.hit.edu.cn/ubuntu-ports/\n" +
+    "Suites: " + version + " " + version + "-updates " + version + "-backports\n" +
+    "Components: main universe restricted multiverse\n" +
+    "Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n\n" +
+    "# Types: deb-src\n" +
+    "# URIs: http://mirrors.hit.edu.cn/ubuntu-ports/\n" +
+    "# Suites: " + version + " " + version + "-updates " + version + "-backports\n" +
+    "# Components: main universe restricted multiverse\n" +
+    "# Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n\n" +
+    "Types: deb\n" +
+    "URIs: http://mirrors.hit.edu.cn/ubuntu-ports/\n" +
+    "Suites: " + version + "-security\n" +
+    "Components: main universe restricted multiverse\n" +
+    "Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n\n" +
+    "# Types: deb-src\n" +
+    "# URIs: http://mirrors.hit.edu.cn/ubuntu-ports/\n" +
+    "# Suites: " + version + "-security\n" +
+    "# Components: main universe restricted multiverse\n" +
+    "# Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n\n" +
+    "# 预发布软件源，不建议启用\n" +
+    "# Types: deb\n" +
+    "# URIs: http://mirrors.hit.edu.cn/ubuntu-ports/\n" +
+    "# Suites: " + version + "-proposed\n" +
+    "# Components: main universe restricted multiverse\n" +
+    "# Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n\n" +
+    "# 预发布软件源，不建议启用\n" +
+    "# Types: deb-src\n" +
+    "# URIs: http://mirrors.hit.edu.cn/ubuntu-ports/\n" +
+    "# Suites: " + version + "-proposed\n" +
+    "# Components: main universe restricted multiverse\n" +
+    "# Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n"
+  );
+}
+
+/**
  * 构建Alpine软件源配置的一行
  *
  * @param val 版本别名
@@ -286,16 +383,42 @@ function buildDebianLine(val, version) {
  */
 function buildDebianBlock(version) {
   return (
-    "# 目前还未提供debian-security，请注意添加\n" +
     buildDebianLine("deb", version) +
     buildDebianLine("# deb-src", version) +
     buildDebianLine("deb", version + "-updates") +
     buildDebianLine("# deb-src", version + "-updates") +
     buildDebianLine("deb", version + "-backports") +
-    buildDebianLine("# deb-src", version + "-backports")
+    buildDebianLine("# deb-src", version + "-backports") +
+    "\n# 目前还未提供 debian-security 镜像，请注意添加\n" +
+    "deb http://deb.debian.org/debian-security " + version + "-security main contrib non-free\n" +
+    "deb-src http://deb.debian.org/debian-security " + version + "-security main contrib non-free\n"
   );
 }
 
+function buildDebianDeb822Block(version) {
+  return ( // 12 才有 non-free-firmware，10 没有 backports
+    `Types: deb\n` +
+    `URIs: http://mirrors.hit.edu.cn/debian\n` +
+    `Suites: ${version} ${version}-updates ${version}-backports\n` +
+    `Components: main contrib non-free non-free-firmware\n` +
+    `Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg\n\n` +
+    `# Types: deb-src\n` +
+    `# URIs: http://mirrors.hit.edu.cn/debian\n` +
+    `# Suites: ${version} ${version}-updates ${version}-backports\n` +
+    `# Components: main contrib non-free non-free-firmware\n` +
+    `# Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg\n\n` +
+    `Types: deb\n` +
+    `URIs: http://security.debian.org/debian-security\n` +
+    `Suites: ${version}-security\n` +
+    `Components: main contrib non-free non-free-firmware\n` +
+    `Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg\n\n` +
+    `# Types: deb-src\n` +
+    `# URIs: http://security.debian.org/debian-security\n` +
+    `# Suites: ${version}-security\n` +
+    `# Components: main contrib non-free non-free-firmware\n` +
+    `# Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg\n`
+  );
+}
 
 /**
  * 构建ArchLinux软件源配置的文本块
