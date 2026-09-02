@@ -139,7 +139,7 @@ export default class ConfigGeneratorCard extends Component {
                         text={this.state.configBlock}
                         onCopy={() => message.success("复制成功", 1)}
                       >
-                        <pre style={{ margin: 0 }}>
+                        <pre style={{ margin: 0, overflowX: "auto" }}>
                           {this.state.configBlock}
                         </pre>
                       </CopyToClipboard>
